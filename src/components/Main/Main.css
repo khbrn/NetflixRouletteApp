@@ -1,3 +1,13 @@
 main {
+	height: 1321px;
+}
+
+.main__separator {
+	height: 10px;
+	opacity: 0.5;
+}
+
+.main__container {
 	height: 1311px;
+	background-color: #232323;
 }

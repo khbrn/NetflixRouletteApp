@@ -1,10 +1,9 @@
 import './App.css';
-import GreetingMsg from './GreetingMsg';
 
 const App = () => {
 	return (
 		<div className="greeting-container">
-			<GreetingMsg />
+			<h1>Hello</h1>
 		</div>
 	);
 };

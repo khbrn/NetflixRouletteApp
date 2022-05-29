@@ -1,0 +1,15 @@
+.logo {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+	letter-spacing: .5px;
+	color: #f65261;
+	background-color: inherit;
+}
+
+#logo--bolded {
+	font-weight: 900;
+	background-color: inherit;
+}

@@ -1,7 +1,12 @@
+import AppLogo from '../AppLogo/AppLogo';
 import './Footer.css';
 
 const Footer = () => {
-	return <footer />;
+	return (
+		<footer>
+			<AppLogo />
+		</footer>
+	);
 };
 
 export default Footer;

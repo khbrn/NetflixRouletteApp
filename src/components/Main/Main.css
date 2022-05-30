@@ -4,7 +4,7 @@ main {
 
 .main__separator {
 	height: 10px;
-	opacity: 0.5;
+	background: #555555;
 }
 
 .main__container {

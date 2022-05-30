@@ -17,3 +17,12 @@ main {
 	flex-direction: row;
 	justify-content: space-between;
 }
+
+.progress-bar {
+	margin-top: 19px;
+	margin-left: 55px;
+	margin-right: 57px;
+	width: 94%;
+	height: 2px;
+	background: #424242;
+}

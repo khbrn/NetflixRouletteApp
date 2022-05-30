@@ -11,3 +11,9 @@ main {
 	height: 1311px;
 	background-color: #232323;
 }
+
+.main__container__tools {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}

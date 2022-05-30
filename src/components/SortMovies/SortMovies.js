@@ -8,7 +8,11 @@ const SortMovies = () => {
 				Sort by:
 			</label>
 			<select name="sort-movie" id="sort-movie" className="sort-movie__dropdown">
-				{mockSortOptions.map((sortOption) => <option value={sortOption}>{sortOption}</option>)}
+				{mockSortOptions.map((sortOption, index) => (
+					<option value={sortOption} key={index}>
+						{sortOption}
+					</option>
+				))}
 			</select>
 		</div>
 	);

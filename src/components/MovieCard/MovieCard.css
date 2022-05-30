@@ -1,0 +1,80 @@
+.movie-card {
+	display: flex;
+	flex-direction: column;
+
+	width: 327px;
+	height: 560px;
+	background-color: #232323;
+}
+
+.movie-card__information {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	margin-top: 13px;
+	background-color: #232323;
+}
+
+.movie-card__information-title {
+	height: 22px;
+
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+
+	color: #ffffff;
+	background-color: #232323;
+	mix-blend-mode: normal;
+	opacity: 0.7;
+}
+
+.movie-card__information-year {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+
+	width: 66px;
+	height: 22px;
+
+	border: 1px solid #979797;
+	background-color: #232323;
+	mix-blend-mode: normal;
+	opacity: 0.5;
+	border-radius: 4px;
+}
+
+.movie-card__information-year p {
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 17px;
+	text-align: center;
+
+	color: #ffffff;
+	background-color: #232323;
+
+	mix-blend-mode: normal;
+	opacity: 0.7;
+}
+
+.movie-card__genre {
+	margin-top: 8px;
+	width: 323px;
+	height: 17px;
+	left: 116px;
+	top: 1106px;
+
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 17px;
+
+	color: #ffffff;
+	background-color: #232323;
+}

@@ -32,6 +32,37 @@ const mockMovieData = [
 		duration: '2h17min',
 		grade: 8.0,
 		description: `The murderous Bride is back and she is still continuing her vengeance quest against her ex-boss, Bill, and taking aim at Bill's younger brother Budd and Elle Driver, the only survivors from the squad of assassins who betrayed her four years earlier. It's all leading up to the ultimate confrontation with Bill, the Bride's former master and the man who ordered her execution!—Anthony Pereyra {hypersonic91@yahoo.com}`
+	},
+	{
+		id: 3,
+		title: 'Avengers: War of Infinity',
+		posterLink: 'https://fwcdn.pl/fpo/37/58/693758/7839647.3.jpg',
+		releaseYear: 2004,
+		genre: 'Action & Adventure',
+		duration: '2h34min',
+		grade: 8.9,
+		description: ``
+	},
+	{
+		id: 4,
+		title: 'Inception',
+		posterLink:
+			'https://s3-alpha-sig.figma.com/img/d701/811a/217633f55a6713086b98c86f110c5d75?Expires=1655078400&Signature=ViErLIz7dF1CIkcUbP9-igV2G8hyZb52Atf6sz3PcwSo97BhmD6JA5VUgkiGTsPUFTJUhSor1sIhb6Vu6MIwU45WbkJ~7m2aOYfm~DzKPs4n-PATpOcjjOK91GtjTS5qpNOqtxD3XnKlRiI42iNrmWZYhRxU9s~zzxQddQasOo1b2uxJ64-jsVRcGrtpmj00OwCsrKSXpTejL-d9SPhLbi0dgw4eFS6--bK6QYF1DvyA9C-8DEeP3SUixlvMnC-dcl5xEDDO4H~knOQ7mVG-qd-fXFr30r20b6GkU0cbRYqVvdklOkKHY5202RxuuDp~qXFROwXm7AYBFSWdKcRdTw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
+		releaseYear: 2003,
+		genre: 'Action & Adventure',
+		duration: '2h14min',
+		grade: 7.9,
+		description: ''
+	},
+	{
+		id: 5,
+		title: 'Reservoir dogs',
+		posterLink: 'https://i0.wp.com/moviemovesme.com/wp-content/uploads/2022/02/12760-reservoir-dogs.jpg?ssl=1',
+		releaseYear: 1994,
+		genre: 'Oscar winning Movie',
+		duration: '2h17min',
+		grade: 8.0,
+		description: ``
 	}
 ];
 

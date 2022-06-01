@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import './MovieCard.css';
+
 import Icon from '@mdi/react';
 import { mdiDotsVerticalCircle } from '@mdi/js';
 
@@ -18,6 +20,19 @@ const MovieCard = (props) => {
 			<p className="movie-card__genre">{props.movieGenre}</p>
 		</div>
 	);
+};
+
+MovieCard.propTypes = {
+	moviePosterLink: PropTypes.string.isRequired,
+	movieTitle: PropTypes.string.isRequired,
+	movieRelease: PropTypes.number.isRequired,
+	movieGenre: PropTypes.string.isRequired
+};
+
+MovieCard.defaultProps = {
+	moviePosterLink: 'https://c.tenor.com/04sSYbNQATUAAAAC/sad-face.gif',
+	movieTitle: 'Oops! Something went wrong',
+	movieGenre: ''
 };
 
 export default MovieCard;

@@ -5,6 +5,7 @@ import FilterGenre from '../FilterGenre/FilterGenre';
 import FilterGenreResult from '../FilterGenreResult/FilterGenreResult';
 
 const Main = () => {
+	const movieCounter = 39;
 	return (
 		<main>
 			<div className="main__separator" />
@@ -14,7 +15,7 @@ const Main = () => {
 					<SortMovies />
 				</div>
 				<div className="progress-bar" />
-				<FilterGenreResult movieCounter={39} />
+				<FilterGenreResult movieCounter={movieCounter} />
 				<MovieList />
 			</div>
 		</main>

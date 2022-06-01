@@ -1,7 +1,7 @@
 import './MovieList.css';
 import mockMovieData from '../../mockData/mockMovieData';
 import MovieCard from '../MovieCard/MovieCard';
-import ErrorBoundary from '../errorBoundary/ErrorBoundary';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
 const MovieList = () => {
 	return (

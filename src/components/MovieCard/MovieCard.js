@@ -1,14 +1,20 @@
+import ContextMenu from '../ContextMenu/ContextMenu';
+
 import PropTypes from 'prop-types';
 import './MovieCard.css';
+import { useState } from 'react'; 
 
 import Icon from '@mdi/react';
 import { mdiDotsVerticalCircle } from '@mdi/js';
 
 const MovieCard = (props) => {
+	const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
+
 	return (
 		<div className="movie-card__container ">
 			<div className="movie-card">
-				<Icon path={mdiDotsVerticalCircle} size={'36px'} className="menu-icon" />
+				<Icon path={mdiDotsVerticalCircle} size={'36px'} className="menu-icon" onClick={() => setIsContextMenuVisible(true)}/>
+				{isContextMenuVisible ?<ContextMenu setIsContextMenuVisible={setIsContextMenuVisible} /> : <></>}
 				<img src={props.moviePosterLink} alt="Movie Poster" className="movie-card__image" />
 			</div>
 			<div className="movie-card__information">

@@ -6,15 +6,19 @@ import { useState } from 'react';
 
 import Icon from '@mdi/react';
 import { mdiDotsVerticalCircle } from '@mdi/js';
+import DeleteMovie from '../DeleteMovie/DeleteMovie';
 
 const MovieCard = (props) => {
 	const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
+	const [isDeleteMovieDialogVisible, setIsDeleteMovieDialogVisible] = useState(false);
 
 	return (
+		<>
+		{isDeleteMovieDialogVisible ? <DeleteMovie setDeleteDialogVisibility={setIsDeleteMovieDialogVisible}/> : <></>}
 		<div className="movie-card__container ">
 			<div className="movie-card">
 				<Icon path={mdiDotsVerticalCircle} size={'36px'} className="menu-icon" onClick={() => setIsContextMenuVisible(true)}/>
-				{isContextMenuVisible ?<ContextMenu setIsContextMenuVisible={setIsContextMenuVisible} /> : <></>}
+				{isContextMenuVisible ?<ContextMenu setIsContextMenuVisible={setIsContextMenuVisible} setIsDeleteMovieDialogVisible={setIsDeleteMovieDialogVisible} /> : <></>}
 				<img src={props.moviePosterLink} alt="Movie Poster" className="movie-card__image" />
 			</div>
 			<div className="movie-card__information">
@@ -25,6 +29,7 @@ const MovieCard = (props) => {
 			</div>
 			<p className="movie-card__genre">{props.movieGenre}</p>
 		</div>
+		</>
 	);
 };
 

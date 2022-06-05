@@ -52,8 +52,7 @@
 }
 
 .button__confirm {
-	margin-top: 52px;
-	margin-left: 462px;
+	margin-right: 60px;
 
 	background: #f65261;
 	border-radius: 4px;
@@ -76,4 +75,11 @@
 
 	background-color: inherit;
 	border: none;
+}
+
+.delete-movie__button {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
 }

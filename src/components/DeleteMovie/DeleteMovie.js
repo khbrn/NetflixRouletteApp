@@ -15,7 +15,9 @@ const DeleteMovie = (props) => {
 				</button>
 				<h2>Delete movie</h2>
 				<p>Are you sure you want to delete this movie?</p>
-				<button className="button__confirm">Confirm</button>
+				<div className="delete-movie__button">
+					<button className="button__confirm">Confirm</button>
+				</div>
 			</div>
 		</div>
 	);

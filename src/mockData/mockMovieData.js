@@ -7,7 +7,7 @@ const mockMovieData = [
 		releaseYear: 1994,
 		genre: 'Action & Adventure',
 		duration: '2h34min',
-		grade: 8.9,
+		rating: 8.9,
 		description: `Jules Winnfield (Samuel L. Jackson) and Vincent Vega (John Travolta) are two hit men who are out to retrieve a suitcase stolen from their employer, mob boss Marsellus Wallace (Ving Rhames). Wallace has also asked Vincent to take his wife Mia (Uma Thurman) out a few days later when Wallace himself will be out of town. Butch Coolidge (Bruce Willis) is an aging boxer who is paid by Wallace to lose his fight. The lives of these seemingly unrelated people are woven together comprising of a series of funny, bizarre and uncalled-for incidents.—Soumitra`
 	},
 	{
@@ -18,7 +18,7 @@ const mockMovieData = [
 		releaseYear: 2003,
 		genre: 'Drama, Biography, Music',
 		duration: '2h14min',
-		grade: 7.9,
+		rating: 7.9,
 		description: `Bohemian Rhapsody is a foot-stomping celebration of Queen, their music and their extraordinary lead singer Freddie Mercury. Freddie defied stereotypes and shattered convention to become one of the most beloved entertainers on the planet. The film traces the meteoric rise of the band through their iconic songs and revolutionary sound. They reach unparalleled success, but in an unexpected turn Freddie, surrounded by darker influences, shuns Queen in pursuit of his solo career. Having suffered greatly without the collaboration of Queen, Freddie manages to reunite with his bandmates just in time for Live Aid. While bravely facing a recent AIDS diagnosis, Freddie leads the band in one of the greatest performances in the history of rock music. Queen cements a legacy that continues to inspire outsiders, dreamers and music lovers to this day.—Twentieth Century Fox
         `
 	},
@@ -30,7 +30,7 @@ const mockMovieData = [
 		releaseYear: 1994,
 		genre: 'Oscar winning Movie',
 		duration: '2h17min',
-		grade: 8.0,
+		rating: 8.0,
 		description: `The murderous Bride is back and she is still continuing her vengeance quest against her ex-boss, Bill, and taking aim at Bill's younger brother Budd and Elle Driver, the only survivors from the squad of assassins who betrayed her four years earlier. It's all leading up to the ultimate confrontation with Bill, the Bride's former master and the man who ordered her execution!—Anthony Pereyra {hypersonic91@yahoo.com}`
 	},
 	{
@@ -40,7 +40,7 @@ const mockMovieData = [
 		releaseYear: 2004,
 		genre: 'Action & Adventure',
 		duration: '2h34min',
-		grade: 8.9,
+		rating: 8.9,
 		description: ``
 	},
 	{
@@ -51,7 +51,7 @@ const mockMovieData = [
 		releaseYear: 2003,
 		genre: 'Action & Adventure',
 		duration: '2h14min',
-		grade: 7.9,
+		rating: 7.9,
 		description: ''
 	},
 	{
@@ -61,7 +61,7 @@ const mockMovieData = [
 		releaseYear: 1994,
 		genre: 'Oscar winning Movie',
 		duration: '2h17min',
-		grade: 8.0,
+		rating: 8.0,
 		description: ``
 	}
 ];

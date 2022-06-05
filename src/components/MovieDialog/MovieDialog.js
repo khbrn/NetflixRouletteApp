@@ -13,7 +13,7 @@ const MovieDialog = (props) => {
 				<button className="close-button" onClick={closeDialog}>
 					<Icon path={mdiClose} size={'28px'} color="white" />
 				</button>
-				<h2>Dialog Name</h2>
+				<h2>{props.movie ? 'Edit Movie' : 'Add Movie'}</h2>
 				<form>
 					<div className="movie-dialog__form-row">
 						<div className="movie-dialog__form__container">
@@ -23,7 +23,8 @@ const MovieDialog = (props) => {
 								id="title"
 								name="title"
 								className="movie-dialog__form-elems-left"
-								value={null}
+								placeholder="Add Title"
+								value={props.movie ? props.movie.title : undefined}
 							/>
 						</div>
 						<div className="movie-dialog__form__container">
@@ -33,7 +34,7 @@ const MovieDialog = (props) => {
 								id="release"
 								name="release"
 								className="movie-dialog__form-elems-right"
-								value={null}
+								value={props.movie ? props.movie.releaseYear : undefined}
 								placeholder="Select date"
 							/>
 						</div>
@@ -47,7 +48,7 @@ const MovieDialog = (props) => {
 								name="url"
 								className="movie-dialog__form-elems-left"
 								placeholder="https://"
-								value={null}
+								value={props.movie ? props.movie.posterLink : undefined}
 							/>
 						</div>
 						<div className="movie-dialog__form__container">
@@ -58,7 +59,7 @@ const MovieDialog = (props) => {
 								name="rating"
 								className="movie-dialog__form-elems-right"
 								placeholder="7.8"
-								value={null}
+								value={props.movie ? props.movie.rating : undefined}
 							/>
 						</div>
 					</div>
@@ -71,7 +72,7 @@ const MovieDialog = (props) => {
 								name="url"
 								className="movie-dialog__form-elems-right"
 								placeholder="Select Genre"
-								value={null}
+								value={props.movie ? props.movie.genre : undefined}
 							/>
 						</div>
 						<div className="movie-dialog__form__container">
@@ -82,7 +83,7 @@ const MovieDialog = (props) => {
 								name="runtime"
 								className="movie-dialog__form-elems-left"
 								placeholder="minutes"
-								value={null}
+								value={props.movie ? props.movie.duration : undefined}
 							/>
 						</div>
 					</div>
@@ -95,7 +96,7 @@ const MovieDialog = (props) => {
 								name="overview"
 								className="movie-dialog__form-elem"
 								placeholder="Movie description"
-								value={null}
+								value={props.movie ? props.movie.description : undefined}
 							/>
 						</div>
 					</div>

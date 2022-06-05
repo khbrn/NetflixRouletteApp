@@ -3,9 +3,12 @@ import MovieList from '../MovieList/MovieList';
 import SortMovies from '../SortMovies/SortMovies';
 import FilterGenre from '../FilterGenre/FilterGenre';
 import FilterGenreResult from '../FilterGenreResult/FilterGenreResult';
+import mockMovieData from '../../mockData/mockMovieData';
+import { useState } from 'react';
 
 const Main = () => {
 	const movieCounter = 39;
+	const [ moviesData, setMoviesData ] = useState(mockMovieData);
 	return (
 		<main>
 			<div className="main__separator" />
@@ -16,7 +19,7 @@ const Main = () => {
 				</div>
 				<div className="progress-bar" />
 				<FilterGenreResult movieCounter={movieCounter} />
-				<MovieList />
+				<MovieList moviesData={moviesData} setMoviesData={setMoviesData} />
 			</div>
 		</main>
 	);

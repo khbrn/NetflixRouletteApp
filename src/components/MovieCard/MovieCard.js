@@ -9,7 +9,7 @@ import { mdiDotsVerticalCircle } from '@mdi/js';
 import DeleteMovie from '../DeleteMovie/DeleteMovie';
 import MovieDialog from '../MovieDialog/MovieDialog';
 
-const MovieCard = (props) => {
+const MovieCard = ({movie}) => {
 	const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
 	const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);
 	const [isDeleteMovieDialogVisible, setIsDeleteMovieDialogVisible] = useState(false);
@@ -17,37 +17,37 @@ const MovieCard = (props) => {
 
 	return (
 		<>
-		{isMovieDialogVisible ? <MovieDialog setMovieDialogVisibility={setIsMovieDialogVisible}/> : <></>}
+		{isMovieDialogVisible ? <MovieDialog setMovieDialogVisibility={setIsMovieDialogVisible} movie={movie}/> : <></>}
 		{isDeleteMovieDialogVisible ? <DeleteMovie setDeleteDialogVisibility={setIsDeleteMovieDialogVisible}/> : <></>}
 		<div className="movie-card__container ">
 			<div className="movie-card">
 				<Icon path={mdiDotsVerticalCircle} size={'36px'} className="menu-icon" onClick={() => setIsContextMenuVisible(true)}/>
 				{isContextMenuVisible ?<ContextMenu setIsContextMenuVisible={setIsContextMenuVisible} setDeleteDialogVisibility={setIsDeleteMovieDialogVisible} setMovieDialogVisibility={setIsMovieDialogVisible}/> : <></>}
-				<img src={props.moviePosterLink} alt="Movie Poster" className="movie-card__image" />
+				<img src={movie.posterLink} alt="Movie Poster" className="movie-card__image" />
 			</div>
 			<div className="movie-card__information">
-				<div className="movie-card__information-title">{props.movieTitle}</div>
+				<div className="movie-card__information-title">{movie.title}</div>
 				<div className="movie-card__information-year">
-					<p>{props.movieRelease}</p>
+					<p>{movie.releaseYear}</p>
 				</div>
 			</div>
-			<p className="movie-card__genre">{props.movieGenre}</p>
+			<p className="movie-card__genre">{movie.genre}</p>
 		</div>
 		</>
 	);
 };
 
 MovieCard.propTypes = {
-	moviePosterLink: PropTypes.string.isRequired,
-	movieTitle: PropTypes.string.isRequired,
-	movieRelease: PropTypes.number.isRequired,
-	movieGenre: PropTypes.string.isRequired
+	posterLink: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+	releaseYear: PropTypes.number.isRequired,
+	genre: PropTypes.string.isRequired
 };
 
 MovieCard.defaultProps = {
-	moviePosterLink: 'https://c.tenor.com/04sSYbNQATUAAAAC/sad-face.gif',
-	movieTitle: 'Oops! Something went wrong',
-	movieGenre: ''
+	posterLink: 'https://c.tenor.com/04sSYbNQATUAAAAC/sad-face.gif',
+	title: 'Oops! Something went wrong',
+	genre: ''
 };
 
 export default MovieCard;

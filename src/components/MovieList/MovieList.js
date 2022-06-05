@@ -1,20 +1,14 @@
 import './MovieList.css';
-import mockMovieData from '../../mockData/mockMovieData';
 import MovieCard from '../MovieCard/MovieCard';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
-const MovieList = () => {
+const MovieList = (props) => {
 	return (
-		<ErrorBoundary movieData={mockMovieData}>
+		<ErrorBoundary movieData={props.moviesData}>
 			<ul className="movie-list">
-				{mockMovieData.map((mockMovie) => (
-					<li key={mockMovie.id}>
-						<MovieCard
-							moviePosterLink={mockMovie.posterLink}
-							movieTitle={mockMovie.title}
-							movieRelease={mockMovie.releaseYear}
-							movieGenre={mockMovie.genre}
-						/>
+				{props.moviesData.map((movie) => (
+					<li key={movie.id}>
+						<MovieCard movie={movie} />
 					</li>
 				))}
 			</ul>

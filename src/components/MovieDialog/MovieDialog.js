@@ -1,10 +1,27 @@
 import './MovieDialog.css';
 import Icon from '@mdi/react';
 import { mdiClose } from '@mdi/js';
+import { useState } from 'react';
 
 const MovieDialog = (props) => {
+	const dialogInfo = {
+		dialogTitle: props.movie ? 'Edit Movie' : 'Add Movie',
+		movieTitle: props.movie ? props.movie.title : '',
+		releaseYear: props.movie ? props.movie.release_date : '',
+		posterLink: props.movie ? props.movie.poster_path : '',
+		rating: props.movie ? props.movie.vote_average : '',
+		genre: props.movie ? props.movie.genres : '',
+		duration: props.movie ? props.movie.runtime : '',
+		description: props.movie ? props.movie.overview : ''
+	};
+	const [ dialogData, setDialogData ] = useState(dialogInfo);
+
 	const closeDialog = () => {
 		props.setMovieDialogVisibility(false);
+	};
+
+	const resetDataDialog = () => {
+		setDialogData(dialogInfo);
 	};
 
 	return (
@@ -13,7 +30,7 @@ const MovieDialog = (props) => {
 				<button className="close-button" onClick={closeDialog}>
 					<Icon path={mdiClose} size={'28px'} color="white" />
 				</button>
-				<h2>{props.movie ? 'Edit Movie' : 'Add Movie'}</h2>
+				<h2>{dialogData.dialogTitle}</h2>
 				<form>
 					<div className="movie-dialog__form-row">
 						<div className="movie-dialog__form__container">
@@ -24,7 +41,10 @@ const MovieDialog = (props) => {
 								name="title"
 								className="movie-dialog__form-elems-left"
 								placeholder="Add Title"
-								value={props.movie ? props.movie.title : undefined}
+								onChange={(event) => {
+									setDialogData({ ...dialogData, movieTitle: event.target.value });
+								}}
+								value={dialogData.movieTitle}
 							/>
 						</div>
 						<div className="movie-dialog__form__container">
@@ -34,8 +54,11 @@ const MovieDialog = (props) => {
 								id="release"
 								name="release"
 								className="movie-dialog__form-elems-right"
-								value={props.movie ? props.movie.releaseYear : undefined}
 								placeholder="Select date"
+								onChange={(event) => {
+									setDialogData({ ...dialogData, releaseYear: event.target.value });
+								}}
+								value={dialogData.releaseYear}
 							/>
 						</div>
 					</div>
@@ -48,7 +71,10 @@ const MovieDialog = (props) => {
 								name="url"
 								className="movie-dialog__form-elems-left"
 								placeholder="https://"
-								value={props.movie ? props.movie.posterLink : undefined}
+								onChange={(event) => {
+									setDialogData({ ...dialogData, posterLink: event.target.value });
+								}}
+								value={dialogData.posterLink}
 							/>
 						</div>
 						<div className="movie-dialog__form__container">
@@ -59,7 +85,10 @@ const MovieDialog = (props) => {
 								name="rating"
 								className="movie-dialog__form-elems-right"
 								placeholder="7.8"
-								value={props.movie ? props.movie.rating : undefined}
+								onChange={(event) => {
+									setDialogData({ ...dialogData, rating: event.target.value });
+								}}
+								value={dialogData.rating}
 							/>
 						</div>
 					</div>
@@ -72,7 +101,10 @@ const MovieDialog = (props) => {
 								name="url"
 								className="movie-dialog__form-elems-right"
 								placeholder="Select Genre"
-								value={props.movie ? props.movie.genre : undefined}
+								onChange={(event) => {
+									setDialogData({ ...dialogData, genre: event.target.value });
+								}}
+								value={dialogData.genre}
 							/>
 						</div>
 						<div className="movie-dialog__form__container">
@@ -83,7 +115,10 @@ const MovieDialog = (props) => {
 								name="runtime"
 								className="movie-dialog__form-elems-left"
 								placeholder="minutes"
-								value={props.movie ? props.movie.duration : undefined}
+								onChange={(event) => {
+									setDialogData({ ...dialogData, duration: event.target.value });
+								}}
+								value={dialogData.duration}
 							/>
 						</div>
 					</div>
@@ -96,13 +131,18 @@ const MovieDialog = (props) => {
 								name="overview"
 								className="movie-dialog__form-elem"
 								placeholder="Movie description"
-								value={props.movie ? props.movie.description : undefined}
+								onChange={(event) => {
+									setDialogData({ ...dialogData, description: event.target.value });
+								}}
+								value={dialogData.description}
 							/>
 						</div>
 					</div>
 				</form>
 				<div className="movie-dialog__buttons">
-					<button className="button__reset">Reset</button>
+					<button className="button__reset" onClick={resetDataDialog}>
+						Reset
+					</button>
 					<button className="button__confirm">Submit</button>
 				</div>
 			</div>

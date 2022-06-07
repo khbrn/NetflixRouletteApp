@@ -6,8 +6,8 @@ const MovieList = (props) => {
 	return (
 		<ErrorBoundary movieData={props.moviesData}>
 			<ul className="movie-list">
-				{props.moviesData.map((movie) => (
-					<li key={movie.id}>
+				{props.moviesData.map((movie, index) => (
+					<li key={index}>
 						<MovieCard movie={movie} />
 					</li>
 				))}

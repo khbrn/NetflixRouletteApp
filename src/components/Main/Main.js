@@ -7,7 +7,7 @@ import mockMovieData from '../../mockData/mockMovieData';
 import { useState } from 'react';
 
 const Main = () => {
-	const movieCounter = 39;
+	const [ movieCounter, setMovieCounter ] = useState(mockMovieData.length);
 	const [ moviesData, setMoviesData ] = useState(mockMovieData);
 	return (
 		<main>

@@ -26,3 +26,19 @@ main {
 	height: 2px;
 	background: #424242;
 }
+
+.loading-message {
+	margin-top: 50px;
+	margin-left: 50px;
+	height: 20px;
+
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 20px;
+
+	text-transform: uppercase;
+
+	color: #ffffff;
+}

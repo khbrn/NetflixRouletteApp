@@ -7,6 +7,10 @@ const DeleteMovie = (props) => {
 		props.setDeleteDialogVisibility(false);
 	};
 
+	const deleteMovieHandler = () => {
+		console.log(`Movie ID ${props.movie.id} was deleted`);
+	};
+
 	return (
 		<div className="delete-movie__container">
 			<div className="delete-movie">
@@ -16,7 +20,9 @@ const DeleteMovie = (props) => {
 				<h2>Delete movie</h2>
 				<p>Are you sure you want to delete this movie?</p>
 				<div className="delete-movie__button">
-					<button className="button__confirm">Confirm</button>
+					<button className="button__confirm" onClick={deleteMovieHandler}>
+						Confirm
+					</button>
 				</div>
 			</div>
 		</div>

@@ -1,5 +1,6 @@
 const mockMovieData = [
 	{
+		id: 0,
 		title: 'La La Land',
 		tagline: "Here's to the fools who dream.",
 		vote_average: 7.9,
@@ -14,6 +15,7 @@ const mockMovieData = [
 		genres: [ 'Comedy', 'Drama', 'Romance' ]
 	},
 	{
+		id: 1,
 		title: 'Bohemian Rhapsody',
 		tagline: 'We are the champions',
 		vote_average: 7.9,
@@ -29,6 +31,7 @@ const mockMovieData = [
 		genres: [ 'Drama', 'Biography', 'Music' ]
 	},
 	{
+		id: 2,
 		title: 'Pulp Fiction',
 		tagline:
 			"Girls like me don't make invitations like this to just anyone! You won't know the facts until you've seen the fiction.",
@@ -44,6 +47,7 @@ const mockMovieData = [
 		genres: [ 'Action & Adventure' ]
 	},
 	{
+		id: 3,
 		title: 'Kill Bill: Vol 2',
 		tagline: 'Revenge is a dish best served cold. Kill is love.',
 		vote_average: 8.0,
@@ -58,6 +62,7 @@ const mockMovieData = [
 		genres: [ 'Oscar winning Movie' ]
 	},
 	{
+		id: 4,
 		title: 'Inception',
 		tagline: 'Your mind is the scene of the crime',
 		vote_average: 7.9,
@@ -72,6 +77,7 @@ const mockMovieData = [
 		genres: [ 'Action & Adventure' ]
 	},
 	{
+		id: 5,
 		title: 'Avengers: War of Infinity',
 		tagline: 'An entire universe. Once and for all. Destiny arrives.',
 		vote_average: 8.9,

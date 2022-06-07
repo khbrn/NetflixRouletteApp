@@ -5,23 +5,34 @@ import { useState } from 'react';
 
 const MovieDialog = (props) => {
 	const dialogInfo = {
-		dialogTitle: props.movie ? 'Edit Movie' : 'Add Movie',
-		movieTitle: props.movie ? props.movie.title : '',
-		releaseYear: props.movie ? props.movie.release_date : '',
-		posterLink: props.movie ? props.movie.poster_path : '',
+		dialogType: props.movie ? 'Edit Movie' : 'Add Movie',
+		title: props.movie ? props.movie.title : '',
+		releaseDate: props.movie ? props.movie.release_date : '',
+		posterPath: props.movie ? props.movie.poster_path : '',
 		rating: props.movie ? props.movie.vote_average : '',
-		genre: props.movie ? props.movie.genres : '',
-		duration: props.movie ? props.movie.runtime : '',
-		description: props.movie ? props.movie.overview : ''
+		genres: props.movie ? props.movie.genres : '',
+		runtime: props.movie ? props.movie.runtime : '',
+		overview: props.movie ? props.movie.overview : ''
 	};
 	const [ dialogData, setDialogData ] = useState(dialogInfo);
 
+	const dataChangeHandler = (event) => {
+		const name = event.target.name;
+		setDialogData((prevState) => {
+			return { ...prevState, [name]: event.target.value };
+		});
+	};
 	const closeDialog = () => {
 		props.setMovieDialogVisibility(false);
 	};
 
-	const resetDataDialog = () => {
+	const reset = () => {
 		setDialogData(dialogInfo);
+	};
+
+	const submitHandler = (event) => {
+		event.preventDefault();
+		console.log(dialogData);
 	};
 
 	return (
@@ -30,8 +41,8 @@ const MovieDialog = (props) => {
 				<button className="close-button" onClick={closeDialog}>
 					<Icon path={mdiClose} size={'28px'} color="white" />
 				</button>
-				<h2>{dialogData.dialogTitle}</h2>
-				<form>
+				<h2>{dialogData.dialogType}</h2>
+				<form onSubmit={submitHandler}>
 					<div className="movie-dialog__form-row">
 						<div className="movie-dialog__form__container">
 							<label htmlFor="title">Title</label>
@@ -41,40 +52,34 @@ const MovieDialog = (props) => {
 								name="title"
 								className="movie-dialog__form-elems-left"
 								placeholder="Add Title"
-								onChange={(event) => {
-									setDialogData({ ...dialogData, movieTitle: event.target.value });
-								}}
-								value={dialogData.movieTitle}
+								onChange={dataChangeHandler}
+								value={dialogData.title}
 							/>
 						</div>
 						<div className="movie-dialog__form__container">
-							<label htmlFor="release">Release date</label>
+							<label htmlFor="releaseDate">Release date</label>
 							<input
 								type="date"
-								id="release"
-								name="release"
+								id="releaseDate"
+								name="releaseDate"
 								className="movie-dialog__form-elems-right"
 								placeholder="Select date"
-								onChange={(event) => {
-									setDialogData({ ...dialogData, releaseYear: event.target.value });
-								}}
-								value={dialogData.releaseYear}
+								onChange={dataChangeHandler}
+								value={dialogData.releaseDate}
 							/>
 						</div>
 					</div>
 					<div className="movie-dialog__form-row">
 						<div className="movie-dialog__form__container">
-							<label htmlFor="url">Movie url</label>
+							<label htmlFor="posterPath">Movie url</label>
 							<input
 								type="text"
-								id="url"
-								name="url"
+								id="posterPath"
+								name="posterPath"
 								className="movie-dialog__form-elems-left"
 								placeholder="https://"
-								onChange={(event) => {
-									setDialogData({ ...dialogData, posterLink: event.target.value });
-								}}
-								value={dialogData.posterLink}
+								onChange={dataChangeHandler}
+								value={dialogData.posterPath}
 							/>
 						</div>
 						<div className="movie-dialog__form__container">
@@ -85,66 +90,60 @@ const MovieDialog = (props) => {
 								name="rating"
 								className="movie-dialog__form-elems-right"
 								placeholder="7.8"
-								onChange={(event) => {
-									setDialogData({ ...dialogData, rating: event.target.value });
-								}}
+								onChange={dataChangeHandler}
 								value={dialogData.rating}
 							/>
 						</div>
 					</div>
 					<div className="movie-dialog__form-row">
 						<div className="movie-dialog__form__container">
-							<label htmlFor="url">Genre</label>
+							<label htmlFor="genres">Genre</label>
 							<input
 								type="text"
-								id="url"
-								name="url"
+								id="genres"
+								name="genres"
 								className="movie-dialog__form-elems-right"
 								placeholder="Select Genre"
-								onChange={(event) => {
-									setDialogData({ ...dialogData, genre: event.target.value });
-								}}
-								value={dialogData.genre}
+								onChange={dataChangeHandler}
+								value={dialogData.genres}
 							/>
 						</div>
 						<div className="movie-dialog__form__container">
-							<label htmlFor="rating">Runtime</label>
+							<label htmlFor="runtime">Runtime</label>
 							<input
 								type="text"
 								id="runtime"
 								name="runtime"
 								className="movie-dialog__form-elems-left"
 								placeholder="minutes"
-								onChange={(event) => {
-									setDialogData({ ...dialogData, duration: event.target.value });
-								}}
-								value={dialogData.duration}
+								onChange={dataChangeHandler}
+								value={dialogData.runtime}
 							/>
 						</div>
 					</div>
 					<div className="movie-dialog__form-row">
 						<div className="movie-dialog__form__container">
-							<label htmlFor="url">Overview</label>
+							<label htmlFor="overview">Overview</label>
 							<textarea
 								type="text"
 								id="overview"
 								name="overview"
 								className="movie-dialog__form-elem"
 								placeholder="Movie description"
-								onChange={(event) => {
-									setDialogData({ ...dialogData, description: event.target.value });
-								}}
-								value={dialogData.description}
+								onChange={dataChangeHandler}
+								value={dialogData.overview}
 							/>
 						</div>
 					</div>
+					<div className="movie-dialog__buttons">
+						<button className="button__reset" onClick={reset}>
+							Reset
+						</button>
+						<button type="submit" className="button__confirm">
+							Submit
+						</button>
+					</div>
 				</form>
-				<div className="movie-dialog__buttons">
-					<button className="button__reset" onClick={resetDataDialog}>
-						Reset
-					</button>
-					<button className="button__confirm">Submit</button>
-				</div>
 			</div>
 		</div>
 	);

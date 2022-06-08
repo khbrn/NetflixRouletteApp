@@ -15,7 +15,7 @@ const Main = () => {
 		return new Promise((resolve) => {
 			setTimeout(()=> {
 				resolve(mockMovieData);
-			}, 5000);
+			}, 1500);
 		});
 	};
 

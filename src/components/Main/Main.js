@@ -6,7 +6,7 @@ import FilterGenreResult from '../FilterGenreResult/FilterGenreResult';
 import mockMovieData from '../../mockData/mockMovieData';
 import { useState, useEffect } from 'react';
 
-const Main = () => {
+const Main = (props) => {
 	const [ movieCounter, setMovieCounter ] = useState(0);
 	const [ moviesData, setMoviesData ] = useState([]);
 	const [ isLoading, setIsLoading ] = useState(false);
@@ -34,7 +34,7 @@ const Main = () => {
 		fetchedMovieContent = (
 			<>
 				<FilterGenreResult movieCounter={movieCounter} />
-				<MovieList moviesData={moviesData} setMoviesData={setMoviesData} /> 
+				<MovieList moviesData={moviesData} setMoviesData={setMoviesData} setIsHeaderVisible={props.setIsHeaderVisible} /> 
 			</>
 		)
 	}

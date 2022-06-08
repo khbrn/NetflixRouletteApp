@@ -8,7 +8,7 @@ const MovieList = (props) => {
 			<ul className="movie-list">
 				{props.moviesData.map((movie, index) => (
 					<li key={index}>
-						<MovieCard movie={movie} setIsHeaderVisible={props.setIsHeaderVisible} />
+						<MovieCard movie={movie} />
 					</li>
 				))}
 			</ul>

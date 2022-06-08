@@ -10,7 +10,7 @@ import DeleteMovie from '../DeleteMovie/DeleteMovie';
 import MovieDialog from '../MovieDialog/MovieDialog';
 import MovieDetails from '../MovieDetails/MovieDetails';
 
-const MovieCard = ({movie, setIsHeaderVisible}) => {
+const MovieCard = ({movie}) => {
 	const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
 	const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);
 	const [isDeleteMovieDialogVisible, setIsDeleteMovieDialogVisible] = useState(false);

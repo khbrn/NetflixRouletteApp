@@ -34,7 +34,7 @@ const Main = (props) => {
 		fetchedMovieContent = (
 			<>
 				<FilterGenreResult movieCounter={movieCounter} />
-				<MovieList moviesData={moviesData} setMoviesData={setMoviesData} setIsHeaderVisible={props.setIsHeaderVisible} /> 
+				<MovieList moviesData={moviesData} setMoviesData={setMoviesData} /> 
 			</>
 		)
 	}

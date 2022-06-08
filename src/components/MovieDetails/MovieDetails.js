@@ -5,6 +5,7 @@ import { mdiMagnify } from '@mdi/js';
 
 const MovieDetails = ({ movie, setIsMovieDetailsVisible }) => {
 	const releaseYear = new Date(movie.release_date).getFullYear();
+
 	const timeConversion = (timeInMinutes) => {
 		let hours = Math.floor(timeInMinutes / 60);
 		let minutes = timeInMinutes % 60;

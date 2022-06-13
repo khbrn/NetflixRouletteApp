@@ -1,31 +1,32 @@
-import ContextMenu from '../ContextMenu/ContextMenu';
-
-import PropTypes from 'prop-types';
 import './MovieCard.css';
-import { useState } from 'react'; 
-
 import Icon from '@mdi/react';
 import { mdiDotsVerticalCircle } from '@mdi/js';
+
+import ContextMenu from '../ContextMenu/ContextMenu';
 import DeleteMovie from '../DeleteMovie/DeleteMovie';
 import MovieDialog from '../MovieDialog/MovieDialog';
-import MovieDetails from '../MovieDetails/MovieDetails';
+import { AppContext } from '../Context/AppContext';
+
+import { useState, useContext, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
 
 const MovieCard = ({movie}) => {
+	const { navigationContext, movieContext } = useContext(AppContext);
+
 	const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
 	const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);
 	const [isDeleteMovieDialogVisible, setIsDeleteMovieDialogVisible] = useState(false);
-	const [isMovieDetailsVisible, setIsMovieDetailsVisible] = useState(false);
 
 	const movieReleaseYear = new Date(movie.release_date).getFullYear();
 
 	const handleMovieDetails = () => {
-		setIsMovieDetailsVisible(true);
+		movieContext.setMovie(movie);
+		navigationContext.setIsHeaderVisible(false);
 	}
-
 
 	return (
 		<>
-		{isMovieDetailsVisible? <MovieDetails movie={movie} setIsMovieDetailsVisible={setIsMovieDetailsVisible} />: <></>}
 		{isMovieDialogVisible ? <MovieDialog setMovieDialogVisibility={setIsMovieDialogVisible} movie={movie}/> : <></>}
 		{isDeleteMovieDialogVisible ? <DeleteMovie setDeleteDialogVisibility={setIsDeleteMovieDialogVisible} movie={movie}/> : <></>}
 		<div className="movie-card__container ">

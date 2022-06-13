@@ -1,18 +1,24 @@
 import './MovieList.css';
 import MovieCard from '../MovieCard/MovieCard';
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
+import { AppContext } from '../Context/AppContext';
 
-const MovieList = (props) => {
+import { useContext} from 'react';
+
+const MovieList = () => {
+	const { moviesContext } = useContext(AppContext);
+	
 	return (
-		<ErrorBoundary movieData={props.moviesData}>
+		<>
 			<ul className="movie-list">
-				{props.moviesData.map((movie, index) => (
+				{moviesContext.movies.map((movie, index) => 
+					(
 					<li key={index}>
 						<MovieCard movie={movie} />
 					</li>
-				))}
+					)
+				)}
 			</ul>
-		</ErrorBoundary>
+		</>
 	);
 };
 

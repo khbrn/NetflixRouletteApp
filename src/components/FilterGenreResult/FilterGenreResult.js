@@ -1,10 +1,15 @@
 import './FilterGenreResult.css';
-import PropTypes from 'prop-types';
+import { AppContext } from '../Context/AppContext';
 
-const FilterGenreResult = (props) => {
+import PropTypes from 'prop-types';
+import { useContext } from 'react';
+
+const FilterGenreResult = () => {
+	const { moviesContext } = useContext(AppContext);
+
 	return (
 		<p className="filter-genre-result">
-			<span>{props.movieCounter}</span> movies found
+			<span>{moviesContext.moviesNumber}</span> movies found
 		</p>
 	);
 };

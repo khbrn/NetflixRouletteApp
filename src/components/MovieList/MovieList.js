@@ -1,6 +1,5 @@
 import './MovieList.css';
 import MovieCard from '../MovieCard/MovieCard';
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
 const MovieList = (props) => {
 	return (

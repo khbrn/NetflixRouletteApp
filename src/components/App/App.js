@@ -6,17 +6,13 @@ import './App.css';
 
 const App = () => {
 	return (
-		<div className="app">
-			<ErrorBoundary>
+		<ErrorBoundary>
+			<div className="app">
 				<Header />
-			</ErrorBoundary>
-			<ErrorBoundary>
 				<Main />
-			</ErrorBoundary>
-			<ErrorBoundary>
 				<Footer />
-			</ErrorBoundary>
-		</div>
+			</div>
+		</ErrorBoundary>
 	);
 };
 

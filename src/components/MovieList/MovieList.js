@@ -5,8 +5,7 @@ import { AppContext } from '../Context/AppContext';
 import { useContext} from 'react';
 
 const MovieList = () => {
-	const { moviesContext } = useContext(AppContext);
-	
+	const { moviesContext } = useContext(AppContext);	
 	return (
 		<>
 			<ul className="movie-list">

@@ -1,6 +1,6 @@
 import './MovieList.css';
 import MovieCard from '../MovieCard/MovieCard';
-import { AppContext } from '../Context/AppContext';
+import { AppContext } from '../../hooks/AppContext';
 
 import { useContext} from 'react';
 

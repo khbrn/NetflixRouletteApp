@@ -1,5 +1,5 @@
 import './FilterGenreResult.css';
-import { AppContext } from '../Context/AppContext';
+import { AppContext } from '../../hooks/AppContext';
 
 import PropTypes from 'prop-types';
 import { useContext } from 'react';

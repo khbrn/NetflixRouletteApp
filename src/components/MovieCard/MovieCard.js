@@ -5,7 +5,7 @@ import { mdiDotsVerticalCircle } from '@mdi/js';
 import ContextMenu from '../ContextMenu/ContextMenu';
 import DeleteMovie from '../DeleteMovie/DeleteMovie';
 import MovieDialog from '../MovieDialog/MovieDialog';
-import { AppContext } from '../Context/AppContext';
+import { AppContext } from '../../hooks/AppContext';
 
 import { useState, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';

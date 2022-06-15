@@ -7,7 +7,7 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import MovieDetails from '../MovieDetails/MovieDetails';
 
-import { AppContext } from '../Context/AppContext';
+import { AppContext } from '../../hooks/AppContext';
 import { useDummyHttp } from '../../hooks/http';
 
 const App = () => {

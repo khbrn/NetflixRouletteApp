@@ -2,7 +2,7 @@ import './MovieDetails.css';
 import Icon from '@mdi/react';
 import { mdiMagnify } from '@mdi/js';
 
-import { AppContext } from '../Context/AppContext';
+import { AppContext } from '../../hooks/AppContext';
 
 import { useContext } from 'react';
 import AppLogo from '../AppLogo/AppLogo';

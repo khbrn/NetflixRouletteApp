@@ -12,6 +12,10 @@
 	"author": "Karolina Habryn",
 	"license": "ISC",
 	"dependencies": {
+		"@mdi/js": "^6.7.96",
+		"@mdi/react": "^1.6.0",
+		"material-design-icons": "^3.0.1",
+		"prop-types": "^15.8.1",
 		"react": "^18.1.0",
 		"react-dom": "^18.1.0"
 	},

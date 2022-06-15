@@ -1,0 +1,23 @@
+.filter-genre {
+	list-style-type: none;
+	width: 435px;
+	padding-top: 20px;
+	padding-left: 55px;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.filter-genre li {
+	height: 20px;
+
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+
+	text-transform: uppercase;
+
+	color: #ffffff;
+}

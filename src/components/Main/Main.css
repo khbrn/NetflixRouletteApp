@@ -1,0 +1,28 @@
+main {
+	height: 1321px;
+}
+
+.main__separator {
+	height: 10px;
+	background: #555555;
+}
+
+.main__container {
+	height: 1311px;
+	background-color: #232323;
+}
+
+.main__container__tools {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.progress-bar {
+	margin-top: 19px;
+	margin-left: 55px;
+	margin-right: 57px;
+	width: 94%;
+	height: 2px;
+	background: #424242;
+}

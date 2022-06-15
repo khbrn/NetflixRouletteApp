@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-
 import "./App.css";
 
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -42,11 +42,13 @@ const App = () => {
 		)
 	}
 	return (
+		<ErrorBoundary>
 		<AppContext.Provider value={appContext}>
 			{isHeaderVisible? <Header/> : <header><MovieDetails/></header>}
 			{fetchedMovieContent}
 			<Footer />
 		</AppContext.Provider>
+		</ErrorBoundary>
 	);
 };
 

@@ -3,7 +3,6 @@ import AddMovie from '../AddMovie/AddMovie';
 
 import './Header.css';
 import SearchMovie from '../SearchMovie/SearchMovie';
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
 const Header = () => {
 	return (
@@ -11,14 +10,10 @@ const Header = () => {
 			<div className="header__background" />
 			<div className="header__elements">
 				<div className="header__first-elements">
-					<ErrorBoundary>
-						<AppLogo />
-						<AddMovie />
-					</ErrorBoundary>
+					<AppLogo />
+					<AddMovie />
 				</div>
-				<ErrorBoundary>
-					<SearchMovie />
-				</ErrorBoundary>
+				<SearchMovie />
 			</div>
 		</header>
 	);

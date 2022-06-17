@@ -1,8 +1,8 @@
-import './DeleteMovie.css';
+import './DeleteMovieDialog.css';
 import Icon from '@mdi/react';
 import { mdiClose } from '@mdi/js';
 
-const DeleteMovie = (props) => {
+const DeleteMovieDialog = (props) => {
 	const closeDialog = () => {
 		props.setDeleteDialogVisibility(false);
 	};
@@ -29,4 +29,4 @@ const DeleteMovie = (props) => {
 	);
 };
 
-export default DeleteMovie;
+export default DeleteMovieDialog;

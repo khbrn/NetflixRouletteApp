@@ -1,7 +1,7 @@
 import './Main.css';
-import MovieList from '../MovieList/MovieList';
-import SortMovies from '../SortMovies/SortMovies';
-import FilterGenre from '../FilterGenre/FilterGenre';
+import MoviesList from '../MoviesList/MoviesList';
+import MoviesSortDropdown from '../MoviesSortDropdown/MoviesSortDropdown';
+import FilterGenreOptionsList from '../FilterGenreOptionsList/FilterGenreOptionsList';
 import FilterGenreResult from '../FilterGenreResult/FilterGenreResult';
 
 const Main = () => {
@@ -10,12 +10,12 @@ const Main = () => {
 			<div className="main__separator" />
 			<div className="main__container">
 				<div className="main__container__tools">
-					<FilterGenre />
-					<SortMovies />
+					<FilterGenreOptionsList />
+					<MoviesSortDropdown />
 				</div>
 				<div className="progress-bar" />
 				<FilterGenreResult />
-				<MovieList />
+				<MoviesList />
 			</div>
 		</main>
 	);

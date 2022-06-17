@@ -1,6 +1,6 @@
 import AppLogo from '../AppLogo/AppLogo';
-import AddMovie from '../AddMovie/AddMovie';
-import SearchMovie from '../SearchMovie/SearchMovie';
+import AddMovie from '../AddMovieButton/AddMovieButton';
+import MovieSearchBar from '../MoviesSearchBar/MoviesSearchBar';
 import MovieDialog from '../MovieDialog/MovieDialog';
 
 import './Header.css';
@@ -20,7 +20,7 @@ const Header = () => {
 					<AddMovie  addMovieHandler={addMovie}/>
 					{isMovieDialogVisible ? <MovieDialog setMovieDialogVisibility={setIsMovieDialogVisible}/> : <></>}
 				</div>
-				<SearchMovie/>
+				<MovieSearchBar/>
 			</div>
 		</header>
 	);

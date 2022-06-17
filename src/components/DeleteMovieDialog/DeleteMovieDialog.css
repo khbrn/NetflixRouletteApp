@@ -1,5 +1,5 @@
 .delete-movie__container {
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	height: 1787px;
 	left: 0px;
@@ -10,7 +10,7 @@
 }
 
 .delete-movie {
-	position: absolute;
+	position: fixed;
 	width: 686px;
 	height: 352px;
 	left: 313px;

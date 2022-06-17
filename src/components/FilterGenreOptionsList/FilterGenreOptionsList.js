@@ -1,8 +1,8 @@
 import mockGenres from '../../mockData/mockGenres';
-import './FilterGenre.css';
+import './FilterGenreOptionsList.css';
 
-const FilterGenre = () => {
+const FilterGenreOptionsList = () => {
 	return <ul className="filter-genre">{mockGenres.map((genre, index) => <li key={index}>{genre}</li>)}</ul>;
 };
 
-export default FilterGenre;
+export default FilterGenreOptionsList;

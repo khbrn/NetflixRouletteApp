@@ -1,7 +1,7 @@
 import mockSortOptions from '../../mockData/mockSortOptions';
-import './SortMovies.css';
+import './MoviesSortDropdown.css';
 
-const SortMovies = () => {
+const MoviesSortDropdown = () => {
 	return (
 		<div className="sort-movie">
 			<label htmlFor="sort-movie" className="sort-movie__label">
@@ -18,4 +18,4 @@ const SortMovies = () => {
 	);
 };
 
-export default SortMovies;
+export default MoviesSortDropdown;

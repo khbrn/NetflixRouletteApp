@@ -1,6 +1,6 @@
-import './AddMovie.css';
+import './AddMovieButton.css';
 
-const AddMovie = (props) => {
+const AddMovieButton = (props) => {
 	return (
 		<button className="button--transparent" onClick={props.addMovieHandler}>
 			+ add movie
@@ -8,4 +8,4 @@ const AddMovie = (props) => {
 	);
 };
 
-export default AddMovie;
+export default AddMovieButton;

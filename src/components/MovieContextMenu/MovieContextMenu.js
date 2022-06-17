@@ -1,8 +1,8 @@
-import './ContextMenu.css';
+import './MovieContextMenu.css';
 import Icon from '@mdi/react';
 import { mdiClose } from '@mdi/js';
 
-const ContextMenu = (props) => {
+const MovieContextMenu = (props) => {
 	const deleteMovie = () => {
 		props.setIsContextMenuVisible(false);
 		props.setDeleteDialogVisibility(true);
@@ -29,4 +29,4 @@ const ContextMenu = (props) => {
 	);
 };
 
-export default ContextMenu;
+export default MovieContextMenu;

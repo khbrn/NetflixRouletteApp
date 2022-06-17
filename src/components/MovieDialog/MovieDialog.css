@@ -10,11 +10,11 @@
 }
 
 .movie-dialog {
-	position: absolute;
+	position: fixed;
 	width: 976px;
-	height: 917px;
+	height: 717px;
 	right: 15%;
-	top: 10%;
+	top: 5%;
 	z-index: 5;
 
 	background: #232323;
@@ -152,6 +152,7 @@
 
 .movie-dialog__form__container textarea {
 	padding-top: 19px;
+	height: 60px;
 }
 
 .dropdown-menu label {

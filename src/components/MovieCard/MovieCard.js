@@ -2,12 +2,12 @@ import './MovieCard.css';
 import Icon from '@mdi/react';
 import { mdiDotsVerticalCircle } from '@mdi/js';
 
-import ContextMenu from '../ContextMenu/ContextMenu';
-import DeleteMovie from '../DeleteMovie/DeleteMovie';
+import MovieContextMenu from '../MovieContextMenu/MovieContextMenu';
+import DeleteMovieDialog from '../DeleteMovieDialog/DeleteMovieDialog';
 import MovieDialog from '../MovieDialog/MovieDialog';
 import { AppContext } from '../../hooks/AppContext';
 
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -28,11 +28,11 @@ const MovieCard = ({movie}) => {
 	return (
 		<>
 		{isMovieDialogVisible ? <MovieDialog setMovieDialogVisibility={setIsMovieDialogVisible} movie={movie}/> : <></>}
-		{isDeleteMovieDialogVisible ? <DeleteMovie setDeleteDialogVisibility={setIsDeleteMovieDialogVisible} movie={movie}/> : <></>}
+		{isDeleteMovieDialogVisible ? <DeleteMovieDialog setDeleteDialogVisibility={setIsDeleteMovieDialogVisible} movie={movie}/> : <></>}
 		<div className="movie-card__container ">
 			<div className="movie-card">
 				<Icon path={mdiDotsVerticalCircle} size={'36px'} className="menu-icon" onClick={() => setIsContextMenuVisible(true)}/>
-				{isContextMenuVisible ?<ContextMenu setIsContextMenuVisible={setIsContextMenuVisible} setDeleteDialogVisibility={setIsDeleteMovieDialogVisible} setMovieDialogVisibility={setIsMovieDialogVisible}/> : <></>}
+				{isContextMenuVisible ?<MovieContextMenu setIsContextMenuVisible={setIsContextMenuVisible} setDeleteDialogVisibility={setIsDeleteMovieDialogVisible} setMovieDialogVisibility={setIsMovieDialogVisible}/> : <></>}
 				<img src={movie.poster_path} alt="Movie Poster" className="movie-card__image" onClick={handleMovieDetails} />
 			</div>
 			<div className="movie-card__information">

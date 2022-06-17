@@ -1,10 +1,10 @@
-import './MovieList.css';
+import './MoviesList.css';
 import MovieCard from '../MovieCard/MovieCard';
 import { AppContext } from '../../hooks/AppContext';
 
 import { useContext} from 'react';
 
-const MovieList = () => {
+const MoviesList = () => {
 	const { moviesContext } = useContext(AppContext);	
 	return (
 		<>
@@ -21,4 +21,4 @@ const MovieList = () => {
 	);
 };
 
-export default MovieList;
+export default MoviesList;

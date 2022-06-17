@@ -1,6 +1,6 @@
-import './SearchMovie.css';
+import './MoviesSearchBar.css';
 
-const SearchMovie = () => {
+const MoviesSearchBar = () => {
 	return (
 		<div className="search-movie">
 			<h1 className="search-movie__header">Find your movie</h1>
@@ -14,4 +14,4 @@ const SearchMovie = () => {
 	);
 };
 
-export default SearchMovie;
+export default MoviesSearchBar;

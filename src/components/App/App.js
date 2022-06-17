@@ -8,7 +8,7 @@ import Main from '../Main/Main';
 import MovieDetails from '../MovieDetails/MovieDetails';
 
 import { AppContext } from '../../hooks/AppContext';
-import { useDummyHttp } from '../../hooks/Http';
+import { useDummyHttp } from '../../hooks/DummyHttp';
 
 const App = () => {
 	const [isHeaderVisible, setIsHeaderVisible] = useState(true);

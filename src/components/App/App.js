@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
-import "./App.css";
+import React, { useState } from 'react';
+
+import './App.css';
 
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import Footer from '../Footer/Footer';
@@ -8,12 +9,12 @@ import Main from '../Main/Main';
 import MovieDetails from '../MovieDetails/MovieDetails';
 
 import { AppContext } from '../../hooks/AppContext';
-import { useDummyHttp } from '../../hooks/DummyHttp';
+import { useDummyHttp } from '../../hooks/useDummyHttp';
 
 const App = () => {
-	const [isHeaderVisible, setIsHeaderVisible] = useState(true);
-	const [movie, setMovie] = useState({});
-	const [isLoading,movies,setMovies, moviesNumber, setMoviesNumber ] = useDummyHttp();
+	const [ isHeaderVisible, setIsHeaderVisible ] = useState(true);
+	const [ movie, setMovie ] = useState({});
+	const [ isLoading, movies, setMovies, moviesNumber, setMoviesNumber ] = useDummyHttp();
 
 	const appContext = {
 		moviesContext: {
@@ -32,22 +33,19 @@ const App = () => {
 		}
 	};
 
-	let fetchedMovieContent =<div className='loading-message__container '><h2 className="loading-message">Loading...</h2></div> ;
-
-	if (!isLoading) {
-		fetchedMovieContent = (
-			<>
-				<Main /> 
-			</>
-		)
-	}
 	return (
 		<ErrorBoundary>
-		<AppContext.Provider value={appContext}>
-			{isHeaderVisible? <Header/> : <header><MovieDetails/></header>}
-			{fetchedMovieContent}
-			<Footer />
-		</AppContext.Provider>
+			<AppContext.Provider value={appContext}>
+				{isHeaderVisible ? (
+					<Header />
+				) : (
+					<header>
+						<MovieDetails />
+					</header>
+				)}
+				<Main isLoading={isLoading} />
+				<Footer />
+			</AppContext.Provider>
 		</ErrorBoundary>
 	);
 };

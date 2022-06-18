@@ -1,25 +1,26 @@
-import './FilterGenreResult.css';
-import { AppContext } from '../../hooks/AppContext';
+import React from "react";
+import { useContext } from "react";
+import PropTypes from "prop-types";
 
-import PropTypes from 'prop-types';
-import { useContext } from 'react';
+import "./FilterGenreResult.css";
+import { AppContext } from "../../hooks/AppContext";
 
 const FilterGenreResult = () => {
-	const { moviesContext } = useContext(AppContext);
+  const { moviesContext } = useContext(AppContext);
 
-	return (
-		<p className="filter-genre-result">
-			<span>{moviesContext.moviesNumber}</span> movies found
-		</p>
-	);
+  return (
+    <p className="filter-genre-result">
+      <span>{moviesContext.moviesNumber}</span> movies found
+    </p>
+  );
 };
 
 FilterGenreResult.propTypes = {
-	movieCounter: PropTypes.number.isRequired
+  movieCounter: PropTypes.number.isRequired,
 };
 
 FilterGenreResult.defaultProps = {
-	movieCounter: 0
+  movieCounter: 0,
 };
 
 export default FilterGenreResult;

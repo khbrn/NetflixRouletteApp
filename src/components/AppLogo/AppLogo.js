@@ -1,3 +1,4 @@
+import React from "react";
 import "./AppLogo.css";
 
 const AppLogo = () => {

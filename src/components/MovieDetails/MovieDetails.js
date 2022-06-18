@@ -1,10 +1,11 @@
+import React from "react";
+import { useContext } from "react";
+
 import "./MovieDetails.css";
 import Icon from "@mdi/react";
 import { mdiMagnify } from "@mdi/js";
 
 import { AppContext } from "../../hooks/AppContext";
-
-import { useContext } from "react";
 import AppLogo from "../AppLogo/AppLogo";
 
 const MovieDetails = () => {

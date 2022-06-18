@@ -1,3 +1,4 @@
+import React from "react";
 import mockGenres from "../../mockData/mockGenres";
 import "./FilterGenreOptionsList.css";
 

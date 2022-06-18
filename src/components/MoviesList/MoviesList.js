@@ -1,8 +1,9 @@
+import React from "react";
+import { useContext } from "react";
+
 import "./MoviesList.css";
 import MovieCard from "../MovieCard/MovieCard";
 import { AppContext } from "../../hooks/AppContext";
-
-import { useContext } from "react";
 
 const MoviesList = () => {
   const { moviesContext } = useContext(AppContext);

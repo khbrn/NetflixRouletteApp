@@ -1,3 +1,5 @@
+import React from "react";
+
 import AppLogo from "../AppLogo/AppLogo";
 import "./Footer.css";
 

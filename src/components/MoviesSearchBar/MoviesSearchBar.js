@@ -1,3 +1,4 @@
+import React from "react";
 import "./MoviesSearchBar.css";
 
 const MoviesSearchBar = () => {

@@ -1,10 +1,11 @@
+import React, { useState } from "react";
+
 import AppLogo from "../AppLogo/AppLogo";
 import AddMovie from "../AddMovieButton/AddMovieButton";
 import MovieSearchBar from "../MoviesSearchBar/MoviesSearchBar";
 import MovieDialog from "../MovieDialog/MovieDialog";
 
 import "./Header.css";
-import { useState } from "react";
 
 const Header = () => {
   const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);

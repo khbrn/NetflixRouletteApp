@@ -1,3 +1,6 @@
+import React, { useState, useContext } from "react";
+import PropTypes from "prop-types";
+
 import "./MovieCard.css";
 import Icon from "@mdi/react";
 import { mdiDotsVerticalCircle } from "@mdi/js";
@@ -6,9 +9,6 @@ import MovieContextMenu from "../MovieContextMenu/MovieContextMenu";
 import DeleteMovieDialog from "../DeleteMovieDialog/DeleteMovieDialog";
 import MovieDialog from "../MovieDialog/MovieDialog";
 import { AppContext } from "../../hooks/AppContext";
-
-import { useState, useContext } from "react";
-import PropTypes from "prop-types";
 
 const MovieCard = ({ movie }) => {
   const { navigationContext, movieContext } = useContext(AppContext);
@@ -80,17 +80,12 @@ const MovieCard = ({ movie }) => {
 };
 
 MovieCard.propTypes = {
-  posterLink: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  releaseYear: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
-};
-
-MovieCard.defaultProps = {
-  posterLink: "https://c.tenor.com/04sSYbNQATUAAAAC/sad-face.gif",
-  title: "Oops! Something went wrong",
-  releaseYear: "1969-12-31",
-  genre: "",
+  movie: PropTypes.shape({
+    release_date: PropTypes.string.isRequired,
+    poster_path: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    genres: PropTypes.array.isRequired,
+  }),
 };
 
 export default MovieCard;

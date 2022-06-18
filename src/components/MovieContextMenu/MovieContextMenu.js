@@ -1,3 +1,6 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 import "./MovieContextMenu.css";
 import Icon from "@mdi/react";
 import { mdiClose } from "@mdi/js";
@@ -30,6 +33,12 @@ const MovieContextMenu = (props) => {
       </ul>
     </div>
   );
+};
+
+MovieContextMenu.propTypes = {
+  setIsContextMenuVisible: PropTypes.func,
+  setDeleteDialogVisibility: PropTypes.func,
+  setMovieDialogVisibility: PropTypes.func,
 };
 
 export default MovieContextMenu;

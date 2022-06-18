@@ -1,8 +1,9 @@
+import React from "react";
+import { useContext } from "react";
+import PropTypes from "prop-types";
+
 import "./FilterGenreResult.css";
 import { AppContext } from "../../hooks/AppContext";
-
-import PropTypes from "prop-types";
-import { useContext } from "react";
 
 const FilterGenreResult = () => {
   const { moviesContext } = useContext(AppContext);

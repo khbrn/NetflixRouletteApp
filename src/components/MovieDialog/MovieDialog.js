@@ -1,7 +1,9 @@
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+
 import "./MovieDialog.css";
 import Icon from "@mdi/react";
 import { mdiClose } from "@mdi/js";
-import { useState } from "react";
 
 const MovieDialog = (props) => {
   const dialogInfo = {
@@ -147,6 +149,19 @@ const MovieDialog = (props) => {
       </div>
     </div>
   );
+};
+
+MovieDialog.propTypes = {
+  movie: PropTypes.shape({
+    release_date: PropTypes.string.isRequired,
+    poster_path: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    genres: PropTypes.array.isRequired,
+    vote_average: PropTypes.number,
+    runtime: PropTypes.number,
+    overview: PropTypes.string,
+  }),
+  setMovieDialogVisibility: PropTypes.func,
 };
 
 export default MovieDialog;

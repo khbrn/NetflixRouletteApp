@@ -1,5 +1,7 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 import "./ErrorBoundary.css";
-import React, { Component } from "react";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -10,6 +12,7 @@ class ErrorBoundary extends React.Component {
     };
   }
 
+  // eslint-disable-next-line no-unused-vars
   static getDerivedStateFromError(error) {
     return { hasError: true };
   }
@@ -30,5 +33,9 @@ class ErrorBoundary extends React.Component {
     return this.props.children;
   }
 }
+
+ErrorBoundary.propTypes = {
+  children: PropTypes.any,
+};
 
 export default ErrorBoundary;

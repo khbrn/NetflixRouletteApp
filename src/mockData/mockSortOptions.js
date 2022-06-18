@@ -1,3 +1,8 @@
-const mockSortOptions = [ 'Release date', 'Duration', 'Score' ];
+const mockSortOptions = [
+  "Release date",
+  "Runtime",
+  "Vote count",
+  "Vote average",
+];
 
 export default mockSortOptions;

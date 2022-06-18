@@ -7,7 +7,7 @@ module.exports = {
 	mode: 'production',
 	entry: './src/index.js',
 	output: {
-		filename: '[name].bundle.js',
+		filename: '[name].[contenthash].js',
 		chunkFilename: '[name].bundle.js',
 		path: path.join(__dirname, '/build')
 	},

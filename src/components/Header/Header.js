@@ -1,22 +1,34 @@
-import AppLogo from '../AppLogo/AppLogo';
-import AddMovie from '../AddMovie/AddMovie';
+import React, { useState } from "react";
 
-import './Header.css';
-import SearchMovie from '../SearchMovie/SearchMovie';
+import AppLogo from "../AppLogo/AppLogo";
+import AddMovie from "../AddMovieButton/AddMovieButton";
+import MovieSearchBar from "../MoviesSearchBar/MoviesSearchBar";
+import MovieDialog from "../MovieDialog/MovieDialog";
+
+import "./Header.css";
 
 const Header = () => {
-	return (
-		<header>
-			<div className="header__background" />
-			<div className="header__elements">
-				<div className="header__first-elements">
-					<AppLogo />
-					<AddMovie />
-				</div>
-				<SearchMovie />
-			</div>
-		</header>
-	);
+  const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);
+  const addMovie = () => {
+    setIsMovieDialogVisible(true);
+  };
+  return (
+    <header>
+      <div className="header__background" />
+      <div className="header__elements">
+        <div className="header__first-elements">
+          <AppLogo />
+          <AddMovie addMovieHandler={addMovie} />
+          {isMovieDialogVisible ? (
+            <MovieDialog setMovieDialogVisibility={setIsMovieDialogVisible} />
+          ) : (
+            <></>
+          )}
+        </div>
+        <MovieSearchBar />
+      </div>
+    </header>
+  );
 };
 
 export default Header;

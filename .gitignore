@@ -3,3 +3,4 @@ build
 dev
 *.code-workspace
 .DS_Store
+.eslintignore

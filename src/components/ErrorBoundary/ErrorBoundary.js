@@ -1,32 +1,41 @@
-import './ErrorBoundary.css';
-import React, { Component } from 'react';
+import React from "react";
+import PropTypes from "prop-types";
+
+import "./ErrorBoundary.css";
 
 class ErrorBoundary extends React.Component {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.state = {
-			hasError: false
-		};
-	}
+    this.state = {
+      hasError: false,
+    };
+  }
 
-	static getDerivedStateFromError(error) {
-		return { hasError: true };
-	}
+  // eslint-disable-next-line no-unused-vars
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
 
-	componentDidCatch(error, info) {
-		console.log(error);
-		console.log(info);
-	}
+  componentDidCatch(error, info) {
+    console.log(error);
+    console.log(info);
+  }
 
-	render() {
-		if (this.state.hasError) {
-			return (
-				<h2 className="error-boundary">Oops, something went wrong... We are doing our best to fix the issue</h2>
-			);
-		}
-		return this.props.children;
-	}
+  render() {
+    if (this.state.hasError) {
+      return (
+        <h2 className="error-boundary">
+          Oops, something went wrong... We are doing our best to fix the issue
+        </h2>
+      );
+    }
+    return this.props.children;
+  }
 }
+
+ErrorBoundary.propTypes = {
+  children: PropTypes.any,
+};
 
 export default ErrorBoundary;

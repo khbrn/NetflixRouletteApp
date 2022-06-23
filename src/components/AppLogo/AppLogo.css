@@ -1,16 +1,16 @@
 .logo {
-	font-family: 'Montserrat', sans-serif;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 20px;
-	line-height: 24px;
-	letter-spacing: .5px;
-	color: #f65261;
-	background-color: transparent;
-	z-index: 3;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #f65261;
+  background-color: transparent;
+  z-index: 3;
 }
 
 #logo--bolded {
-	font-weight: 900;
-	background-color: transparent;
+  font-weight: 900;
+  background-color: transparent;
 }

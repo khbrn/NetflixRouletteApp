@@ -1,34 +1,34 @@
 header {
-	height: 600px;
-	width: 100%;
-	background: #000000;
-	box-sizing: border-box;
+  height: 600px;
+  width: 100%;
+  background: #000000;
+  box-sizing: border-box;
 }
 
 .header__background {
-	box-sizing: border-box;
-	height: 100%;
-	background: url("https://s3-alpha-sig.figma.com/img/9ab1/b611/92a81bbe79a924292111ca43f3a39e8f?Expires=1655683200&Signature=TkELiImK53JvhHPqeKGbQ5JC14zKtdT~WU3M0cEfg2ydP7XzUjsrYSH9BRAFNiAFcta31ER9U7aJw243hH9NlsXFSNE1J8B1TPq9YDTzDjUjW27bJapgrpomgfekI0NAilekN4-eCVctJs8-JeR5JVf0ZZ-6GgWU3-S749TlvlRvIUYiSBxknNL2vwGbqruTn5fXYkRI2pGB6AkCqcmlH8CUq1KD8lJBRhKHUOnpxJnb-8cKnBxoXUH6LXleWvMSEw6uf90SIVQ3UYo1sIgPvUfPLIgY6H-dVKDkLMbxLqLzdZDgNNu8QiWxJYRHN0Wp-db-UcJ~uGe2IDlMe71LDA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
-	mix-blend-mode: normal;
-	opacity: 0.3;
-	filter: blur(8.15485px);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+  box-sizing: border-box;
+  height: 100%;
+  background: url("https://s3-alpha-sig.figma.com/img/9ab1/b611/92a81bbe79a924292111ca43f3a39e8f?Expires=1655683200&Signature=TkELiImK53JvhHPqeKGbQ5JC14zKtdT~WU3M0cEfg2ydP7XzUjsrYSH9BRAFNiAFcta31ER9U7aJw243hH9NlsXFSNE1J8B1TPq9YDTzDjUjW27bJapgrpomgfekI0NAilekN4-eCVctJs8-JeR5JVf0ZZ-6GgWU3-S749TlvlRvIUYiSBxknNL2vwGbqruTn5fXYkRI2pGB6AkCqcmlH8CUq1KD8lJBRhKHUOnpxJnb-8cKnBxoXUH6LXleWvMSEw6uf90SIVQ3UYo1sIgPvUfPLIgY6H-dVKDkLMbxLqLzdZDgNNu8QiWxJYRHN0Wp-db-UcJ~uGe2IDlMe71LDA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+  mix-blend-mode: normal;
+  opacity: 0.3;
+  filter: blur(8.15485px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .header__elements {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	background: transparent;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: transparent;
 }
 
 .header__first-elements {
-	display: flex;
-	justify-content: space-between;
-	margin-left: 76px;
-	margin-top: 24px;
-	margin-right: 86px;
-	background: inherit;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 76px;
+  margin-top: 24px;
+  margin-right: 86px;
+  background: inherit;
 }

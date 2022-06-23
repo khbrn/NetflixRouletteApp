@@ -1,85 +1,85 @@
 .delete-movie__container {
-	position: fixed;
-	width: 100%;
-	height: 1787px;
-	left: 0px;
-	top: 0px;
-	z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: 1787px;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
 
-	background: rgba(35, 35, 35, 0.918051);
+  background: rgba(35, 35, 35, 0.918051);
 }
 
 .delete-movie {
-	position: fixed;
-	width: 686px;
-	height: 352px;
-	left: 313px;
-	top: 177px;
-	z-index: 3;
+  position: fixed;
+  width: 686px;
+  height: 352px;
+  left: 313px;
+  top: 177px;
+  z-index: 3;
 
-	background: #232323;
-	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1), 0px 2px 10px rgba(0, 0, 0, 0.07), 0px 10px 20px rgba(0, 0, 0, 0.05),
-		0px 10px 50px rgba(0, 0, 0, 0.05);
+  background: #232323;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1), 0px 2px 10px rgba(0, 0, 0, 0.07),
+    0px 10px 20px rgba(0, 0, 0, 0.05), 0px 10px 50px rgba(0, 0, 0, 0.05);
 }
 
 .delete-movie h2 {
-	margin-top: 63px;
-	margin-left: 82px;
-	margin-bottom: 52px;
+  margin-top: 63px;
+  margin-left: 82px;
+  margin-bottom: 52px;
 
-	font-family: 'Montserrat', sans-serif;
-	font-style: normal;
-	font-weight: 300;
-	font-size: 40px;
-	line-height: 49px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 49px;
 
-	letter-spacing: 2px;
-	text-transform: uppercase;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 
-	color: #ffffff;
+  color: #ffffff;
 }
 
 .delete-movie p {
-	margin-left: 82px;
-	margin-top: 37px;
-	font-family: 'Montserrat', sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 20px;
-	line-height: 24px;
+  margin-left: 82px;
+  margin-top: 37px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
 
-	color: #ffffff;
+  color: #ffffff;
 }
 
 .button__confirm {
-	margin-right: 60px;
+  margin-right: 60px;
 
-	background: #f65261;
-	border-radius: 4px;
-	border-color: transparent;
-	width: 180px;
-	height: 57px;
-	font-family: 'Montserrat', sans-serif;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 20px;
-	line-height: 24px;
-	text-transform: uppercase;
-	color: #ffffff;
+  background: #f65261;
+  border-radius: 4px;
+  border-color: transparent;
+  width: 180px;
+  height: 57px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
 .close-button {
-	position: absolute;
-	right: 26.12px;
-	top: 27.64px;
+  position: absolute;
+  right: 26.12px;
+  top: 27.64px;
 
-	background-color: inherit;
-	border: none;
+  background-color: inherit;
+  border: none;
 }
 
 .delete-movie__button {
-	margin-top: 50px;
-	display: flex;
-	flex-direction: row;
-	justify-content: end;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
 }

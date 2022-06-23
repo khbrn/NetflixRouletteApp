@@ -11,10 +11,12 @@
 
 .delete-movie {
   position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   width: 686px;
   height: 352px;
-  left: 313px;
-  top: 177px;
   z-index: 3;
 
   background: #232323;

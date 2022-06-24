@@ -6,7 +6,9 @@ module.exports = {
   mode: "development",
   devtool: "source-map",
   watch: true,
-  entry: "./src/index.js",
+  entry: {
+    index: ['babel-polyfill', './src/index.js']
+  },
   output: {
     path: path.join(__dirname, "/dev"),
     filename: "index_bundle.js",

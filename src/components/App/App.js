@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useSelector } from "react-redux";
 import "./App.css";
 
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
@@ -9,28 +9,19 @@ import Main from "../Main/Main";
 import MovieDetails from "../MovieDetails/MovieDetails";
 
 import { AppContext } from "../../hooks/AppContext";
-import { useDummyHttp } from "../../hooks/useDummyHttp";
+import { useFetchMoviesData } from "../../hooks/useFetchMoviesData";
 
 const App = () => {
-  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const isHeaderVisible = useSelector((state) => state.ui.isHeaderVisible);
+  const isLoading = useSelector((state) => state.ui.isLoading);
   const [movie, setMovie] = useState({});
-  const [isLoading, movies, setMovies, moviesNumber, setMoviesNumber] =
-    useDummyHttp();
+
+  useFetchMoviesData();
 
   const appContext = {
-    moviesContext: {
-      movies,
-      setMovies,
-      moviesNumber,
-      setMoviesNumber,
-    },
     movieContext: {
       movie,
       setMovie,
-    },
-    navigationContext: {
-      isHeaderVisible,
-      setIsHeaderVisible,
     },
   };
 

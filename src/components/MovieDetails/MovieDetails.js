@@ -1,5 +1,6 @@
 import React from "react";
 import { useContext } from "react";
+import { useDispatch } from "react-redux";
 
 import "./MovieDetails.css";
 import Icon from "@mdi/react";
@@ -7,9 +8,11 @@ import { mdiMagnify } from "@mdi/js";
 
 import { AppContext } from "../../hooks/AppContext";
 import AppLogo from "../AppLogo/AppLogo";
+import { uiActions } from "../../store/uiSlice";
 
 const MovieDetails = () => {
-  const { navigationContext, movieContext } = useContext(AppContext);
+  const dispatch = useDispatch();
+  const { movieContext } = useContext(AppContext);
   const releaseYear = new Date(movieContext.movie.release_date).getFullYear();
 
   const timeConversion = (timeInMinutes) => {
@@ -20,7 +23,7 @@ const MovieDetails = () => {
   };
 
   const handleSearchMovie = () => {
-    navigationContext.setIsHeaderVisible(true);
+    dispatch(uiActions.showHeader());
   };
 
   return (

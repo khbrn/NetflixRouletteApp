@@ -1,16 +1,15 @@
+import { useSelector } from "react-redux";
 import React from "react";
-import { useContext } from "react";
 
 import "./MoviesList.css";
 import MovieCard from "../MovieCard/MovieCard";
-import { AppContext } from "../../hooks/AppContext";
 
 const MoviesList = () => {
-  const { moviesContext } = useContext(AppContext);
+  const movies = useSelector((state) => state.movies.movies);
   return (
     <>
       <ul className="movie-list">
-        {moviesContext.movies.map((movie, index) => (
+        {movies.map((movie, index) => (
           <li key={index}>
             <MovieCard movie={movie} />
           </li>

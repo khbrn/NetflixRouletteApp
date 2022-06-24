@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 
 import "./MovieCard.css";
@@ -9,9 +10,11 @@ import MovieContextMenu from "../MovieContextMenu/MovieContextMenu";
 import DeleteMovieDialog from "../DeleteMovieDialog/DeleteMovieDialog";
 import MovieDialog from "../MovieDialog/MovieDialog";
 import { AppContext } from "../../hooks/AppContext";
+import { uiActions } from "../../store/uiSlice";
 
 const MovieCard = ({ movie }) => {
-  const { navigationContext, movieContext } = useContext(AppContext);
+  const dispatch = useDispatch();
+  const { movieContext } = useContext(AppContext);
 
   const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
   const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);
@@ -22,7 +25,7 @@ const MovieCard = ({ movie }) => {
 
   const handleMovieDetails = () => {
     movieContext.setMovie(movie);
-    navigationContext.setIsHeaderVisible(false);
+    dispatch(uiActions.hideHeader());
   };
 
   return (

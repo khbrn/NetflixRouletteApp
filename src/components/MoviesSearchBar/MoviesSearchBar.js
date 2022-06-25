@@ -9,17 +9,14 @@ const MoviesSearchBar = () => {
 
   const handleKeypress = (event) => {
     if (event.keyCode === 13) {
-      return searchMovieHandler(query);
+      event.preventDefault();
+      dispatch(searchMoviesData(query));
     }
-  };
-
-  const searchMovieHandler = (query) => {
-    dispatch(searchMoviesData(query));
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
-    searchMovieHandler(query);
+    dispatch(searchMoviesData(query));
   };
 
   return (

@@ -1,8 +1,16 @@
 import React from "react";
-import mockSortOptions from "../../mockData/mockSortOptions";
+import { useDispatch } from "react-redux";
+import { sortMoviesData } from "../../store/moviesActions";
+import { sortingOptions } from "../../utils/sortingOptions";
 import "./MoviesSortDropdown.css";
 
 const MoviesSortDropdown = () => {
+  const dispatch = useDispatch();
+  const filterHander = (event) => {
+    const field = event.target.value;
+    dispatch(sortMoviesData(field));
+  };
+
   return (
     <div className="sort-movie">
       <label htmlFor="sort-movie" className="sort-movie__label">
@@ -12,10 +20,11 @@ const MoviesSortDropdown = () => {
         name="sort-movie"
         id="sort-movie"
         className="sort-movie__dropdown"
+        onChange={filterHander}
       >
-        {mockSortOptions.map((sortOption, index) => (
-          <option value={sortOption} key={index}>
-            {sortOption}
+        {sortingOptions.map((sortingOption, index) => (
+          <option value={sortingOption.sortingOptionValue} key={index}>
+            {sortingOption.sortingOptionDisplay}
           </option>
         ))}
       </select>

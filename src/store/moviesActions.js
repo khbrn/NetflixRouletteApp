@@ -14,3 +14,10 @@ export const searchMoviesData = (query) => {
     dispatch(moviesActions.searchMovies({ movies: moviesData }));
   };
 };
+
+export const sortMoviesData = (field) => {
+  return async (dispatch) => {
+    const moviesData = await MoviesService.sortMovies(field);
+    dispatch(moviesActions.sortMovies({ movies: moviesData }));
+  };
+};

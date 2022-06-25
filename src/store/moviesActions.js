@@ -7,3 +7,10 @@ export const fetchMoviesData = () => {
     dispatch(moviesActions.loadMovies({ movies: fetchedMoviesData }));
   };
 };
+
+export const searchMoviesData = (query) => {
+  return async (dispatch) => {
+    const moviesData = await MoviesService.searchMovies(query);
+    dispatch(moviesActions.searchMovies({ movies: moviesData }));
+  };
+};

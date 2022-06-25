@@ -4,15 +4,11 @@ export const sortingOptions = [
     sortingOptionValue: "release_date",
   },
   {
-    sortingOptionDisplay: "runtime",
-    sortingOptionValue: "runtime",
+    sortingOptionDisplay: "genre",
+    sortingOptionValue: "genre",
   },
   {
     sortingOptionDisplay: "rating",
     sortingOptionValue: "vote_average",
-  },
-  {
-    sortingOptionDisplay: "budget",
-    sortingOptionValue: "budget",
   },
 ];

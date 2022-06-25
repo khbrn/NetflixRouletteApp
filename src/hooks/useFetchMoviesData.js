@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { fetchMoviesData } from "../store/moviesActions";
+import { fetchMoviesData, sortMoviesData } from "../store/moviesActions";
 import { uiActions } from "../store/uiSlice";
 
 export const useFetchMoviesData = () => {
@@ -8,6 +8,7 @@ export const useFetchMoviesData = () => {
   useEffect(() => {
     dispatch(uiActions.startLoading());
     dispatch(fetchMoviesData());
+    dispatch(sortMoviesData("release_date"));
     dispatch(uiActions.stopLoading());
   }, [dispatch]);
 };

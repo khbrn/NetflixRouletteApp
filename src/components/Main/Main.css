@@ -1,5 +1,6 @@
 main {
-  height: 1321px;
+  height: auto;
+  overflow: visible;
 }
 
 .main__separator {
@@ -8,7 +9,7 @@ main {
 }
 
 .main__container {
-  height: 1311px;
+  height: auto;
   background-color: #232323;
 }
 

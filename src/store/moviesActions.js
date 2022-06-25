@@ -21,3 +21,10 @@ export const sortMoviesData = (field) => {
     dispatch(moviesActions.sortMovies({ movies: moviesData }));
   };
 };
+
+export const filterMoviesData = (genre) => {
+  return async (dispatch) => {
+    const moviesData = await MoviesService.filterMovies(genre);
+    dispatch(moviesActions.filterMovies({ movies: moviesData }));
+  };
+};

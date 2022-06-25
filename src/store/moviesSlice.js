@@ -21,6 +21,10 @@ const moviesSlice = createSlice({
       state.movies = action.payload.movies;
       state.moviesNumber = state.movies ? state.movies.length : 0;
     },
+    filterMovies(state, action) {
+      state.movies = action.payload.movies;
+      state.moviesNumber = state.movies ? state.movies.length : 0;
+    },
   },
 });
 

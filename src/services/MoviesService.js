@@ -13,7 +13,7 @@ export const MoviesService = {
   searchMovies: async (query) => {
     try {
       const response = await fetch(
-        `${fetchURL}?search=${query}&searchBy=title&limit=9`
+        `${fetchURL}?search=${query}&searchBy=title&limit=21`
       );
       const { data } = await response.json();
       return data;
@@ -24,8 +24,17 @@ export const MoviesService = {
   sortMovies: async (field) => {
     try {
       const response = await fetch(
-        `${fetchURL}?sortBy=${field}&sortOrder=desc&limit=9`
+        `${fetchURL}?sortBy=${field}&sortOrder=desc&limit=21`
       );
+      const { data } = await response.json();
+      return data;
+    } catch (error) {
+      return { error: error.response };
+    }
+  },
+  filterMovies: async (genre) => {
+    try {
+      const response = await fetch(`${fetchURL}?filter=${genre}&limit=21`);
       const { data } = await response.json();
       return data;
     } catch (error) {

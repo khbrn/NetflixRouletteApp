@@ -9,12 +9,11 @@ import { mdiDotsVerticalCircle } from "@mdi/js";
 import MovieContextMenu from "../MovieContextMenu/MovieContextMenu";
 import DeleteMovieDialog from "../DeleteMovieDialog/DeleteMovieDialog";
 import MovieDialog from "../MovieDialog/MovieDialog";
-import { AppContext } from "../../hooks/AppContext";
 import { uiActions } from "../../store/uiSlice";
+import { moviesActions } from "../../store/moviesSlice";
 
 const MovieCard = ({ movie }) => {
   const dispatch = useDispatch();
-  const { movieContext } = useContext(AppContext);
 
   const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
   const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);
@@ -24,7 +23,7 @@ const MovieCard = ({ movie }) => {
   const movieReleaseYear = new Date(movie.release_date).getFullYear();
 
   const handleMovieDetails = () => {
-    movieContext.setMovie(movie);
+    dispatch(moviesActions.setCurrentMovie({ movie: movie }));
     dispatch(uiActions.hideHeader());
   };
 

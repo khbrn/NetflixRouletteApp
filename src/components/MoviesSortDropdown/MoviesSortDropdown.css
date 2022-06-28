@@ -1,42 +1,42 @@
 .sort-movie {
-	padding-top: 19.36px;
-	width: 363px;
+  padding-top: 19.36px;
+  width: 363px;
 }
 
 .sort-movie__label {
-	margin-right: 31px;
+  margin-right: 31px;
 
-	width: 76px;
-	height: 20px;
+  width: 76px;
+  height: 20px;
 
-	font-family: 'Montserrat', sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 20px;
-	letter-spacing: 0.888889px;
-	text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.888889px;
+  text-transform: uppercase;
 
-	color: #ffffff;
+  color: #ffffff;
 
-	mix-blend-mode: normal;
-	opacity: 0.6;
+  mix-blend-mode: normal;
+  opacity: 0.6;
 }
 
 .sort-movie__dropdown {
-	padding-right: 62px;
-	height: 20px;
+  padding-right: 62px;
+  height: 20px;
 
-	font-family: 'Montserrat', sans-serif;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
 
-	letter-spacing: 0.888889px;
-	text-transform: uppercase;
-	background-color: inherit;
-	border: none;
+  letter-spacing: 0.888889px;
+  text-transform: uppercase;
+  background-color: inherit;
+  border: none;
 
-	color: #ffffff;
+  color: #ffffff;
 }

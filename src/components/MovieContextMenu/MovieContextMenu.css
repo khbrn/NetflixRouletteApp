@@ -1,54 +1,55 @@
 .context-menu {
-	position: absolute;
-	width: 190px;
-	height: 111px;
+  position: absolute;
+  width: 190px;
+  height: 111px;
 
-	margin-top: 14px;
-	margin-right: 14px;
+  margin-top: 14px;
+  margin-right: 14px;
 
-	background: rgba(35, 35, 35, 0.918051);
-	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1), 0px 2px 10px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.1),
-		0px 10px 50px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(27.1828px);
-	border-radius: 4px;
+  background: rgba(35, 35, 35, 0.918051);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1), 0px 2px 10px rgba(0, 0, 0, 0.1),
+    0px 10px 20px rgba(0, 0, 0, 0.1), 0px 10px 50px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(27.1828px);
+  border-radius: 4px;
 }
 
 .context-menu__list {
-	list-style-type: none;
+  list-style-type: none;
 
-	margin-top: 29px;
+  margin-top: 29px;
 
-	display: flex;
-	flex-direction: column;
-	align-items: space-around;
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
 }
 
 .context-menu__list li {
-	font-family: 'Montserrat', sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
 
-	padding: 6.33px 14px 7.67px 23px;
+  padding: 6.33px 14px 7.67px 23px;
 
-	color: #ffffff;
+  color: #ffffff;
 
-	mix-blend-mode: normal;
-	opacity: 0.8;
+  mix-blend-mode: normal;
+  opacity: 0.8;
 }
 
 .context-menu ul li:hover {
-	background: #f65261;
-	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.1), 0px 10px 50px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(27.1828px);
+  background: #f65261;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.1),
+    0px 10px 50px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(27.1828px);
 }
 
 .close-icon {
-	position: absolute;
-	right: 7px;
-	top: 5px;
+  position: absolute;
+  right: 7px;
+  top: 5px;
 
-	background-color: inherit;
-	border: none;
+  background-color: inherit;
+  border: none;
 }

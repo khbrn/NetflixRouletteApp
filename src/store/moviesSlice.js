@@ -29,6 +29,12 @@ const moviesSlice = createSlice({
     setCurrentMovie(state, action) {
       state.currentMovie = action.payload.movie;
     },
+    deleteMovie(state, action) {
+      state.movies = state.movies.filter(
+        (movie) => movie.id !== action.payload.id
+      );
+      state.moviesNumber = state.movies ? state.movies.length : 0;
+    },
   },
 });
 

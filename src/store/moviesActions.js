@@ -28,3 +28,10 @@ export const filterMoviesData = (genre) => {
     dispatch(moviesActions.filterMovies({ movies: moviesData }));
   };
 };
+
+export const deleteMovieData = (id) => {
+  return async (dispatch) => {
+    await MoviesService.deleteMovie(id);
+    dispatch(moviesActions.deleteMovie({ id }));
+  };
+};

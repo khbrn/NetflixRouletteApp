@@ -5,14 +5,18 @@ import Icon from "@mdi/react";
 import { mdiClose } from "@mdi/js";
 
 import "./DeleteMovieDialog.css";
+import { useDispatch } from "react-redux";
+import { deleteMovieData } from "../../store/moviesActions";
 
 const DeleteMovieDialog = (props) => {
+  const dispatch = useDispatch();
   const closeDialog = () => {
     props.setDeleteDialogVisibility(false);
   };
 
   const deleteMovieHandler = () => {
-    console.log(`Movie ID ${props.movie.id} was deleted`);
+    dispatch(deleteMovieData(props.movie.id));
+    closeDialog();
   };
 
   return (

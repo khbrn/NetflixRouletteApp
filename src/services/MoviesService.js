@@ -41,4 +41,16 @@ export const MoviesService = {
       return { error: error.response };
     }
   },
+  deleteMovie: async (id) => {
+    try {
+      const response = await fetch(`${fetchURL}/${id}`, {
+        method: "DELETE",
+      });
+
+      const { data } = await response.json();
+      return data;
+    } catch (error) {
+      return { error: error.response };
+    }
+  },
 };

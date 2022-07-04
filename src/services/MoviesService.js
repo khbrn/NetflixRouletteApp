@@ -46,8 +46,39 @@ export const MoviesService = {
       const response = await fetch(`${fetchURL}/${id}`, {
         method: "DELETE",
       });
-
       const { data } = await response.json();
+      return data;
+    } catch (error) {
+      return { error: error.response };
+    }
+  },
+  addMovie: async (movie) => {
+    try {
+      const response = await fetch(fetchURL, {
+        method: "POST",
+        body: JSON.stringify(movie),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response.json();
+      console.log(data);
+      return data;
+    } catch (error) {
+      return { error: error.response };
+    }
+  },
+  editMovie: async (movie) => {
+    try {
+      const responseJson = await fetch(fetchURL, {
+        method: "PUT",
+        body: JSON.stringify(movie),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await responseJson.json();
+
       return data;
     } catch (error) {
       return { error: error.response };

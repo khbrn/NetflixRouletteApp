@@ -35,6 +35,17 @@ const moviesSlice = createSlice({
       );
       state.moviesNumber = state.movies ? state.movies.length : 0;
     },
+    addMovie(state, action) {
+      state.movies.unshift(action.payload.movie);
+      state.moviesNumber = state.movies ? state.movies.length : 0;
+    },
+    editMovie(state, action) {
+      let movieToEditIndex = state.movies.findIndex(
+        (movie) => movie.id === action.payload.movie.id
+      );
+      state.movies.splice(movieToEditIndex, 1);
+      state.movies.splice(movieToEditIndex, 0, action.payload.movie);
+    },
   },
 });
 

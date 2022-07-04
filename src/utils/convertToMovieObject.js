@@ -6,6 +6,6 @@ export const convertToMovieObject = (dialogData) => {
     poster_path: dialogData.posterPath || "",
     overview: dialogData.overview || "",
     runtime: dialogData.runtime ? Number(dialogData.runtime) : 0,
-    genres: dialogData.genres ? dialogData.genres.split(",") : [],
+    genres: dialogData.genres || [],
   };
 };

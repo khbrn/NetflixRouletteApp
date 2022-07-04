@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
 
 import "./MovieDialog.css";
 import Icon from "@mdi/react";
 import { mdiClose } from "@mdi/js";
+import { convertToMovieObject } from "../../utils/convertToMovieObject";
+import { addMovieData, editMovieData } from "../../store/moviesActions";
 
 const MovieDialog = (props) => {
+  const dispatch = useDispatch();
   const dialogInfo = {
     dialogType: props.movie ? "Edit Movie" : "Add Movie",
     title: props.movie ? props.movie.title : "",
     releaseDate: props.movie ? props.movie.release_date : "",
     posterPath: props.movie ? props.movie.poster_path : "",
     rating: props.movie ? props.movie.vote_average : "",
-    genres: props.movie ? props.movie.genres : "",
+    genres: props.movie ? props.movie.genres : [],
     runtime: props.movie ? props.movie.runtime : "",
     overview: props.movie ? props.movie.overview : "",
   };
@@ -20,8 +24,13 @@ const MovieDialog = (props) => {
 
   const dataChangeHandler = (event) => {
     const name = event.target.name;
+    let value = event.target.value;
+    if (value && name === "genres") {
+      value = value.split(",");
+    }
+
     setDialogData((prevState) => {
-      return { ...prevState, [name]: event.target.value };
+      return { ...prevState, [name]: value };
     });
   };
   const closeDialog = () => {
@@ -34,7 +43,17 @@ const MovieDialog = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(dialogData);
+    const movieObj = convertToMovieObject(dialogData);
+    console.log(movieObj);
+
+    if (dialogData.dialogType === "Add Movie") {
+      dispatch(addMovieData(movieObj));
+    } else {
+      movieObj.id = props.movie.id;
+      console.log(movieObj);
+      dispatch(editMovieData(movieObj));
+    }
+    closeDialog();
   };
 
   return (
@@ -160,6 +179,7 @@ MovieDialog.propTypes = {
     vote_average: PropTypes.number,
     runtime: PropTypes.number,
     overview: PropTypes.string,
+    id: PropTypes.number,
   }),
   setMovieDialogVisibility: PropTypes.func,
 };

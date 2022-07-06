@@ -6,25 +6,17 @@ import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
-import MovieDetails from "../MovieDetails/MovieDetails";
 
 import { useFetchMoviesData } from "../../hooks/useFetchMoviesData";
 
 const App = () => {
-  const isHeaderVisible = useSelector((state) => state.ui.isHeaderVisible);
   const isLoading = useSelector((state) => state.ui.isLoading);
 
   useFetchMoviesData();
 
   return (
     <ErrorBoundary>
-      {isHeaderVisible ? (
-        <Header />
-      ) : (
-        <header>
-          <MovieDetails />
-        </header>
-      )}
+      <Header />
       <Main isLoading={isLoading} />
       <Footer />
     </ErrorBoundary>

@@ -32,3 +32,7 @@ header {
   margin-right: 86px;
   background: inherit;
 }
+
+.header__first-elements :first-child {
+  z-index: 3;
+}

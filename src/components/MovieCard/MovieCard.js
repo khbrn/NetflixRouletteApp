@@ -1,4 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 
 import "./MovieCard.css";
@@ -8,10 +9,11 @@ import { mdiDotsVerticalCircle } from "@mdi/js";
 import MovieContextMenu from "../MovieContextMenu/MovieContextMenu";
 import DeleteMovieDialog from "../DeleteMovieDialog/DeleteMovieDialog";
 import MovieDialog from "../MovieDialog/MovieDialog";
-import { AppContext } from "../../hooks/AppContext";
+import { uiActions } from "../../store/uiSlice";
+import { moviesActions } from "../../store/moviesSlice";
 
 const MovieCard = ({ movie }) => {
-  const { navigationContext, movieContext } = useContext(AppContext);
+  const dispatch = useDispatch();
 
   const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
   const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);
@@ -21,8 +23,8 @@ const MovieCard = ({ movie }) => {
   const movieReleaseYear = new Date(movie.release_date).getFullYear();
 
   const handleMovieDetails = () => {
-    movieContext.setMovie(movie);
-    navigationContext.setIsHeaderVisible(false);
+    dispatch(moviesActions.setCurrentMovie({ movie: movie }));
+    dispatch(uiActions.hideHeader());
   };
 
   return (

@@ -1,12 +1,22 @@
 import React from "react";
-import mockGenres from "../../mockData/mockGenres";
+import { useDispatch } from "react-redux";
+import { filterMoviesData } from "../../store/moviesActions";
+import { movieFilterOptions } from "../../utils/filterOptions";
 import "./FilterGenreOptionsList.css";
 
 const FilterGenreOptionsList = () => {
+  const dispatch = useDispatch();
   return (
     <ul className="filter-genre">
-      {mockGenres.map((genre, index) => (
-        <li key={index}>{genre}</li>
+      {movieFilterOptions.map((filterOption) => (
+        <li
+          key={filterOption.id}
+          onClick={() =>
+            dispatch(filterMoviesData(filterOption.filterOptionValue))
+          }
+        >
+          {filterOption.filterOptionName}
+        </li>
       ))}
     </ul>
   );

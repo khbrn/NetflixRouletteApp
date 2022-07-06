@@ -1,16 +1,14 @@
 import React from "react";
-import { useContext } from "react";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
 import "./FilterGenreResult.css";
-import { AppContext } from "../../hooks/AppContext";
 
 const FilterGenreResult = () => {
-  const { moviesContext } = useContext(AppContext);
-
+  const moviesNumber = useSelector((state) => state.movies.moviesNumber);
   return (
     <p className="filter-genre-result">
-      <span>{moviesContext.moviesNumber}</span> movies found
+      <span>{moviesNumber}</span> movies found
     </p>
   );
 };

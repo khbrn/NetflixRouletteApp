@@ -6,9 +6,10 @@ import "./MoviesSearchBar.css";
 const MoviesSearchBar = () => {
   const [query, setQuery] = useState("");
   const dispatch = useDispatch();
+  const ENTER_KEY = 13;
 
   const handleKeypress = (event) => {
-    if (event.keyCode === 13) {
+    if (event.keyCode === ENTER_KEY) {
       event.preventDefault();
       dispatch(searchMoviesData(query));
     }

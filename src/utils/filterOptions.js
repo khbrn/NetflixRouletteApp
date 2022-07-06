@@ -1,4 +1,4 @@
-export const genres = [
+export const movieFilterOptions = [
   {
     filterOptionName: "all",
     filterOptionValue: "",

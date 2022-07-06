@@ -1,19 +1,21 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { filterMoviesData } from "../../store/moviesActions";
-import { genres } from "../../utils/filterOptions";
+import { movieFilterOptions } from "../../utils/filterOptions";
 import "./FilterGenreOptionsList.css";
 
 const FilterGenreOptionsList = () => {
   const dispatch = useDispatch();
   return (
     <ul className="filter-genre">
-      {genres.map((genre, index) => (
+      {movieFilterOptions.map((filterOption) => (
         <li
-          key={index}
-          onClick={() => dispatch(filterMoviesData(genre.filterOptionValue))}
+          key={filterOption.id}
+          onClick={() =>
+            dispatch(filterMoviesData(filterOption.filterOptionValue))
+          }
         >
-          {genre.filterOptionName}
+          {filterOption.filterOptionName}
         </li>
       ))}
     </ul>

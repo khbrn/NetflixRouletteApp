@@ -43,6 +43,10 @@ const moviesSlice = createSlice({
       let movieToEditIndex = state.movies.findIndex(
         (movie) => movie.id === action.payload.movie.id
       );
+
+      if (state.currentMovie.id === action.payload.movie.id) {
+        state.currentMovie = action.payload.movie;
+      }
       state.movies.splice(movieToEditIndex, 1);
       state.movies.splice(movieToEditIndex, 0, action.payload.movie);
     },

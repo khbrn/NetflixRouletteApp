@@ -9,8 +9,8 @@ const MoviesList = () => {
   return (
     <>
       <ul className="movie-list">
-        {movies.map((movie, index) => (
-          <li key={index}>
+        {movies.map((movie) => (
+          <li key={movie.id}>
             <MovieCard movie={movie} />
           </li>
         ))}

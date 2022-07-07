@@ -10,5 +10,5 @@ export const useFetchMoviesData = () => {
     dispatch(fetchMoviesData());
     dispatch(sortMoviesData("release_date"));
     dispatch(uiActions.stopLoading());
-  }, [dispatch]);
+  }, []);
 };

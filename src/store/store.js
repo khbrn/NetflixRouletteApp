@@ -3,7 +3,10 @@ import moviesSlice from "./moviesSlice";
 import uiSlice from "./uiSlice";
 
 const store = configureStore({
-  reducer: { movies: moviesSlice.reducer, ui: uiSlice.reducer },
+  reducer: {
+    [moviesSlice.name]: moviesSlice.reducer,
+    [uiSlice.name]: uiSlice.reducer,
+  },
 });
 
 export default store;

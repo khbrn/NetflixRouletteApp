@@ -8,14 +8,14 @@ const MoviesSearchBar = () => {
   const dispatch = useDispatch();
   const ENTER_KEY = 13;
 
-  const handleKeypress = (event) => {
+  const searchMoviesOnEnterPress = (event) => {
     if (event.keyCode === ENTER_KEY) {
       event.preventDefault();
       dispatch(searchMoviesData(query));
     }
   };
 
-  const submitHandler = (event) => {
+  const searchMovies = (event) => {
     event.preventDefault();
     dispatch(searchMoviesData(query));
   };
@@ -31,13 +31,9 @@ const MoviesSearchBar = () => {
           onChange={(event) => {
             setQuery(event.target.value);
           }}
-          onKeyDown={handleKeypress}
+          onKeyDown={searchMoviesOnEnterPress}
         />
-        <button
-          type="submit"
-          className="button__submit"
-          onClick={submitHandler}
-        >
+        <button type="submit" className="button__submit" onClick={searchMovies}>
           <p>Search</p>
         </button>
       </form>

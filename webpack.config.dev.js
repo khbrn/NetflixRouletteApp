@@ -20,6 +20,7 @@ module.exports = {
   devServer: {
     allowedHosts: path.join(__dirname, "./dev"),
     open: true,
+    historyApiFallback: true
   },
   module: {
     rules: [

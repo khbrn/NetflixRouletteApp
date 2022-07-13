@@ -4,14 +4,20 @@ import { ENTER_KEY } from "../../constants/constants";
 import { searchMoviesData } from "../../store/moviesActions";
 import "./MoviesSearchBar.css";
 
-import { useSearchParams } from "react-router-dom";
+import {
+  createSearchParams,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 
 const MoviesSearchBar = () => {
   const [query, setQuery] = useState("");
   const [searchParams] = useSearchParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const searchQuery = searchParams.get("search");
+  const params = { search: query };
 
   useEffect(() => {
     setQuery(searchQuery);
@@ -21,13 +27,17 @@ const MoviesSearchBar = () => {
   const searchMoviesOnEnterPress = (event) => {
     if (event.keyCode === ENTER_KEY) {
       event.preventDefault();
-      console.log(query);
+      navigate({
+        pathname: "/search",
+        search: `?${createSearchParams(params)}`,
+      });
       dispatch(searchMoviesData(query));
     }
   };
 
   const searchMovies = (event) => {
     event.preventDefault();
+    navigate({ pathname: "/search", search: `?${createSearchParams(params)}` });
     dispatch(searchMoviesData(query));
   };
 

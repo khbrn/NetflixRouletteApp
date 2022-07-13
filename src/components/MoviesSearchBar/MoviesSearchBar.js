@@ -1,16 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ENTER_KEY } from "../../constants/constants";
 import { searchMoviesData } from "../../store/moviesActions";
 import "./MoviesSearchBar.css";
 
+import { useSearchParams } from "react-router-dom";
+
 const MoviesSearchBar = () => {
   const [query, setQuery] = useState("");
+  const [searchParams] = useSearchParams();
   const dispatch = useDispatch();
+
+  const searchQuery = searchParams.get("search");
+
+  useEffect(() => {
+    setQuery(searchQuery);
+    dispatch(searchMoviesData(searchQuery));
+  }, [searchQuery]);
 
   const searchMoviesOnEnterPress = (event) => {
     if (event.keyCode === ENTER_KEY) {
       event.preventDefault();
+      console.log(query);
       dispatch(searchMoviesData(query));
     }
   };

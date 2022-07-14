@@ -8,7 +8,7 @@
   justify-content: space-between;
 }
 
-.filter-genre li {
+.filter-genre a {
   height: 20px;
 
   font-family: "Montserrat", sans-serif;
@@ -18,6 +18,11 @@
   line-height: 20px;
 
   text-transform: uppercase;
+  text-decoration: none;
 
   color: #ffffff;
+}
+
+.unselected {
+  color: #9e4444;
 }

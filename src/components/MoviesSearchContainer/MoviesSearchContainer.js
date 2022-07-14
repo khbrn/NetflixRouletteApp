@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
+
 import AddMovieButton from "../AddMovieButton/AddMovieButton";
 import AppLogo from "../AppLogo/AppLogo";
 import MovieDialog from "../MovieDialog/MovieDialog";
 import MoviesSearchBar from "../MoviesSearchBar/MoviesSearchBar";
 
-const MoviesSearchContainer = () => {
+const MoviesSearchContainer = ({ searchQuery }) => {
   const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);
   const addMovie = () => {
     setIsMovieDialogVisible(true);
@@ -21,10 +23,14 @@ const MoviesSearchContainer = () => {
             <MovieDialog setMovieDialogVisibility={setIsMovieDialogVisible} />
           )}
         </div>
-        <MoviesSearchBar />
+        <MoviesSearchBar searchQuery={searchQuery} />
       </div>
     </div>
   );
+};
+
+MoviesSearchContainer.propTypes = {
+  searchQuery: PropTypes.string,
 };
 
 export default MoviesSearchContainer;

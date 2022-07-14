@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 import "./Header.css";
 import MovieDetails from "../MovieDetails/MovieDetails";
@@ -7,10 +8,15 @@ import MoviesSearchContainer from "../MoviesSearchContainer/MoviesSearchContaine
 
 const Header = () => {
   const isHeaderVisible = useSelector((state) => state.ui.isHeaderVisible);
+  const { searchQuery } = useParams();
 
   return (
     <header>
-      {!isHeaderVisible ? <MovieDetails /> : <MoviesSearchContainer />}
+      {!isHeaderVisible ? (
+        <MovieDetails />
+      ) : (
+        <MoviesSearchContainer searchQuery={searchQuery} />
+      )}
     </header>
   );
 };

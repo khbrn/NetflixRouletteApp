@@ -1,43 +1,38 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 import { ENTER_KEY } from "../../constants/constants";
-import { searchMoviesData } from "../../store/moviesActions";
+import { fetchMoviesData, searchMoviesData } from "../../store/moviesActions";
+
 import "./MoviesSearchBar.css";
 
-import {
-  createSearchParams,
-  useNavigate,
-  useSearchParams,
-} from "react-router-dom";
-
-const MoviesSearchBar = () => {
+const MoviesSearchBar = ({ searchQuery }) => {
   const [query, setQuery] = useState("");
-  const [searchParams] = useSearchParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const searchQuery = searchParams.get("search");
-  const params = { search: query };
-
   useEffect(() => {
     setQuery(searchQuery);
+    if (!searchQuery) {
+      dispatch(fetchMoviesData());
+      return;
+    }
     dispatch(searchMoviesData(searchQuery));
   }, [searchQuery]);
 
   const searchMoviesOnEnterPress = (event) => {
     if (event.keyCode === ENTER_KEY) {
       event.preventDefault();
-      navigate({
-        pathname: "/search",
-        search: `?${createSearchParams(params)}`,
-      });
+      navigate(`../search/${query}`);
       dispatch(searchMoviesData(query));
     }
   };
 
   const searchMovies = (event) => {
     event.preventDefault();
-    navigate({ pathname: "/search", search: `?${createSearchParams(params)}` });
+    navigate(`../search/${query}`);
     dispatch(searchMoviesData(query));
   };
 
@@ -49,6 +44,7 @@ const MoviesSearchBar = () => {
           type="text"
           placeholder="What do you want to watch?"
           className="search-movie__bar"
+          value={query || ""}
           onChange={(event) => {
             setQuery(event.target.value);
           }}
@@ -60,6 +56,10 @@ const MoviesSearchBar = () => {
       </form>
     </div>
   );
+};
+
+MoviesSearchBar.propTypes = {
+  searchQuery: PropTypes.string,
 };
 
 export default MoviesSearchBar;

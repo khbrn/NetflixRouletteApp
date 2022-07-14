@@ -15,17 +15,11 @@ const App = () => {
   return (
     <ErrorBoundary>
       <Routes>
-        <Route path="/" element={<Navigate to="/search?search=" />}></Route>
-        <Route
-          path="search"
-          element={
-            <>
-              <Header />
-              <Main isLoading={isLoading} />
-            </>
-          }
-        />
+        <Route path="/" element={<Navigate to="search" />}></Route>
+        <Route path="search" element={<Header />} />
+        <Route path="search/:searchQuery" element={<Header />} />
       </Routes>
+      <Main isLoading={isLoading} />
       <Footer />
     </ErrorBoundary>
   );

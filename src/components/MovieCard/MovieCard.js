@@ -27,6 +27,11 @@ const MovieCard = ({ movie }) => {
     dispatch(uiActions.hideHeader());
   };
 
+  const handleContextMenu = () => {
+    dispatch(moviesActions.setCurrentMovie({ movie: movie }));
+    setIsContextMenuVisible(true);
+  };
+
   return (
     <>
       {isMovieDialogVisible ? (
@@ -51,7 +56,7 @@ const MovieCard = ({ movie }) => {
             path={mdiDotsVerticalCircle}
             size={"36px"}
             className="menu-icon"
-            onClick={() => setIsContextMenuVisible(true)}
+            onClick={handleContextMenu}
           />
           {isContextMenuVisible ? (
             <MovieContextMenu

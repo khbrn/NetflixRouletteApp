@@ -46,7 +46,7 @@ const MovieDetails = () => {
             </div>
           </div>
           <div className="movie-details__data-genre">
-            {movie.genres.join(",")}
+            {movie.genres.join(", ")}
           </div>
           <div className="movie-details__data__second-row">
             <div className="movie-details__data-release-year">

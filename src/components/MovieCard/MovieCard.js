@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-
-import "./MovieCard.css";
-import Icon from "@mdi/react";
-import { mdiDotsVerticalCircle } from "@mdi/js";
 
 import MovieContextMenu from "../MovieContextMenu/MovieContextMenu";
 import DeleteMovieDialog from "../DeleteMovieDialog/DeleteMovieDialog";
 import MovieDialog from "../MovieDialog/MovieDialog";
 import { uiActions } from "../../store/uiSlice";
-import { moviesActions } from "../../store/moviesSlice";
+import { getMovieData } from "../../store/moviesActions";
+
+import "./MovieCard.css";
+import Icon from "@mdi/react";
+import { mdiDotsVerticalCircle } from "@mdi/js";
 
 const MovieCard = ({ movie }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
   const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);
@@ -23,12 +25,12 @@ const MovieCard = ({ movie }) => {
   const movieReleaseYear = new Date(movie.release_date).getFullYear();
 
   const handleMovieDetails = () => {
-    dispatch(moviesActions.setCurrentMovie({ movie: movie }));
+    navigate(`search?movie=${movie.id || ""}`);
+    dispatch(getMovieData(movie.id));
     dispatch(uiActions.hideHeader());
   };
 
   const handleContextMenu = () => {
-    dispatch(moviesActions.setCurrentMovie({ movie: movie }));
     setIsContextMenuVisible(true);
   };
 
@@ -88,6 +90,7 @@ const MovieCard = ({ movie }) => {
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     release_date: PropTypes.string.isRequired,
     poster_path: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,

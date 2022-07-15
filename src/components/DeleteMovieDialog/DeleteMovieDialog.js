@@ -7,6 +7,7 @@ import { mdiClose } from "@mdi/js";
 import "./DeleteMovieDialog.css";
 import { useDispatch } from "react-redux";
 import { deleteMovieData } from "../../store/moviesActions";
+import { uiActions } from "../../store/uiSlice";
 
 const DeleteMovieDialog = (props) => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const DeleteMovieDialog = (props) => {
 
   const deleteMovieHandler = () => {
     dispatch(deleteMovieData(props.movie.id));
+    dispatch(uiActions.showHeader());
     closeDialog();
   };
 

@@ -26,9 +26,6 @@ const moviesSlice = createSlice({
       state.movies = action.payload.movies;
       state.moviesNumber = state.movies ? state.movies.length : 0;
     },
-    setCurrentMovie(state, action) {
-      state.currentMovie = action.payload.movie;
-    },
     deleteMovie(state, action) {
       state.movies = state.movies.filter(
         (movie) => movie.id !== action.payload.id
@@ -49,6 +46,9 @@ const moviesSlice = createSlice({
       }
       state.movies.splice(movieToEditIndex, 1);
       state.movies.splice(movieToEditIndex, 0, action.payload.movie);
+    },
+    getMovie(state, action) {
+      state.currentMovie = action.payload.movie;
     },
   },
 });

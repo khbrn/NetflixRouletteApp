@@ -46,14 +46,14 @@ const MovieDetails = () => {
             </div>
           </div>
           <div className="movie-details__data-genre">
-            {movie.genres.join(", ")}
+            {movie.genres?.join(", ")}
           </div>
           <div className="movie-details__data__second-row">
             <div className="movie-details__data-release-year">
               {releaseYear}
             </div>
             <div className="movie-details__data-duration">
-              {timeConversion(movie.runtime)}
+              {movie.runtime ? timeConversion(movie.runtime) : 0}
             </div>
           </div>
           <div className="movie-details__data-overview">{movie.overview}</div>

@@ -21,7 +21,7 @@ const MovieCard = ({ movie }) => {
   const movieReleaseYear = new Date(movie.release_date).getFullYear();
 
   const handleMovieDetails = () => {
-    navigate(`?movie=${movie.id || ""}`);
+    navigate(`../search?movie=${movie.id || ""}`, { replace: true });
   };
 
   const handleContextMenu = () => {

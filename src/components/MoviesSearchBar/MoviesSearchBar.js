@@ -26,14 +26,12 @@ const MoviesSearchBar = ({ searchQuery }) => {
     if (event.keyCode === ENTER_KEY) {
       event.preventDefault();
       navigate(`../search/${query}`);
-      dispatch(searchMoviesData(query));
     }
   };
 
   const searchMovies = (event) => {
     event.preventDefault();
     navigate(`../search/${query}`);
-    dispatch(searchMoviesData(query));
   };
 
   return (

@@ -1,17 +1,27 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { movieFilterOptions } from "../../utils/filterOptions";
 
 import "./FilterGenreOptionsList.css";
 
 const FilterGenreOptionsList = () => {
+  const navigate = useNavigate();
   return (
-    <nav className="filter-genre">
-      <NavLink to={`?genre=${""}`}>all</NavLink>
-      <NavLink to={`?genre=${"documentary" || ""}`}>documentary</NavLink>
-      <NavLink to={`?genre=${"comedy" || ""}`}>comedy</NavLink>
-      <NavLink to={`?genre=${"horror" || ""}`}>horror</NavLink>
-      <NavLink to={`?genre=${"crime" || ""}`}>crime</NavLink>
-    </nav>
+    <ul className="filter-genre">
+      {movieFilterOptions.map((filterOption) => (
+        <li
+          key={filterOption.id}
+          onClick={() => {
+            navigate(
+              `../search?genre=${filterOption.filterOptionValue || ""}`,
+              { replace: true }
+            );
+          }}
+        >
+          {filterOption.filterOptionName}
+        </li>
+      ))}
+    </ul>
   );
 };
 

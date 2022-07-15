@@ -11,7 +11,7 @@ const MoviesSortDropdown = () => {
 
   const filterHander = (event) => {
     const field = event.target.value;
-    navigate(`?sortBy=${field || ""}`);
+    navigate(`../search?sortBy=${field || ""}`, { replace: true });
   };
 
   const [searchParams] = useSearchParams();

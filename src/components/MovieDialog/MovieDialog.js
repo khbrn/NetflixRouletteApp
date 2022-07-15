@@ -8,6 +8,7 @@ import Icon from "@mdi/react";
 import { mdiClose } from "@mdi/js";
 import { convertToMovieObject } from "../../utils/convertToMovieObject";
 import { addMovieData, editMovieData } from "../../store/moviesActions";
+import { ADD_MOVIE, EDIT_MOVIE } from "../../constants/constants";
 
 const MovieDialog = (props) => {
   const dispatch = useDispatch();
@@ -55,7 +56,7 @@ const MovieDialog = (props) => {
 
   const formik = useFormik({
     initialValues: {
-      dialogType: props.movie ? "Edit Movie" : "Add Movie",
+      dialogType: props.movie ? EDIT_MOVIE : ADD_MOVIE,
       title: props.movie ? props.movie.title : "",
       releaseDate: props.movie ? props.movie.release_date : "",
       posterPath: props.movie ? props.movie.poster_path : "",
@@ -68,7 +69,7 @@ const MovieDialog = (props) => {
     onSubmit: (values) => {
       const movieObj = convertToMovieObject(values);
 
-      if (values.dialogType === "Add Movie") {
+      if (values.dialogType === ADD_MOVIE) {
         dispatch(addMovieData(movieObj));
       } else {
         movieObj.id = props.movie.id;
@@ -84,7 +85,7 @@ const MovieDialog = (props) => {
         <button className="close-button" onClick={closeDialog}>
           <Icon path={mdiClose} size={"28px"} color="white" />
         </button>
-        <h2>{props.movie ? "Edit Movie" : "Add Movie"}</h2>
+        <h2>{props.movie ? EDIT_MOVIE : ADD_MOVIE}</h2>
         <form onSubmit={formik.handleSubmit}>
           <div className="movie-dialog__form-row">
             <div className="movie-dialog__form__container">

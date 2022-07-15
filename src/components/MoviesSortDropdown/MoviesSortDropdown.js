@@ -1,28 +1,21 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
-import { sortMoviesData } from "../../store/moviesActions";
+import { ROUTER_PARAMS } from "../../constants/constants";
 import { sortingOptions } from "../../utils/sortingOptions";
 
 import "./MoviesSortDropdown.css";
 
 const MoviesSortDropdown = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const filterHander = (event) => {
     const field = event.target.value;
-    navigate(`search?sortBy=${field || ""}`);
-    dispatch(sortMoviesData(field));
+    navigate(`?sortBy=${field || ""}`);
   };
 
   const [searchParams] = useSearchParams();
-  const sortParam = searchParams.get("sortBy");
-
-  useEffect(() => {
-    dispatch(sortMoviesData(sortParam));
-  }, [sortParam]);
+  const sortParam = searchParams.get(ROUTER_PARAMS.SORT_BY);
 
   return (
     <div className="sort-movie">
@@ -34,7 +27,7 @@ const MoviesSortDropdown = () => {
         id="sort-movie"
         className="sort-movie__dropdown"
         onChange={filterHander}
-        value={sortParam}
+        value={sortParam || ""}
       >
         {sortingOptions.map((sortingOption, index) => (
           <option value={sortingOption.sortingOptionValue} key={index}>

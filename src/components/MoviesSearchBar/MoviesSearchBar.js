@@ -1,23 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { searchMoviesData } from "../../store/moviesActions";
+import { useNavigate } from "react-router-dom";
+
+import { ENTER_KEY } from "../../constants/constants";
+import { fetchMoviesData, searchMoviesData } from "../../store/moviesActions";
+
 import "./MoviesSearchBar.css";
 
-const MoviesSearchBar = () => {
+const MoviesSearchBar = ({ searchQuery }) => {
   const [query, setQuery] = useState("");
   const dispatch = useDispatch();
-  const ENTER_KEY = 13;
+  const navigate = useNavigate();
 
-  const handleKeypress = (event) => {
+  useEffect(() => {
+    setQuery(searchQuery);
+    if (!searchQuery) {
+      dispatch(fetchMoviesData());
+      return;
+    }
+    dispatch(searchMoviesData(searchQuery));
+  }, [searchQuery]);
+
+  const searchMoviesOnEnterPress = (event) => {
     if (event.keyCode === ENTER_KEY) {
       event.preventDefault();
-      dispatch(searchMoviesData(query));
+      navigate(`../search/${query}`);
     }
   };
 
-  const submitHandler = (event) => {
+  const searchMovies = (event) => {
     event.preventDefault();
-    dispatch(searchMoviesData(query));
+    navigate(`../search/${query}`);
   };
 
   return (
@@ -28,21 +42,22 @@ const MoviesSearchBar = () => {
           type="text"
           placeholder="What do you want to watch?"
           className="search-movie__bar"
+          value={query || ""}
           onChange={(event) => {
             setQuery(event.target.value);
           }}
-          onKeyDown={handleKeypress}
+          onKeyDown={searchMoviesOnEnterPress}
         />
-        <button
-          type="submit"
-          className="button__submit"
-          onClick={submitHandler}
-        >
+        <button type="submit" className="button__submit" onClick={searchMovies}>
           <p>Search</p>
         </button>
       </form>
     </div>
   );
+};
+
+MoviesSearchBar.propTypes = {
+  searchQuery: PropTypes.string,
 };
 
 export default MoviesSearchBar;

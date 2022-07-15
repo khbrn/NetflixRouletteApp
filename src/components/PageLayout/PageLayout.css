@@ -1,4 +1,5 @@
-header {
+header,
+.movies-search-container {
   height: 600px;
   width: 100%;
   background: #000000;

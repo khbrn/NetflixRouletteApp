@@ -28,3 +28,32 @@ export const filterMoviesData = (genre) => {
     dispatch(moviesActions.filterMovies({ movies: moviesData }));
   };
 };
+
+export const deleteMovieData = (id) => {
+  return async (dispatch) => {
+    await MoviesService.deleteMovie(id);
+    dispatch(moviesActions.deleteMovie({ id }));
+  };
+};
+
+export const addMovieData = (movie) => {
+  return async (dispatch) => {
+    const moviesData = await MoviesService.addMovie(movie);
+    dispatch(moviesActions.addMovie({ movie: moviesData }));
+  };
+};
+
+export const editMovieData = (movie) => {
+  return async (dispatch) => {
+    const moviesData = await MoviesService.editMovie(movie);
+    dispatch(moviesActions.editMovie({ movie: moviesData }));
+  };
+};
+
+export const getMovieData = (movieId) => {
+  return async (dispatch) => {
+    const movieData = await MoviesService.getMovie(movieId);
+    console.log(movieData);
+    dispatch(moviesActions.getMovie({ movie: movieData }));
+  };
+};

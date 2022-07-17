@@ -11,7 +11,9 @@
     "lint": "eslint ./ --ignore-path .eslintignore",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write \"{,!(node_modules)/**/}*.js\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test:dev": "jest --env=jsdom",
+    "test:prod": "jest"
   },
   "author": "Karolina Habryn",
   "license": "ISC",
@@ -22,6 +24,7 @@
     "@reduxjs/toolkit": "^1.8.2",
     "babel-polyfill": "^6.26.0",
     "formik": "^2.2.9",
+    "jest-environment-jsdom": "^28.1.3",
     "material-design-icons": "^3.0.1",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
@@ -30,13 +33,16 @@
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.5",
+    "@babel/core": "^7.18.6",
     "@babel/plugin-proposal-class-properties": "^7.17.12",
     "@babel/plugin-transform-runtime": "^7.17.12",
-    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-env": "^7.18.6",
     "@babel/preset-react": "^7.17.12",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^28.1.3",
     "babel-loader": "^8.2.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
@@ -47,6 +53,8 @@
     "eslint-plugin-react": "^7.30.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^28.1.3",
     "lint-staged": "^13.0.2",
     "mini-css-extract-plugin": "^2.6.0",
     "prettier": "2.7.1",
@@ -57,5 +65,11 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(scss|sass|css)$": "identity-obj-proxy"
+    }
   }
 }

@@ -9,4 +9,3 @@ webpack.config.prod.js
 .gitignore
 .eslintignore
 .husky
-coverage

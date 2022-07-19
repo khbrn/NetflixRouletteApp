@@ -8,4 +8,3 @@ dev
 webpack.config.dev.js
 webpack.config.js
 webpack.config.prod.js
-coverage

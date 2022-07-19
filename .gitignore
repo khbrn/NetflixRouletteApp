@@ -4,3 +4,4 @@ dev
 .husky
 *.code-workspace
 .DS_Store
+coverage

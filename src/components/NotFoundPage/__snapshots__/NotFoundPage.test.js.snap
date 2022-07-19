@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shows the not found page message for incorrect URL address 1`] = `
+<div
+  className="error-message"
+>
+  <h1>
+    Page Not Found
+  </h1>
+  <h2>
+    404
+  </h2>
+  <button
+    type="button"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      BACK TO HOME PAGE
+    </a>
+  </button>
+</div>
+`;

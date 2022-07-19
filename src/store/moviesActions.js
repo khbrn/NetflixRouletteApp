@@ -11,21 +11,21 @@ export const fetchMoviesData = () => {
 export const searchMoviesData = (query) => {
   return async (dispatch) => {
     const moviesData = await MoviesService.searchMovies(query);
-    dispatch(moviesActions.searchMovies({ movies: moviesData }));
+    dispatch(moviesActions.loadMovies({ movies: moviesData }));
   };
 };
 
 export const sortMoviesData = (field) => {
   return async (dispatch) => {
     const moviesData = await MoviesService.sortMovies(field);
-    dispatch(moviesActions.sortMovies({ movies: moviesData }));
+    dispatch(moviesActions.loadMovies({ movies: moviesData }));
   };
 };
 
 export const filterMoviesData = (genre) => {
   return async (dispatch) => {
     const moviesData = await MoviesService.filterMovies(genre);
-    dispatch(moviesActions.filterMovies({ movies: moviesData }));
+    dispatch(moviesActions.loadMovies({ movies: moviesData }));
   };
 };
 
@@ -38,22 +38,21 @@ export const deleteMovieData = (id) => {
 
 export const addMovieData = (movie) => {
   return async (dispatch) => {
-    const moviesData = await MoviesService.addMovie(movie);
-    dispatch(moviesActions.addMovie({ movie: moviesData }));
+    const movieData = await MoviesService.addMovie(movie);
+    dispatch(moviesActions.addMovie({ movie: movieData }));
   };
 };
 
 export const editMovieData = (movie) => {
   return async (dispatch) => {
-    const moviesData = await MoviesService.editMovie(movie);
-    dispatch(moviesActions.editMovie({ movie: moviesData }));
+    const movieData = await MoviesService.editMovie(movie);
+    dispatch(moviesActions.editMovie({ movie: movieData }));
   };
 };
 
 export const getMovieData = (movieId) => {
   return async (dispatch) => {
     const movieData = await MoviesService.getMovie(movieId);
-    console.log(movieData);
     dispatch(moviesActions.getMovie({ movie: movieData }));
   };
 };

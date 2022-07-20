@@ -2,8 +2,10 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
+import { unmountComponentAtNode } from "react-dom";
+import { act } from "react-dom/test-utils";
 
-import FilterGenreOptionsList from "./FilterGenreOptionsList";
+import FilterGenreOptionsList from "../components/FilterGenreOptionsList/FilterGenreOptionsList";
 
 const mockedNavigator = jest.fn();
 
@@ -11,17 +13,33 @@ jest.mock("react-router-dom", () => ({
   useNavigate: () => mockedNavigator,
 }));
 
+let container = null;
+beforeEach(() => {
+  container = document.createElement("div");
+  document.body.appendChild(container);
+});
+
+afterEach(() => {
+  unmountComponentAtNode(container);
+  container.remove();
+  container = null;
+});
+
 describe("FilterGenreOptionsList component", () => {
-  test("should render the component as list items", () => {
-    render(<FilterGenreOptionsList />);
+  it("should render the component as list items", () => {
+    act(() => {
+      render(<FilterGenreOptionsList />, container);
+    });
 
     const genreList = screen.queryAllByRole("listitem");
 
     expect(genreList).not.toHaveLength(0);
   });
 
-  test("should render all default genres", () => {
-    render(<FilterGenreOptionsList />);
+  it("should render all default genres", () => {
+    act(() => {
+      render(<FilterGenreOptionsList />, container);
+    });
 
     const optionAll = screen.queryByText(/all/i);
     const optionDocumentary = screen.queryByText(/documentary/i);
@@ -36,8 +54,10 @@ describe("FilterGenreOptionsList component", () => {
     expect(optionCrime).toBeInTheDocument();
   });
 
-  test("should change URL query when the user clicked on documentary genre list item", async () => {
-    render(<FilterGenreOptionsList />);
+  it("should change URL query when the user clicked on documentary genre list item", async () => {
+    act(() => {
+      render(<FilterGenreOptionsList />, container);
+    });
 
     await userEvent.click(screen.getByText(/documentary/i));
 
@@ -48,8 +68,10 @@ describe("FilterGenreOptionsList component", () => {
     );
   });
 
-  test("should change URL query when user clicked on all genre list item", async () => {
-    render(<FilterGenreOptionsList />);
+  it("should change URL query when user clicked on all genre list item", async () => {
+    act(() => {
+      render(<FilterGenreOptionsList />, container);
+    });
 
     await userEvent.click(screen.getByText(/all/i));
 

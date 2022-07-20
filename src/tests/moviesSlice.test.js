@@ -5,17 +5,17 @@ import {
   searchedMoviesMock,
   movieMockUpdated,
 } from "../mock/moviesSliceMock";
-import moviesSlice, { moviesActions } from "./moviesSlice";
+import moviesSlice, { moviesActions } from "../store/moviesSlice";
 
 const reducer = moviesSlice.reducer;
 
 describe("moviesSlice ", () => {
-  test("should return the initial state", () => {
+  it("should return the initial state", () => {
     expect(reducer(undefined, { type: undefined })).toEqual(initialStateMock);
   });
 
   describe("loadMovies reducer", () => {
-    test("should load movies data to the store for the first time", () => {
+    it("should load movies data to the store for the first time", () => {
       expect(
         reducer(
           initialStateMock,
@@ -30,7 +30,7 @@ describe("moviesSlice ", () => {
       ).toEqual(moviesMock.length);
     });
 
-    test("should replace the state with the search result", () => {
+    it("should replace the state with the search result", () => {
       const previousState = {
         movies: moviesMock,
         currentMovie: {},
@@ -53,7 +53,7 @@ describe("moviesSlice ", () => {
   });
 
   describe("deleteMovie reducer", () => {
-    test("should remove proper movie from the store and update movies number", () => {
+    it("should remove proper movie from the store and update movies number", () => {
       const previousState = {
         movies: moviesMock,
         currentMovie: {},
@@ -70,7 +70,7 @@ describe("moviesSlice ", () => {
       ).toEqual(previousState.moviesNumber - 1);
     });
 
-    test("should not update the store if movie id was not found", () => {
+    it("should not update the store if movie id was not found", () => {
       const previousState = {
         movies: moviesMock,
         currentMovie: {},
@@ -85,7 +85,7 @@ describe("moviesSlice ", () => {
   });
 
   describe("addMovie reducer", () => {
-    test("should update the store with the new movie", () => {
+    it("should update the store with the new movie", () => {
       const previousState = {
         movies: moviesMock,
         currentMovie: {},
@@ -105,7 +105,7 @@ describe("moviesSlice ", () => {
   });
 
   describe("getMovie reducer", () => {
-    test("should update the store with the chosen movie", () => {
+    it("should update the store with the chosen movie", () => {
       const previousState = {
         movies: searchedMoviesMock,
         currentMovie: {},
@@ -121,7 +121,7 @@ describe("moviesSlice ", () => {
   });
 
   describe("editMovie reducer", () => {
-    test("should update movies array if the movie was edited", () => {
+    it("should update movies array if the movie was edited", () => {
       const previousState = {
         movies: moviesMock,
         currentMovie: {},
@@ -136,7 +136,7 @@ describe("moviesSlice ", () => {
       ).toContainEqual(movieMockUpdated);
     });
 
-    test("should update current movie if the current movie was edited", () => {
+    it("should update current movie if the current movie was edited", () => {
       const previousState = {
         movies: moviesMock,
         currentMovie: movieMock,
@@ -151,7 +151,7 @@ describe("moviesSlice ", () => {
       ).toEqual(movieMockUpdated);
     });
 
-    test("should not update current movie if the current movie was not edited", () => {
+    it("should not update current movie if the current movie was not edited", () => {
       const previousState = {
         movies: moviesMock,
         currentMovie: { id: 269149, title: "Zootopia" },
@@ -166,7 +166,7 @@ describe("moviesSlice ", () => {
       ).toEqual(previousState.currentMovie);
     });
 
-    test("should not update movies if the movie id was not found", () => {
+    it("should not update movies if the movie id was not found", () => {
       const previousState = {
         movies: moviesMock,
         currentMovie: movieMock,

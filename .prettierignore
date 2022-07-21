@@ -10,3 +10,4 @@ webpack.config.prod.js
 .eslintignore
 .husky
 coverage
+cypress

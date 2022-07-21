@@ -29,13 +29,8 @@ describe('Searching movie by "coco" keyword', () => {
 
   it("should display movie info after clicking on the first search result ", () => {
     cy.get(".search-movie__bar").type("coco");
-    cy.get(".button__submit")
-      .click()
-      .then(() => {
-        cy.get(".movie-list>li")
-          .first()
-          .click()
-          .then(() => {
+    cy.get(".button__submit").click().then(() => {
+        cy.get(".movie-list>li").first().click().then(() => {
             cy.get(".movie-details__data-title").should("exist");
           });
       });
@@ -46,13 +41,8 @@ describe('Searching movie by "coco" keyword', () => {
     cy.get(".button__submit")
       .click()
       .then(() => {
-        cy.get(".movie-list>li")
-          .first()
-          .click()
-          .then(() => {
-            cy.get(".movie-details__data-title")
-              .contains("div", /coco/i)
-              .should("exist");
+        cy.get(".movie-list>li").first().click().then(() => {
+            cy.get(".movie-details__data-title").contains("div", /coco/i).should("exist");
           });
       });
   });

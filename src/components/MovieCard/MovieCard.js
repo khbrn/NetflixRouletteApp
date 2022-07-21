@@ -1,19 +1,17 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+
+import MovieContextMenu from "../MovieContextMenu/MovieContextMenu";
+import DeleteMovieDialog from "../DeleteMovieDialog/DeleteMovieDialog";
+import MovieDialog from "../MovieDialog/MovieDialog";
 
 import "./MovieCard.css";
 import Icon from "@mdi/react";
 import { mdiDotsVerticalCircle } from "@mdi/js";
 
-import MovieContextMenu from "../MovieContextMenu/MovieContextMenu";
-import DeleteMovieDialog from "../DeleteMovieDialog/DeleteMovieDialog";
-import MovieDialog from "../MovieDialog/MovieDialog";
-import { uiActions } from "../../store/uiSlice";
-import { moviesActions } from "../../store/moviesSlice";
-
 const MovieCard = ({ movie }) => {
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
   const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);
@@ -23,8 +21,11 @@ const MovieCard = ({ movie }) => {
   const movieReleaseYear = new Date(movie.release_date).getFullYear();
 
   const handleMovieDetails = () => {
-    dispatch(moviesActions.setCurrentMovie({ movie: movie }));
-    dispatch(uiActions.hideHeader());
+    navigate(`../search?movie=${movie.id || ""}`, { replace: true });
+  };
+
+  const handleContextMenu = () => {
+    setIsContextMenuVisible(true);
   };
 
   return (
@@ -51,7 +52,7 @@ const MovieCard = ({ movie }) => {
             path={mdiDotsVerticalCircle}
             size={"36px"}
             className="menu-icon"
-            onClick={() => setIsContextMenuVisible(true)}
+            onClick={handleContextMenu}
           />
           {isContextMenuVisible ? (
             <MovieContextMenu
@@ -83,6 +84,7 @@ const MovieCard = ({ movie }) => {
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     release_date: PropTypes.string.isRequired,
     poster_path: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,

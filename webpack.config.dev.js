@@ -10,8 +10,9 @@ module.exports = {
     index: ['babel-polyfill', './src/index.js']
   },
   output: {
-    path: path.join(__dirname, "/dev"),
+    path: path.join(__dirname, "dev"),
     filename: "index_bundle.js",
+    publicPath: "/",
   },
   resolve: {
     modules: [path.resolve(__dirname, "./src"), "node_modules"],
@@ -20,6 +21,7 @@ module.exports = {
   devServer: {
     allowedHosts: path.join(__dirname, "./dev"),
     open: true,
+    historyApiFallback: true
   },
   module: {
     rules: [

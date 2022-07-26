@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 
 import MovieContextMenu from "../MovieContextMenu/MovieContextMenu";
@@ -11,7 +11,7 @@ import Icon from "@mdi/react";
 import { mdiDotsVerticalCircle } from "@mdi/js";
 
 const MovieCard = ({ movie }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
   const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);
@@ -21,7 +21,7 @@ const MovieCard = ({ movie }) => {
   const movieReleaseYear = new Date(movie.release_date).getFullYear();
 
   const handleMovieDetails = () => {
-    navigate(`../search?movie=${movie.id || ""}`, { replace: true });
+    router.push(`../search?movie=${movie.id || ""}`);
   };
 
   const handleContextMenu = () => {

@@ -1,21 +1,18 @@
 import React from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useRouter } from "next/router";
 
-import { ROUTER_PARAMS } from "../../constants/constants";
 import { sortingOptions } from "../../utils/sortingOptions";
 
 import classes from "./MoviesSortDropdown.module.css";
 
 const MoviesSortDropdown = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
+  const sortParam = router.query.sortBy;
 
   const filterHander = (event) => {
     const field = event.target.value;
-    navigate(`../search?sortBy=${field || ""}`, { replace: true });
+    router.push(`../search?sortBy=${field || ""}`);
   };
-
-  const [searchParams] = useSearchParams();
-  const sortParam = searchParams.get(ROUTER_PARAMS.SORT_BY);
 
   return (
     <div className={classes["sort-movie"]}>

@@ -1,20 +1,21 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
+
 import { movieFilterOptions } from "../../utils/filterOptions";
 
 import classes from "./FilterGenreOptionsList.module.css";
 
 const FilterGenreOptionsList = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
+
   return (
     <ul className={classes["filter-genre"]}>
       {movieFilterOptions.map((filterOption) => (
         <li
           key={filterOption.id}
           onClick={() => {
-            navigate(
-              `../search?genre=${filterOption.filterOptionValue || ""}`,
-              { replace: true }
+            router.push(
+              `../search?genre=${filterOption.filterOptionValue || ""}`
             );
           }}
         >

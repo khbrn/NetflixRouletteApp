@@ -10,9 +10,9 @@ import { uiActions } from "../store/uiSlice";
 
 export const useCustomRouting = (searchParams) => {
   const dispatch = useDispatch();
-  const sortParam = searchParams.get(ROUTER_PARAMS.SORT_BY);
-  const genreParam = searchParams.get(ROUTER_PARAMS.GENRE_PARAM);
-  const movieParam = searchParams.get(ROUTER_PARAMS.MOVIE_PARAM);
+  const sortParam = searchParams[ROUTER_PARAMS.SORT_BY];
+  const genreParam = searchParams[ROUTER_PARAMS.GENRE_PARAM];
+  const movieParam = searchParams[ROUTER_PARAMS.MOVIE_PARAM];
 
   useEffect(() => {
     if (sortParam) {

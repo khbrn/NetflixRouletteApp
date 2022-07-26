@@ -10,6 +10,7 @@ import classes from "./MoviesSearchContainer.module.css";
 
 const MoviesSearchContainer = ({ searchQuery }) => {
   const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);
+
   const addMovie = () => {
     setIsMovieDialogVisible(true);
   };

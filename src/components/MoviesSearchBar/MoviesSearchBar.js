@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 
 import { ENTER_KEY } from "../../constants/constants";
 import { fetchMoviesData, searchMoviesData } from "../../store/moviesActions";
@@ -11,7 +11,7 @@ import classes from "./MoviesSearchBar.module.css";
 const MoviesSearchBar = ({ searchQuery }) => {
   const [query, setQuery] = useState("");
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
     setQuery(searchQuery);
@@ -25,13 +25,13 @@ const MoviesSearchBar = ({ searchQuery }) => {
   const searchMoviesOnEnterPress = (event) => {
     if (event.keyCode === ENTER_KEY) {
       event.preventDefault();
-      navigate(`../search/${query}`);
+      router.push(`../search/${query}`);
     }
   };
 
   const searchMovies = (event) => {
     event.preventDefault();
-    navigate(`../search/${query}`);
+    router.push(`../search/${query}`);
   };
 
   return (

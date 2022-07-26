@@ -4,7 +4,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { ROUTER_PARAMS } from "../../constants/constants";
 import { sortingOptions } from "../../utils/sortingOptions";
 
-import "./MoviesSortDropdown.css";
+import classes from "./MoviesSortDropdown.module.css";
 
 const MoviesSortDropdown = () => {
   const navigate = useNavigate();
@@ -18,14 +18,14 @@ const MoviesSortDropdown = () => {
   const sortParam = searchParams.get(ROUTER_PARAMS.SORT_BY);
 
   return (
-    <div className="sort-movie">
-      <label htmlFor="sort-movie" className="sort-movie__label">
+    <div className={classes["sort-movie"]}>
+      <label htmlFor="sort-movie" className={classes["sort-movie__label"]}>
         Sort by:
       </label>
       <select
         name="sort-movie"
         id="sort-movie"
-        className="sort-movie__dropdown"
+        className={classes["sort-movie__dropdown"]}
         onChange={filterHander}
         value={sortParam || ""}
       >

@@ -1,12 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import "./MovieDetails.css";
-import Icon from "@mdi/react";
-import { mdiMagnify } from "@mdi/js";
-
 import AppLogo from "../AppLogo/AppLogo";
 import { uiActions } from "../../store/uiSlice";
+
+import classes from "./MovieDetails.module.css";
+import Icon from "@mdi/react";
+import { mdiMagnify } from "@mdi/js";
 
 const MovieDetails = () => {
   const dispatch = useDispatch();
@@ -25,8 +25,8 @@ const MovieDetails = () => {
   };
 
   return (
-    <div className="movie-details">
-      <div className="movie-details__nav">
+    <div className={classes["movie-details"]}>
+      <div className={classes["movie-details__nav"]}>
         <AppLogo />
         <Icon
           path={mdiMagnify}
@@ -36,27 +36,31 @@ const MovieDetails = () => {
           onClick={handleSearchMovie}
         />
       </div>
-      <div className="movie-details__main">
+      <div className={classes["movie-details__main"]}>
         <img src={movie.poster_path} alt="poster" />
-        <div className="movie-details__data">
-          <div className="movie-details__data__first-row">
-            <div className="movie-details__data-title">{movie.title}</div>
-            <div className="movie-details__data-rate">
+        <div className={classes["movie-details__data"]}>
+          <div className={classes["movie-details__data__first-row"]}>
+            <div className={classes["movie-details__data-title"]}>
+              {movie.title}
+            </div>
+            <div className={classes["movie-details__data-rate"]}>
               <p>{movie.vote_average}</p>
             </div>
           </div>
-          <div className="movie-details__data-genre">
+          <div className={classes["movie-details__data-genre"]}>
             {movie.genres?.join(", ")}
           </div>
-          <div className="movie-details__data__second-row">
-            <div className="movie-details__data-release-year">
+          <div className={classes["movie-details__data__second-row"]}>
+            <div className={classes["movie-details__data-release-year"]}>
               {releaseYear}
             </div>
-            <div className="movie-details__data-duration">
+            <div className={classes["movie-details__data-duration"]}>
               {movie.runtime ? timeConversion(movie.runtime) : 0}
             </div>
           </div>
-          <div className="movie-details__data-overview">{movie.overview}</div>
+          <div className={classes["movie-details__data-overview"]}>
+            {movie.overview}
+          </div>
         </div>
       </div>
     </div>

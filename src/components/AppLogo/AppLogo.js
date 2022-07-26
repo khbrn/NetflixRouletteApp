@@ -1,10 +1,10 @@
 import React from "react";
-import "./AppLogo.css";
+import classes from "./AppLogo.module.css";
 
 const AppLogo = () => {
   return (
-    <div className="logo" aria-hidden="true">
-      <span id="logo--bolded">netflix</span>roulette
+    <div className={classes.logo} aria-hidden="true">
+      <span className={classes["logo--bolded"]}>netflix</span>roulette
     </div>
   );
 };

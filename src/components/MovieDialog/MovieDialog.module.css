@@ -188,3 +188,20 @@
   mix-blend-mode: normal;
   opacity: 0.8;
 }
+
+.button__confirm {
+  margin-right: 60px;
+
+  background: #f65261;
+  border-radius: 4px;
+  border-color: transparent;
+  width: 180px;
+  height: 57px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
+}

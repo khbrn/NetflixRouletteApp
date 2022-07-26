@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./ErrorBoundary.css";
+import classes from "./ErrorBoundary.module.css";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <h2 className="error-boundary">
+        <h2 className={classes["error-boundary"]}>
           Oops, something went wrong... We are doing our best to fix the issue
         </h2>
       );

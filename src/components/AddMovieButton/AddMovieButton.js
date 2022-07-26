@@ -1,11 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./AddMovieButton.css";
+import classes from "./AddMovieButton.module.css";
 
 const AddMovieButton = (props) => {
   return (
-    <button className="button--transparent" onClick={props.addMovieHandler}>
+    <button
+      className={classes["button--transparent"]}
+      onClick={props.addMovieHandler}
+    >
       + add movie
     </button>
   );

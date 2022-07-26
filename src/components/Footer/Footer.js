@@ -1,11 +1,11 @@
 import React from "react";
 
 import AppLogo from "../AppLogo/AppLogo";
-import "./Footer.css";
+import classes from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className={classes.footer}>
       <AppLogo />
     </footer>
   );

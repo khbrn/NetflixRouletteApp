@@ -3,11 +3,12 @@ import { useFormik } from "formik";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 
-import "./MovieDialog.css";
-import Icon from "@mdi/react";
-import { mdiClose } from "@mdi/js";
 import { convertToMovieObject } from "../../utils/convertToMovieObject";
 import { addMovieData, editMovieData } from "../../store/moviesActions";
+
+import classes from "./MovieDialog.module.css";
+import Icon from "@mdi/react";
+import { mdiClose } from "@mdi/js";
 
 const MovieDialog = (props) => {
   const dispatch = useDispatch();
@@ -79,34 +80,34 @@ const MovieDialog = (props) => {
   });
 
   return (
-    <div className="movie-dialog__container">
-      <div className="movie-dialog">
-        <button className="close-button" onClick={closeDialog}>
+    <div className={classes["movie-dialog__container"]}>
+      <div className={classes["movie-dialog"]}>
+        <button className={classes["close-button"]} onClick={closeDialog}>
           <Icon path={mdiClose} size={"28px"} color="white" />
         </button>
         <h2>{props.movie ? "Edit Movie" : "Add Movie"}</h2>
         <form onSubmit={formik.handleSubmit}>
-          <div className="movie-dialog__form-row">
-            <div className="movie-dialog__form__container">
+          <div className={classes["movie-dialog__form-row"]}>
+            <div className={classes["movie-dialog__form__container"]}>
               <label htmlFor="title">Title</label>
               <input
                 type="text"
                 id="title"
                 name="title"
-                className="movie-dialog__form-elems-left"
+                className={classes["movie-dialog__form-elems-left"]}
                 placeholder="Add Title"
                 onChange={formik.handleChange}
                 value={formik.values.title}
               />
               {formik.errors.title && <p>{formik.errors.title}</p>}
             </div>
-            <div className="movie-dialog__form__container">
+            <div className={classes["movie-dialog__form__container"]}>
               <label htmlFor="releaseDate">Release date</label>
               <input
                 type="date"
                 id="releaseDate"
                 name="releaseDate"
-                className="movie-dialog__form-elems-right"
+                className={classes["movie-dialog__form-elems-right"]}
                 placeholder="Select date"
                 onChange={formik.handleChange}
                 value={formik.values.releaseDate}
@@ -114,27 +115,27 @@ const MovieDialog = (props) => {
               {formik.errors.releaseDate && <p>{formik.errors.releaseDate}</p>}
             </div>
           </div>
-          <div className="movie-dialog__form-row">
-            <div className="movie-dialog__form__container">
+          <div className={classes["movie-dialog__form-row"]}>
+            <div className={classes["movie-dialog__form__container"]}>
               <label htmlFor="posterPath">Movie url</label>
               <input
                 type="text"
                 id="posterPath"
                 name="posterPath"
-                className="movie-dialog__form-elems-left"
+                className={classes["movie-dialog__form-elems-left"]}
                 placeholder="https://"
                 onChange={formik.handleChange}
                 value={formik.values.posterPath}
               />
               {formik.errors.posterPath && <p>{formik.errors.posterPath}</p>}
             </div>
-            <div className="movie-dialog__form__container">
+            <div className={classes["movie-dialog__form__container"]}>
               <label htmlFor="rating">Rating</label>
               <input
                 type="text"
                 id="rating"
                 name="rating"
-                className="movie-dialog__form-elems-right"
+                className={classes["movie-dialog__form-elems-right"]}
                 placeholder="7.8"
                 onChange={formik.handleChange}
                 value={formik.values.rating}
@@ -142,27 +143,27 @@ const MovieDialog = (props) => {
               {formik.errors.rating && <p>{formik.errors.rating}</p>}
             </div>
           </div>
-          <div className="movie-dialog__form-row">
-            <div className="movie-dialog__form__container">
+          <div className={classes["movie-dialog__form-row"]}>
+            <div className={classes["movie-dialog__form__container"]}>
               <label htmlFor="genres">Genre</label>
               <input
                 type="text"
                 id="genres"
                 name="genres"
-                className="movie-dialog__form-elems-right"
+                className={classes["movie-dialog__form-elems-right"]}
                 placeholder="Select Genre"
                 onChange={formik.handleChange}
                 value={formik.values.genres}
               />
               {formik.errors.genres && <p>{formik.errors.genres}</p>}
             </div>
-            <div className="movie-dialog__form__container">
+            <div className={classes["movie-dialog__form__container"]}>
               <label htmlFor="runtime">Runtime</label>
               <input
                 type="text"
                 id="runtime"
                 name="runtime"
-                className="movie-dialog__form-elems-left"
+                className={classes["movie-dialog__form-elems-left"]}
                 placeholder="minutes"
                 onChange={formik.handleChange}
                 value={formik.values.runtime}
@@ -170,14 +171,14 @@ const MovieDialog = (props) => {
               {formik.errors.runtime && <p>{formik.errors.runtime}</p>}
             </div>
           </div>
-          <div className="movie-dialog__form-row">
-            <div className="movie-dialog__form__container">
+          <div className={classes["movie-dialog__form-row"]}>
+            <div className={classes["movie-dialog__form__container"]}>
               <label htmlFor="overview">Overview</label>
               <textarea
                 type="text"
                 id="overview"
                 name="overview"
-                className="movie-dialog__form-elem"
+                className={classes["movie-dialog__form-elem"]}
                 placeholder="Movie description"
                 onChange={formik.handleChange}
                 value={formik.values.overview}
@@ -185,15 +186,15 @@ const MovieDialog = (props) => {
               {formik.errors.overview && <p>{formik.errors.overview}</p>}
             </div>
           </div>
-          <div className="movie-dialog__buttons">
+          <div className={classes["movie-dialog__buttons"]}>
             <button
               type="button"
-              className="button__reset"
+              className={classes["button__reset"]}
               onClick={formik.handleReset}
             >
               Reset
             </button>
-            <button type="submit" className="button__confirm">
+            <button type="submit" className={classes["button__confirm"]}>
               Submit
             </button>
           </div>

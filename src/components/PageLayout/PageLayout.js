@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import MovieDetails from "../MovieDetails/MovieDetails";
 import MoviesSearchContainer from "../MoviesSearchContainer/MoviesSearchContainer";
-import "./PageLayout.css";
 
 const PageLayout = () => {
   const isLoading = useSelector((state) => state.ui.isLoading);

@@ -6,7 +6,7 @@ import MovieContextMenu from "../MovieContextMenu/MovieContextMenu";
 import DeleteMovieDialog from "../DeleteMovieDialog/DeleteMovieDialog";
 import MovieDialog from "../MovieDialog/MovieDialog";
 
-import "./MovieCard.css";
+import classes from "./MovieCard.module.css";
 import Icon from "@mdi/react";
 import { mdiDotsVerticalCircle } from "@mdi/js";
 
@@ -46,12 +46,12 @@ const MovieCard = ({ movie }) => {
       ) : (
         <></>
       )}
-      <div className="movie-card__container ">
-        <div className="movie-card">
+      <div className={classes["movie-card__container"]}>
+        <div className={classes["movie-card"]}>
           <Icon
             path={mdiDotsVerticalCircle}
             size={"36px"}
-            className="menu-icon"
+            className={classes["menu-icon"]}
             onClick={handleContextMenu}
           />
           {isContextMenuVisible ? (
@@ -66,17 +66,21 @@ const MovieCard = ({ movie }) => {
           <img
             src={movie.poster_path}
             alt="Movie Poster"
-            className="movie-card__image"
+            className={classes["movie-card__image"]}
             onClick={handleMovieDetails}
           />
         </div>
-        <div className="movie-card__information">
-          <div className="movie-card__information-title">{movie.title}</div>
-          <div className="movie-card__information-year">
+        <div className={classes["movie-card__information"]}>
+          <div className={classes["movie-card__information-title"]}>
+            {movie.title}
+          </div>
+          <div className={classes["movie-card__information-year"]}>
             <p>{movieReleaseYear}</p>
           </div>
         </div>
-        <p className="movie-card__genre">{movie.genres.join(", ")}</p>
+        <p className={classes["movie-card__genre"]}>
+          {movie.genres.join(", ")}
+        </p>
       </div>
     </>
   );
@@ -86,7 +90,7 @@ MovieCard.propTypes = {
   movie: PropTypes.shape({
     id: PropTypes.number.isRequired,
     release_date: PropTypes.string.isRequired,
-    poster_path: PropTypes.string.isRequired,
+    poster_path: PropTypes.string,
     title: PropTypes.string.isRequired,
     genres: PropTypes.array.isRequired,
   }),

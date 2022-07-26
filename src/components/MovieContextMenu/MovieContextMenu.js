@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./MovieContextMenu.css";
+import classes from "./MovieContextMenu.module.css";
 import Icon from "@mdi/react";
 import { mdiClose } from "@mdi/js";
 
@@ -16,18 +16,21 @@ const MovieContextMenu = (props) => {
     props.setMovieDialogVisibility(true);
   };
   return (
-    <div className="context-menu">
+    <div className={classes["context-menu"]}>
       <button
-        className="close-icon"
+        className={classes["close-icon"]}
         onClick={() => props.setIsContextMenuVisible(false)}
       >
         <Icon path={mdiClose} size={"18px"} color="white" />
       </button>
-      <ul className="context-menu__list">
-        <li className="context-menu__list__edit" onClick={editMovie}>
+      <ul className={classes["context-menu__list"]}>
+        <li className={classes["context-menu__list__edit"]} onClick={editMovie}>
           Edit
         </li>
-        <li className="context-menu__list__delete" onClick={deleteMovie}>
+        <li
+          className={classes["context-menu__list__delete"]}
+          onClick={deleteMovie}
+        >
           Delete
         </li>
       </ul>

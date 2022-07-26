@@ -11,3 +11,4 @@ webpack.config.prod.js
 .husky
 coverage
 cypress
+.next

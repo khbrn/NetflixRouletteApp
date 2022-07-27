@@ -1,25 +1,17 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
+import PropTypes from "prop-types";
 
 import { ENTER_KEY } from "../../constants/constants";
-import { fetchMoviesData, searchMoviesData } from "../../store/moviesActions";
 
 import classes from "./MoviesSearchBar.module.css";
 
 const MoviesSearchBar = ({ searchQuery }) => {
   const [query, setQuery] = useState("");
-  const dispatch = useDispatch();
   const router = useRouter();
 
   useEffect(() => {
     setQuery(searchQuery);
-    if (!searchQuery) {
-      dispatch(fetchMoviesData());
-      return;
-    }
-    dispatch(searchMoviesData(searchQuery));
   }, [searchQuery]);
 
   const searchMoviesOnEnterPress = (event) => {

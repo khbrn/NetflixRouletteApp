@@ -14,9 +14,10 @@ const FilterGenreOptionsList = () => {
         <li
           key={filterOption.id}
           onClick={() => {
-            router.push(
-              `../search?genre=${filterOption.filterOptionValue || ""}`
-            );
+            router.push({
+              pathname: "/search",
+              query: { genre: filterOption.filterOptionValue || "" },
+            });
           }}
         >
           {filterOption.filterOptionName}

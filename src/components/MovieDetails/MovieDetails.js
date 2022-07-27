@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
 
 import AppLogo from "../AppLogo/AppLogo";
 import { uiActions } from "../../store/uiSlice";
@@ -10,6 +11,7 @@ import { mdiMagnify } from "@mdi/js";
 
 const MovieDetails = () => {
   const dispatch = useDispatch();
+  const router = useRouter();
   const movie = useSelector((state) => state.movies.currentMovie);
   const releaseYear = new Date(movie.release_date).getFullYear();
 
@@ -22,6 +24,7 @@ const MovieDetails = () => {
 
   const handleSearchMovie = () => {
     dispatch(uiActions.showHeader());
+    router.push(`../search`);
   };
 
   return (

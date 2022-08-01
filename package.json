@@ -12,8 +12,8 @@
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write \"{,!(node_modules)/**/}*.js\"",
     "prepare": "husky install",
-    "test:dev": "jest --env=jsdom",
-    "test:prod": "jest"
+    "test:unit": "jest",
+    "test:e2e": "cypress run"
   },
   "author": "Karolina Habryn",
   "license": "ISC",
@@ -70,11 +70,5 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(scss|sass|css)$": "identity-obj-proxy"
-    }
   }
 }

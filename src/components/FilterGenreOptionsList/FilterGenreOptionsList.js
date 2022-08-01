@@ -12,10 +12,9 @@ const FilterGenreOptionsList = () => {
         <li
           key={filterOption.id}
           onClick={() => {
-            navigate(
-              `../search?genre=${filterOption.filterOptionValue || ""}`,
-              { replace: true }
-            );
+            navigate(`../search?genre=${filterOption.filterOptionValue}`, {
+              replace: true,
+            });
           }}
         >
           {filterOption.filterOptionName}

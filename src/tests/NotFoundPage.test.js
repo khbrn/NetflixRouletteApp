@@ -6,38 +6,33 @@ import { act } from "react-dom/test-utils";
 import { createMemoryHistory } from "history";
 import pretty from "pretty";
 import "@testing-library/jest-dom";
+import renderer from "react-test-renderer";
 
 import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
-
-let container = null;
-beforeEach(() => {
-  container = document.createElement("div");
-  document.body.appendChild(container);
-});
-
-afterEach(() => {
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
-});
 
 describe("NotFoundPage component", () => {
   it("shows the not found page message for incorrect URL address", () => {
     const history = createMemoryHistory();
-    history.push("/page-not-found");
+    history.push("/movie-not-found");
 
-    act(() => {
-      render(
+    const tree = renderer
+      .create(
         <MemoryRouter location={history.location} navigator={history}>
           <NotFoundPage />
-        </MemoryRouter>,
-        container
-      );
-    });
+        </MemoryRouter>
+      )
+      .toJSON();
+
+    render(
+      <MemoryRouter location={history.location} navigator={history}>
+        <NotFoundPage />
+      </MemoryRouter>
+    );
 
     expect(screen.getByText(/page not found/i)).toBeInTheDocument();
     expect(screen.getByText(/404/i)).toBeInTheDocument();
     expect(screen.getByText(/back to home page/i)).toBeInTheDocument();
-    expect(pretty(container.innerHTML)).toMatchInlineSnapshot(`""`);
+
+    expect(tree).toMatchSnapshot();
   });
 });

@@ -5,3 +5,5 @@ export const ROUTER_PARAMS = {
   GENRE_PARAM: "genre",
   MOVIE_PARAM: "movie",
 };
+export const ADD_MOVIE = "Add Movie";
+export const EDIT_MOVIE = "Edit Movie";

@@ -54,14 +54,12 @@ const MovieCard = ({ movie }) => {
             className="menu-icon"
             onClick={handleContextMenu}
           />
-          {isContextMenuVisible ? (
+          {isContextMenuVisible && (
             <MovieContextMenu
               setIsContextMenuVisible={setIsContextMenuVisible}
               setDeleteDialogVisibility={setIsDeleteMovieDialogVisible}
               setMovieDialogVisibility={setIsMovieDialogVisible}
             />
-          ) : (
-            <></>
           )}
           <img
             src={movie.poster_path}

@@ -20,7 +20,7 @@ export const useCustomRouting = (searchParams) => {
       return;
     }
 
-    if (genreParam) {
+    if (genreParam || genreParam === "") {
       dispatch(filterMoviesData(genreParam));
       return;
     }

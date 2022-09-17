@@ -8,6 +8,8 @@ import Icon from "@mdi/react";
 import { mdiClose } from "@mdi/js";
 import { convertToMovieObject } from "../../utils/convertToMovieObject";
 import { addMovieData, editMovieData } from "../../store/moviesActions";
+import { ADD_MOVIE, EDIT_MOVIE } from "../../constants/constants";
+import validateUrl from "../../utils/validateUrl";
 
 const MovieDialog = (props) => {
   const dispatch = useDispatch();
@@ -26,11 +28,7 @@ const MovieDialog = (props) => {
     }
     if (!values.posterPath) {
       errors.posterPath = "Movie URL is required";
-    } else if (
-      !/^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,}))\.?)(?::\d{2,5})?(?:[/?#]\S*)?$/i.test(
-        values.posterPath
-      )
-    ) {
+    } else if (!validateUrl(values.posterPath)) {
       errors.posterPath = "Invalid Movie URL";
     }
 
@@ -55,7 +53,7 @@ const MovieDialog = (props) => {
 
   const formik = useFormik({
     initialValues: {
-      dialogType: props.movie ? "Edit Movie" : "Add Movie",
+      dialogType: props.movie ? EDIT_MOVIE : ADD_MOVIE,
       title: props.movie ? props.movie.title : "",
       releaseDate: props.movie ? props.movie.release_date : "",
       posterPath: props.movie ? props.movie.poster_path : "",
@@ -68,7 +66,7 @@ const MovieDialog = (props) => {
     onSubmit: (values) => {
       const movieObj = convertToMovieObject(values);
 
-      if (values.dialogType === "Add Movie") {
+      if (values.dialogType === ADD_MOVIE) {
         dispatch(addMovieData(movieObj));
       } else {
         movieObj.id = props.movie.id;
@@ -84,7 +82,7 @@ const MovieDialog = (props) => {
         <button className="close-button" onClick={closeDialog}>
           <Icon path={mdiClose} size={"28px"} color="white" />
         </button>
-        <h2>{props.movie ? "Edit Movie" : "Add Movie"}</h2>
+        <h2>{props.movie ? EDIT_MOVIE : ADD_MOVIE}</h2>
         <form onSubmit={formik.handleSubmit}>
           <div className="movie-dialog__form-row">
             <div className="movie-dialog__form__container">

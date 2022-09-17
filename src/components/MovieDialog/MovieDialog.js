@@ -1,41 +1,83 @@
-import React, { useState } from "react";
+import React from "react";
+import { useFormik } from "formik";
 import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
 
 import "./MovieDialog.css";
 import Icon from "@mdi/react";
 import { mdiClose } from "@mdi/js";
+import { convertToMovieObject } from "../../utils/convertToMovieObject";
+import { addMovieData, editMovieData } from "../../store/moviesActions";
+import { ADD_MOVIE, EDIT_MOVIE } from "../../constants/constants";
 
 const MovieDialog = (props) => {
-  const dialogInfo = {
-    dialogType: props.movie ? "Edit Movie" : "Add Movie",
-    title: props.movie ? props.movie.title : "",
-    releaseDate: props.movie ? props.movie.release_date : "",
-    posterPath: props.movie ? props.movie.poster_path : "",
-    rating: props.movie ? props.movie.vote_average : "",
-    genres: props.movie ? props.movie.genres : "",
-    runtime: props.movie ? props.movie.runtime : "",
-    overview: props.movie ? props.movie.overview : "",
-  };
-  const [dialogData, setDialogData] = useState(dialogInfo);
+  const dispatch = useDispatch();
 
-  const dataChangeHandler = (event) => {
-    const name = event.target.name;
-    setDialogData((prevState) => {
-      return { ...prevState, [name]: event.target.value };
-    });
-  };
   const closeDialog = () => {
     props.setMovieDialogVisibility(false);
   };
 
-  const reset = () => {
-    setDialogData(dialogInfo);
+  const validate = (values) => {
+    const errors = {};
+    if (!values.title) {
+      errors.title = "Title is required";
+    }
+    if (!values.releaseDate) {
+      errors.releaseDate = "Date is required";
+    }
+    if (!values.posterPath) {
+      errors.posterPath = "Movie URL is required";
+    } else if (
+      !/^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,}))\.?)(?::\d{2,5})?(?:[/?#]\S*)?$/i.test(
+        values.posterPath
+      )
+    ) {
+      errors.posterPath = "Invalid Movie URL";
+    }
+
+    if (!values.rating) {
+      errors.rating = "Rating is required";
+    }
+
+    if (!values.overview) {
+      errors.overview = "Overview is required";
+    }
+
+    if (!values.runtime) {
+      errors.runtime = "Runtime is required";
+    }
+
+    if (!values.genres.length) {
+      errors.genres = "Genre is required";
+    }
+
+    return errors;
   };
 
-  const submitHandler = (event) => {
-    event.preventDefault();
-    console.log(dialogData);
-  };
+  const formik = useFormik({
+    initialValues: {
+      dialogType: props.movie ? EDIT_MOVIE : ADD_MOVIE,
+      title: props.movie ? props.movie.title : "",
+      releaseDate: props.movie ? props.movie.release_date : "",
+      posterPath: props.movie ? props.movie.poster_path : "",
+      rating: props.movie ? props.movie.vote_average : "",
+      genres: props.movie ? props.movie.genres : [],
+      runtime: props.movie ? props.movie.runtime : "",
+      overview: props.movie ? props.movie.overview : "",
+    },
+    validate,
+    onSubmit: (values) => {
+      const movieObj = convertToMovieObject(values);
+
+      if (values.dialogType === ADD_MOVIE) {
+        dispatch(addMovieData(movieObj));
+      } else {
+        movieObj.id = props.movie.id;
+        dispatch(editMovieData(movieObj));
+      }
+      closeDialog();
+    },
+  });
 
   return (
     <div className="movie-dialog__container">
@@ -43,8 +85,8 @@ const MovieDialog = (props) => {
         <button className="close-button" onClick={closeDialog}>
           <Icon path={mdiClose} size={"28px"} color="white" />
         </button>
-        <h2>{dialogData.dialogType}</h2>
-        <form onSubmit={submitHandler}>
+        <h2>{props.movie ? EDIT_MOVIE : ADD_MOVIE}</h2>
+        <form onSubmit={formik.handleSubmit}>
           <div className="movie-dialog__form-row">
             <div className="movie-dialog__form__container">
               <label htmlFor="title">Title</label>
@@ -54,9 +96,10 @@ const MovieDialog = (props) => {
                 name="title"
                 className="movie-dialog__form-elems-left"
                 placeholder="Add Title"
-                onChange={dataChangeHandler}
-                value={dialogData.title}
+                onChange={formik.handleChange}
+                value={formik.values.title}
               />
+              {formik.errors.title && <p>{formik.errors.title}</p>}
             </div>
             <div className="movie-dialog__form__container">
               <label htmlFor="releaseDate">Release date</label>
@@ -66,9 +109,10 @@ const MovieDialog = (props) => {
                 name="releaseDate"
                 className="movie-dialog__form-elems-right"
                 placeholder="Select date"
-                onChange={dataChangeHandler}
-                value={dialogData.releaseDate}
+                onChange={formik.handleChange}
+                value={formik.values.releaseDate}
               />
+              {formik.errors.releaseDate && <p>{formik.errors.releaseDate}</p>}
             </div>
           </div>
           <div className="movie-dialog__form-row">
@@ -80,9 +124,10 @@ const MovieDialog = (props) => {
                 name="posterPath"
                 className="movie-dialog__form-elems-left"
                 placeholder="https://"
-                onChange={dataChangeHandler}
-                value={dialogData.posterPath}
+                onChange={formik.handleChange}
+                value={formik.values.posterPath}
               />
+              {formik.errors.posterPath && <p>{formik.errors.posterPath}</p>}
             </div>
             <div className="movie-dialog__form__container">
               <label htmlFor="rating">Rating</label>
@@ -92,9 +137,10 @@ const MovieDialog = (props) => {
                 name="rating"
                 className="movie-dialog__form-elems-right"
                 placeholder="7.8"
-                onChange={dataChangeHandler}
-                value={dialogData.rating}
+                onChange={formik.handleChange}
+                value={formik.values.rating}
               />
+              {formik.errors.rating && <p>{formik.errors.rating}</p>}
             </div>
           </div>
           <div className="movie-dialog__form-row">
@@ -106,9 +152,10 @@ const MovieDialog = (props) => {
                 name="genres"
                 className="movie-dialog__form-elems-right"
                 placeholder="Select Genre"
-                onChange={dataChangeHandler}
-                value={dialogData.genres}
+                onChange={formik.handleChange}
+                value={formik.values.genres}
               />
+              {formik.errors.genres && <p>{formik.errors.genres}</p>}
             </div>
             <div className="movie-dialog__form__container">
               <label htmlFor="runtime">Runtime</label>
@@ -118,9 +165,10 @@ const MovieDialog = (props) => {
                 name="runtime"
                 className="movie-dialog__form-elems-left"
                 placeholder="minutes"
-                onChange={dataChangeHandler}
-                value={dialogData.runtime}
+                onChange={formik.handleChange}
+                value={formik.values.runtime}
               />
+              {formik.errors.runtime && <p>{formik.errors.runtime}</p>}
             </div>
           </div>
           <div className="movie-dialog__form-row">
@@ -132,13 +180,18 @@ const MovieDialog = (props) => {
                 name="overview"
                 className="movie-dialog__form-elem"
                 placeholder="Movie description"
-                onChange={dataChangeHandler}
-                value={dialogData.overview}
+                onChange={formik.handleChange}
+                value={formik.values.overview}
               />
+              {formik.errors.overview && <p>{formik.errors.overview}</p>}
             </div>
           </div>
           <div className="movie-dialog__buttons">
-            <button className="button__reset" onClick={reset}>
+            <button
+              type="button"
+              className="button__reset"
+              onClick={formik.handleReset}
+            >
               Reset
             </button>
             <button type="submit" className="button__confirm">
@@ -160,6 +213,7 @@ MovieDialog.propTypes = {
     vote_average: PropTypes.number,
     runtime: PropTypes.number,
     overview: PropTypes.string,
+    id: PropTypes.number,
   }),
   setMovieDialogVisibility: PropTypes.func,
 };

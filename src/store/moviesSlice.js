@@ -14,18 +14,6 @@ const moviesSlice = createSlice({
       state.movies = action.payload.movies;
       state.moviesNumber = state.movies ? state.movies.length : 0;
     },
-    searchMovies(state, action) {
-      state.movies = action.payload.movies;
-      state.moviesNumber = state.movies ? state.movies.length : 0;
-    },
-    sortMovies(state, action) {
-      state.movies = action.payload.movies;
-      state.moviesNumber = state.movies ? state.movies.length : 0;
-    },
-    filterMovies(state, action) {
-      state.movies = action.payload.movies;
-      state.moviesNumber = state.movies ? state.movies.length : 0;
-    },
     deleteMovie(state, action) {
       state.movies = state.movies.filter(
         (movie) => movie.id !== action.payload.id
@@ -40,6 +28,8 @@ const moviesSlice = createSlice({
       let movieToEditIndex = state.movies.findIndex(
         (movie) => movie.id === action.payload.movie.id
       );
+
+      if (movieToEditIndex < 0) return;
 
       if (state.currentMovie.id === action.payload.movie.id) {
         state.currentMovie = action.payload.movie;

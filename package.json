@@ -16,6 +16,7 @@
   "author": "Karolina Habryn",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.18.10",
     "@babel/eslint-parser": "^7.18.2",
     "@mdi/js": "^6.7.96",
     "@mdi/react": "^1.6.0",
@@ -30,12 +31,11 @@
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.5",
+    "@babel/core": "^7.19.1",
     "@babel/plugin-proposal-class-properties": "^7.17.12",
     "@babel/plugin-transform-runtime": "^7.17.12",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
-    "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.5",
     "babel-preset-env": "^1.7.0",

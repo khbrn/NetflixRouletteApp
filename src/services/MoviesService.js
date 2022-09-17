@@ -70,14 +70,14 @@ export const MoviesService = {
   },
   editMovie: async (movie) => {
     try {
-      const responseJson = await fetch(fetchURL, {
+      const response = await fetch(fetchURL, {
         method: "PUT",
         body: JSON.stringify(movie),
         headers: {
           "Content-Type": "application/json",
         },
       });
-      const data = await responseJson.json();
+      const data = await response.json();
 
       return data;
     } catch (error) {

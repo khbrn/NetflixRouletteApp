@@ -1,23 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 import { ENTER_KEY } from "../../constants/constants";
-import { searchMoviesData } from "../../store/moviesActions";
+import { fetchMoviesData, searchMoviesData } from "../../store/moviesActions";
+
 import "./MoviesSearchBar.css";
 
-const MoviesSearchBar = () => {
+const MoviesSearchBar = ({ searchQuery }) => {
   const [query, setQuery] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setQuery(searchQuery);
+    if (!searchQuery) {
+      dispatch(fetchMoviesData());
+      return;
+    }
+    dispatch(searchMoviesData(searchQuery));
+  }, [searchQuery]);
 
   const searchMoviesOnEnterPress = (event) => {
     if (event.keyCode === ENTER_KEY) {
       event.preventDefault();
-      dispatch(searchMoviesData(query));
+      navigate(`../search/${query}`);
     }
   };
 
   const searchMovies = (event) => {
     event.preventDefault();
-    dispatch(searchMoviesData(query));
+    navigate(`../search/${query}`);
   };
 
   return (
@@ -28,6 +42,7 @@ const MoviesSearchBar = () => {
           type="text"
           placeholder="What do you want to watch?"
           className="search-movie__bar"
+          value={query || ""}
           onChange={(event) => {
             setQuery(event.target.value);
           }}
@@ -39,6 +54,10 @@ const MoviesSearchBar = () => {
       </form>
     </div>
   );
+};
+
+MoviesSearchBar.propTypes = {
+  searchQuery: PropTypes.string,
 };
 
 export default MoviesSearchBar;

@@ -7,7 +7,7 @@ export const MoviesService = {
       const { data } = await response.json();
       return data;
     } catch (error) {
-      console.log(error.response);
+      return { error: error.response };
     }
   },
   searchMovies: async (query) => {
@@ -79,6 +79,15 @@ export const MoviesService = {
       });
       const data = await response.json();
 
+      return data;
+    } catch (error) {
+      return { error: error.response };
+    }
+  },
+  getMovie: async (movieId) => {
+    try {
+      const response = await fetch(`${fetchURL}/${movieId}`);
+      const data = await response.json();
       return data;
     } catch (error) {
       return { error: error.response };

@@ -49,3 +49,11 @@ export const editMovieData = (movie) => {
     dispatch(moviesActions.editMovie({ movie: moviesData }));
   };
 };
+
+export const getMovieData = (movieId) => {
+  return async (dispatch) => {
+    const movieData = await MoviesService.getMovie(movieId);
+    console.log(movieData);
+    dispatch(moviesActions.getMovie({ movie: movieData }));
+  };
+};

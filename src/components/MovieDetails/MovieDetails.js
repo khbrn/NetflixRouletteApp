@@ -7,18 +7,12 @@ import { mdiMagnify } from "@mdi/js";
 
 import AppLogo from "../AppLogo/AppLogo";
 import { uiActions } from "../../store/uiSlice";
+import timeToHoursConverter from "../../utils/timeToHoursConverter";
 
 const MovieDetails = () => {
   const dispatch = useDispatch();
   const movie = useSelector((state) => state.movies.currentMovie);
   const releaseYear = new Date(movie.release_date).getFullYear();
-
-  const timeConversion = (timeInMinutes) => {
-    let hours = Math.floor(timeInMinutes / 60);
-    let minutes = timeInMinutes % 60;
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    return `${hours}h ${minutes}min`;
-  };
 
   const handleSearchMovie = () => {
     dispatch(uiActions.showHeader());
@@ -46,14 +40,14 @@ const MovieDetails = () => {
             </div>
           </div>
           <div className="movie-details__data-genre">
-            {movie.genres.join(", ")}
+            {movie.genres?.join(", ")}
           </div>
           <div className="movie-details__data__second-row">
             <div className="movie-details__data-release-year">
-              {releaseYear}
+              {releaseYear || ""}
             </div>
             <div className="movie-details__data-duration">
-              {timeConversion(movie.runtime)}
+              {movie.runtime ? timeToHoursConverter(movie.runtime) : 0}
             </div>
           </div>
           <div className="movie-details__data-overview">{movie.overview}</div>

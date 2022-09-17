@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
 
+import "./DeleteMovieDialog.css";
+import { useDispatch } from "react-redux";
 import { deleteMovieData } from "../../store/moviesActions";
 import { uiActions } from "../../store/uiSlice";
 
-import "./DeleteMovieDialog.css";
 import Icon from "@mdi/react";
 import { mdiClose } from "@mdi/js";
 

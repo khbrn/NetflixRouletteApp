@@ -1,24 +1,26 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import "./App.css";
+import { Route, Routes, Navigate, useSearchParams } from "react-router-dom";
+import { useCustomRouting } from "../../hooks/useCustomRouting";
 
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
-import Main from "../Main/Main";
+import NotFoundPage from "../NotFoundPage/NotFoundPage";
+import PageLayout from "../PageLayout/PageLayout";
 
-import { useFetchMoviesData } from "../../hooks/useFetchMoviesData";
+import "./App.css";
 
 const App = () => {
-  const isLoading = useSelector((state) => state.ui.isLoading);
-
-  useFetchMoviesData();
+  const [searchParams] = useSearchParams();
+  useCustomRouting(searchParams);
 
   return (
     <ErrorBoundary>
-      <Header />
-      <Main isLoading={isLoading} />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Navigate to="search" />} />
+        <Route path="search" element={<PageLayout />}>
+          <Route path=":searchQuery" element={<PageLayout />} />
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </ErrorBoundary>
   );
 };

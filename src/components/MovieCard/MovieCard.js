@@ -6,7 +6,7 @@ import MovieContextMenu from "../MovieContextMenu/MovieContextMenu";
 import DeleteMovieDialog from "../DeleteMovieDialog/DeleteMovieDialog";
 import MovieDialog from "../MovieDialog/MovieDialog";
 
-import "./MovieCard.css";
+import "./MovieCard.scss";
 import Icon from "@mdi/react";
 import { mdiDotsVerticalCircle } from "@mdi/js";
 
@@ -64,13 +64,12 @@ const MovieCard = ({ movie }) => {
           <img
             src={movie.poster_path}
             alt="Movie Poster"
-            className="movie-card__image"
             onClick={handleMovieDetails}
           />
         </div>
         <div className="movie-card__information">
-          <div className="movie-card__information-title">{movie.title}</div>
-          <div className="movie-card__information-year">
+          <div className="movie-card__information__title">{movie.title}</div>
+          <div className="movie-card__information__year">
             <p>{movieReleaseYear}</p>
           </div>
         </div>

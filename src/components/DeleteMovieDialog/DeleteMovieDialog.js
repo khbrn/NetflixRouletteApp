@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./DeleteMovieDialog.css";
+import "./DeleteMovieDialog.scss";
 import { useDispatch } from "react-redux";
 import { deleteMovieData } from "../../store/moviesActions";
 import { uiActions } from "../../store/uiSlice";
@@ -30,9 +30,7 @@ const DeleteMovieDialog = (props) => {
         <h2>Delete movie</h2>
         <p>Are you sure you want to delete this movie?</p>
         <div className="delete-movie__button">
-          <button className="button__confirm" onClick={deleteMovieHandler}>
-            Confirm
-          </button>
+          <button onClick={deleteMovieHandler}>Confirm</button>
         </div>
       </div>
     </div>

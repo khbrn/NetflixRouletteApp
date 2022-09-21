@@ -1,0 +1,99 @@
+@import "styles/colors";
+@import "styles/fonts";
+
+.movie-details {
+  height: 100%;
+  width: 100%;
+  background: $color-dark-grey;
+  box-sizing: border-box;
+
+  .movie-details__nav {
+    padding: 28px 60px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .movie-details__main {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+
+    img {
+      padding-left: 60px;
+
+      width: 324px;
+      height: 486px;
+    }
+
+    .movie-details__all {
+      padding-left: 60px;
+
+      .movie-details__first-row {
+        display: flex;
+        flex-direction: row;
+
+        .movie-details__title {
+          @include font($weight: 300, $size: 40px, $height: 50px);
+
+          text-align: center;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .movie-details__rate {
+          margin-left: 26px;
+          box-sizing: border-box;
+          border: 1px solid #ffffff;
+
+          border-radius: 50%;
+          width: 60px;
+          height: 60px;
+          p {
+            @include font($weight: 300, $size: 20px, $height: 24px);
+
+            text-align: center;
+            text-transform: uppercase;
+            top: calc(50% - 24px / 2);
+            padding-top: 18px;
+          }
+        }
+      }
+
+      .movie-details__genre {
+        @include font($weight: 500, $size: 14px, $height: 18px);
+
+        mix-blend-mode: normal;
+        opacity: 0.5;
+      }
+
+      .movie-details__second-row {
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        .movie-details__release-year {
+          @include font($weight: 300, $size: 24px, $height: 30px);
+          color: $color-red;
+
+          margin-right: 50px;
+        }
+
+        .movie-details__duration {
+          @include font($weight: 300, $size: 24px, $height: 30px);
+          color: $color-red;
+        }
+      }
+
+      .movie-details__overview {
+        @include font($weight: 300, $size: 20px, $height: 24px);
+
+        padding-right: 60px;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+      }
+    }
+  }
+}

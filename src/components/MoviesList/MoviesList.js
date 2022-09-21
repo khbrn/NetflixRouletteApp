@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import React from "react";
 
-import "./MoviesList.css";
+import "./MoviesList.scss";
 import MovieCard from "../MovieCard/MovieCard";
 
 const MoviesList = () => {

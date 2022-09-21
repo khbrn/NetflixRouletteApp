@@ -2,12 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { movieFilterOptions } from "../../utils/filterOptions";
 
-import "./FilterGenreOptionsList.css";
+import "./FilterGenreOptionsList.scss";
 
 const FilterGenreOptionsList = () => {
   const navigate = useNavigate();
   return (
-    <ul className="filter-genre">
+    <ul className="list__genres">
       {movieFilterOptions.map((filterOption) => (
         <li
           key={filterOption.id}

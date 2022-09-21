@@ -1,0 +1,33 @@
+@import "styles/colors";
+
+main {
+  height: auto;
+  overflow: visible;
+
+  .main__separator {
+    height: 10px;
+    background: $color-light-grey;
+  }
+
+  .main__container {
+    height: auto;
+    background-color: $color-dark-grey;
+
+    .main__container__tools {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .main__container__progress-bar {
+      margin-top: 20px;
+      margin-left: 56px;
+      margin-right: 58px;
+
+      width: 94%;
+      height: 2px;
+
+      background: $color-medium-grey;
+    }
+  }
+}

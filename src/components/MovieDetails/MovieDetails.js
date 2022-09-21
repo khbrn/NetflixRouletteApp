@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import "./MovieDetails.css";
+import "./MovieDetails.scss";
 import Icon from "@mdi/react";
 import { mdiMagnify } from "@mdi/js";
 
@@ -32,25 +32,23 @@ const MovieDetails = () => {
       </div>
       <div className="movie-details__main">
         <img src={movie.poster_path} alt="poster" />
-        <div className="movie-details__data">
-          <div className="movie-details__data__first-row">
-            <div className="movie-details__data-title">{movie.title}</div>
-            <div className="movie-details__data-rate">
+        <div className="movie-details__all">
+          <div className="movie-details__first-row">
+            <div className="movie-details__title">{movie.title}</div>
+            <div className="movie-details__rate">
               <p>{movie.vote_average}</p>
             </div>
           </div>
-          <div className="movie-details__data-genre">
-            {movie.genres?.join(", ")}
-          </div>
-          <div className="movie-details__data__second-row">
-            <div className="movie-details__data-release-year">
+          <div className="movie-details__genre">{movie.genres?.join(", ")}</div>
+          <div className="movie-details__second-row">
+            <div className="movie-details__release-year">
               {releaseYear || ""}
             </div>
-            <div className="movie-details__data-duration">
+            <div className="movie-details__duration">
               {movie.runtime ? timeToHoursConverter(movie.runtime) : 0}
             </div>
           </div>
-          <div className="movie-details__data-overview">{movie.overview}</div>
+          <div className="movie-details__overview">{movie.overview}</div>
         </div>
       </div>
     </div>

@@ -1,0 +1,9 @@
+@mixin font($weight: 500, $size: 20px, $height: 24px) {
+  font-family: $font-stack;
+  color: $color-white;
+  font-style: normal;
+
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}

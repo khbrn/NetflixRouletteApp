@@ -2,12 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
-import "./FilterGenreResult.css";
+import "./FilterGenreResult.scss";
 
 const FilterGenreResult = () => {
   const moviesNumber = useSelector((state) => state.movies.moviesNumber);
   return (
-    <p className="filter-genre-result">
+    <p className="counter__movies">
       <span>{moviesNumber}</span> movies found
     </p>
   );

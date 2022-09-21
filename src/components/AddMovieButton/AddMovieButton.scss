@@ -1,0 +1,12 @@
+@import "styles/colors";
+@import "styles/fonts";
+@import "styles/buttons";
+
+.btn--secondary {
+  @extend %btn--secondary-shared;
+  width: 178px;
+  height: 46px;
+
+  background: $color-medium-grey;
+  border-color: transparent;
+}

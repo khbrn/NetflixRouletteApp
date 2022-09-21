@@ -1,0 +1,25 @@
+$color-white: #ffffff;
+$color-light-grey: #555555;
+$color-medium-grey: #424242;
+$color-dark-grey: #232323;
+$color-red: #f65261;
+$font-stack: "Montserrat", sans-serif;
+
+%font-shared {
+  font-family: $font-stack;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.logo {
+  @extend %font-shared;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+
+  color: $color-red;
+
+  span {
+    font-weight: 900;
+  }
+}

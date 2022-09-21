@@ -1,0 +1,40 @@
+@import "styles/colors";
+
+.header {
+  height: 600px;
+  width: 100%;
+  background: $color-black;
+  box-sizing: border-box;
+
+  .header__background {
+    box-sizing: border-box;
+    height: 100%;
+    background: url("https://s3-alpha-sig.figma.com/img/9ab1/b611/92a81bbe79a924292111ca43f3a39e8f?Expires=1656892800&Signature=IxSujAbWmoaC-2hbfXy5tMieIBxTpL-mOk9vuyS0~jnH2vSIFg9TyqVzAH3mrCYFHNB6hB-MquqH0ZWlv26KSM-P4SN~5unYjtbJjd6hFanSDN2c~O6nTTOCopawppkTb1AX~ER79QhoCGgNqSXWdhdA3LEngk7m5xRPPinmV7YGjfGwIvG9q~WHSCPHjkvi3~EatBfHBwqD-ZVD34xi9RZnKn8OmcnUpKMvtcalPDcVZvBFsqDQmFQFGZX4rdAxPiimP2YK6LD5rupltwDOvKUhY7zsVvmuxIrGl5uMdrAAK-D6i7QixUH9BekONMFYxPbLwDqkUTNGnTJZ5qqS7g__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+    mix-blend-mode: normal;
+    opacity: 0.3;
+    filter: blur(8px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .header__container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: transparent;
+
+    .header__container__add-movie {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 76px;
+      margin-top: 24px;
+      margin-right: 86px;
+      background: inherit;
+    }
+
+    .header__container__add-movie:first-child {
+      z-index: 3;
+    }
+  }
+}

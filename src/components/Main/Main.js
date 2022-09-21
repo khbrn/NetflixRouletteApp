@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./Main.css";
+import "./Main.scss";
 import MoviesList from "../MoviesList/MoviesList";
 import MoviesSortDropdown from "../MoviesSortDropdown/MoviesSortDropdown";
 import FilterGenreOptionsList from "../FilterGenreOptionsList/FilterGenreOptionsList";
@@ -24,7 +24,7 @@ const Main = ({ isLoading }) => {
           <FilterGenreOptionsList />
           <MoviesSortDropdown />
         </div>
-        <div className="progress-bar" />
+        <div className="main__container__progress-bar" />
         <FilterGenreResult />
         <MoviesList />
       </div>

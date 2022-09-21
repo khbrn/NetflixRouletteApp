@@ -1,0 +1,22 @@
+@import "styles/colors";
+@import "styles/fonts";
+
+%btn--primary-shared {
+  @include font($weight: 500, $height: 24px);
+  text-align: center;
+  text-transform: uppercase;
+
+  background: $color-red;
+  color: $color-white;
+  border-color: transparent;
+  border-radius: 4px;
+}
+
+%btn--secondary-shared {
+  @include font($weight: 600, $height: 24px);
+  text-align: center;
+  text-transform: uppercase;
+
+  color: $color-red;
+  border-radius: 4px;
+}

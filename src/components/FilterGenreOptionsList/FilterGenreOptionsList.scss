@@ -1,0 +1,20 @@
+@import "styles/colors";
+@import "styles/fonts";
+
+.list__genres {
+  list-style-type: none;
+  width: 436px;
+  padding-top: 20px;
+  padding-left: 56px;
+
+  display: flex;
+  justify-content: space-between;
+
+  li {
+    @include font($weight: 500, $size: 16px, $height: 20px);
+
+    height: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}

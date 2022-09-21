@@ -8,7 +8,7 @@ const MoviesList = () => {
   const movies = useSelector((state) => state.movies.movies);
   return (
     <>
-      <ul className="movie-list">
+      <ul className="movies-list">
         {movies.map((movie) => (
           <li key={movie.id}>
             <MovieCard movie={movie} />

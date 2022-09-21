@@ -18,7 +18,7 @@ const MoviesSortDropdown = () => {
   const sortParam = searchParams.get(ROUTER_PARAMS.SORT_BY);
 
   return (
-    <div className="sort-movie">
+    <div className="movies-sort-dropdown">
       <label htmlFor="sort-movie">Sort by:</label>
       <select
         name="sort-movie"

@@ -1,7 +1,7 @@
 @import "styles/colors";
 @import "styles/fonts";
 
-.counter__movies {
+.filter-genre-result {
   @include font($weight: normal, $size: 20px, $height: 24px);
 
   padding-left: 56px;

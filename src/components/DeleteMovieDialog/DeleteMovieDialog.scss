@@ -2,7 +2,7 @@
 @import "styles/fonts";
 @import "styles/buttons";
 
-.delete-movie__container {
+.delete-movie__dialog {
   position: fixed;
   width: 100%;
   height: 1787px;
@@ -10,9 +10,9 @@
   top: 0px;
   z-index: 1;
 
-  background: $color-dark-grey;
+  background: rgba(35, 35, 35, 0.918051);
 
-  .delete-movie {
+  .delete-movie__container {
     position: fixed;
     top: 50%;
     left: 50%;

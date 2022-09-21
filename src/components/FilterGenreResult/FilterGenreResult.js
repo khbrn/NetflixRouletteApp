@@ -7,7 +7,7 @@ import "./FilterGenreResult.scss";
 const FilterGenreResult = () => {
   const moviesNumber = useSelector((state) => state.movies.moviesNumber);
   return (
-    <p className="counter__movies">
+    <p className="filter-genre-result">
       <span>{moviesNumber}</span> movies found
     </p>
   );

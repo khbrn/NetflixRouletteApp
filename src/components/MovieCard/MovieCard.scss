@@ -1,14 +1,14 @@
 @import "styles/colors";
 @import "styles/fonts";
 
-.movie-card__container {
+.movie-card {
   display: flex;
   flex-direction: column;
 
   width: 328px;
   height: 560px;
 
-  .movie-card {
+  .movie-card__container {
     display: flex;
     justify-content: flex-end;
 

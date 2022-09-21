@@ -1,7 +1,7 @@
 @import "styles/colors";
 @import "styles/fonts";
 
-.context-menu {
+.movie-context-menu {
   position: absolute;
   width: 190px;
   height: 112px;
@@ -24,7 +24,7 @@
     border: none;
   }
 
-  .context-menu__list {
+  .movie-context-menu__list {
     list-style-type: none;
     margin-top: 30px;
 

@@ -35,9 +35,9 @@ const MoviesSearchBar = ({ searchQuery }) => {
   };
 
   return (
-    <div className="search-movie">
-      <h1 className="search-movie__header">Find your movie</h1>
-      <form className="search-movie__form">
+    <div className="movies-search-bar">
+      <h1 className="movies-search-bar__header">Find your movie</h1>
+      <form className="movies-search-bar__form">
         <input
           type="text"
           placeholder="What do you want to watch?"

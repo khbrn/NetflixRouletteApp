@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import "./Main.scss";
 import MoviesList from "../MoviesList/MoviesList";
 import MoviesSortDropdown from "../MoviesSortDropdown/MoviesSortDropdown";
-import FilterGenreOptionsList from "../FilterGenreOptionsList/FilterGenreOptionsList";
+import GenresList from "../GenresList/GenresList";
 import FilterGenreResult from "../FilterGenreResult/FilterGenreResult";
 
 const Main = ({ isLoading }) => {
@@ -21,7 +21,7 @@ const Main = ({ isLoading }) => {
       <div className="main__separator" />
       <div className="main__container">
         <div className="main__container__tools">
-          <FilterGenreOptionsList />
+          <GenresList />
           <MoviesSortDropdown />
         </div>
         <div className="main__container__progress-bar" />

@@ -46,8 +46,8 @@ const MovieCard = ({ movie }) => {
       ) : (
         <></>
       )}
-      <div className="movie-card__container ">
-        <div className="movie-card">
+      <div className="movie-card">
+        <div className="movie-card__container ">
           <Icon
             path={mdiDotsVerticalCircle}
             size={"36px"}

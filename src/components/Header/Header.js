@@ -6,7 +6,7 @@ import AppLogo from "../AppLogo/AppLogo";
 import MovieDialog from "../MovieDialog/MovieDialog";
 import MoviesSearchBar from "../MoviesSearchBar/MoviesSearchBar";
 
-import "./MoviesSearchContainer.scss";
+import "./Header.scss";
 
 const MoviesSearchContainer = ({ searchQuery }) => {
   const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);

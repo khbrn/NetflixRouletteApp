@@ -22,8 +22,8 @@ const DeleteMovieDialog = (props) => {
   };
 
   return (
-    <div className="delete-movie__container">
-      <div className="delete-movie">
+    <div className="delete-movie__dialog">
+      <div className="delete-movie__container">
         <button className="close-button" onClick={closeDialog}>
           <Icon path={mdiClose} size={"28px"} color="white" />
         </button>

@@ -5,7 +5,7 @@ import "./AddMovieButton.scss";
 
 const AddMovieButton = (props) => {
   return (
-    <button className="btn--secondary" onClick={props.addMovieHandler}>
+    <button className="add-movie-button" onClick={props.addMovieHandler}>
       + add movie
     </button>
   );

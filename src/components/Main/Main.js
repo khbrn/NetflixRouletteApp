@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./Main.css";
 import MoviesList from "../MoviesList/MoviesList";
 import MoviesSortDropdown from "../MoviesSortDropdown/MoviesSortDropdown";
-import FilterGenreOptionsList from "../FilterGenreOptionsList/FilterGenreOptionsList";
+import GenresList from "../GenresList/GenresList";
 import FilterGenreResult from "../FilterGenreResult/FilterGenreResult";
+
+import "./Main.scss";
 
 const Main = ({ isLoading }) => {
   let fetchedMovieContent = (
@@ -17,14 +18,14 @@ const Main = ({ isLoading }) => {
   return isLoading ? (
     fetchedMovieContent
   ) : (
-    <main>
+    <main className="main">
       <div className="main__separator" />
       <div className="main__container">
         <div className="main__container__tools">
-          <FilterGenreOptionsList />
+          <GenresList />
           <MoviesSortDropdown />
         </div>
-        <div className="progress-bar" />
+        <div className="main__container__progress-bar" />
         <FilterGenreResult />
         <MoviesList />
       </div>

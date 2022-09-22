@@ -1,11 +1,11 @@
 import React from "react";
-import Main from "../Main/Main";
-import Footer from "../Footer/Footer";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import MovieDetails from "../MovieDetails/MovieDetails";
+
 import MoviesSearchContainer from "../MoviesSearchContainer/MoviesSearchContainer";
-import "./PageLayout.css";
+import Main from "../Main/Main";
+import Footer from "../Footer/Footer";
+import MovieDetails from "../MovieDetails/MovieDetails";
 
 const PageLayout = () => {
   const isLoading = useSelector((state) => state.ui.isLoading);

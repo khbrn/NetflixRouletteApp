@@ -1,10 +1,11 @@
 import React from "react";
-import "./AppLogo.css";
+
+import "./AppLogo.scss";
 
 const AppLogo = () => {
   return (
-    <div className="logo" aria-hidden="true">
-      <span id="logo--bolded">netflix</span>roulette
+    <div className="app-logo" aria-hidden="true">
+      <span>netflix</span>roulette
     </div>
   );
 };

@@ -1,5 +1,7 @@
+@import "styles/colors";
+
 .error-boundary {
   padding-top: 50px;
   padding-left: 50px;
-  color: #f65261;
+  color: $secondary-text-color;
 }

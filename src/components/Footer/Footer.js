@@ -1,7 +1,8 @@
 import React from "react";
 
 import AppLogo from "../AppLogo/AppLogo";
-import "./Footer.css";
+
+import "./Footer.scss";
 
 const Footer = () => {
   return (

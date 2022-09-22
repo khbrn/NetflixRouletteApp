@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-import "./DeleteMovieDialog.css";
+import Icon from "@mdi/react";
+import { mdiClose } from "@mdi/js";
 import { useDispatch } from "react-redux";
+
 import { deleteMovieData } from "../../store/moviesActions";
 import { uiActions } from "../../store/uiSlice";
 
-import Icon from "@mdi/react";
-import { mdiClose } from "@mdi/js";
+import "./DeleteMovieDialog.scss";
 
 const DeleteMovieDialog = (props) => {
   const dispatch = useDispatch();
@@ -22,17 +22,15 @@ const DeleteMovieDialog = (props) => {
   };
 
   return (
-    <div className="delete-movie__container">
-      <div className="delete-movie">
+    <div className="delete-movie__dialog">
+      <div className="delete-movie__container">
         <button className="close-button" onClick={closeDialog}>
           <Icon path={mdiClose} size={"28px"} color="white" />
         </button>
         <h2>Delete movie</h2>
         <p>Are you sure you want to delete this movie?</p>
-        <div className="delete-movie__button">
-          <button className="button__confirm" onClick={deleteMovieHandler}>
-            Confirm
-          </button>
+        <div className="delete-movie__container__button">
+          <button onClick={deleteMovieHandler}>Confirm</button>
         </div>
       </div>
     </div>

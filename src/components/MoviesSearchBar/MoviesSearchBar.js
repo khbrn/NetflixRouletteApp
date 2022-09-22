@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { ENTER_KEY } from "../../constants/constants";
 import { fetchMoviesData, searchMoviesData } from "../../store/moviesActions";
 
-import "./MoviesSearchBar.css";
+import "./MoviesSearchBar.scss";
 
 const MoviesSearchBar = ({ searchQuery }) => {
   const [query, setQuery] = useState("");
@@ -35,20 +35,19 @@ const MoviesSearchBar = ({ searchQuery }) => {
   };
 
   return (
-    <div className="search-movie">
-      <h1 className="search-movie__header">Find your movie</h1>
-      <form className="search-movie__form">
+    <div className="movies-search-bar">
+      <h1 className="movies-search-bar__header">Find your movie</h1>
+      <form className="movies-search-bar__form">
         <input
           type="text"
           placeholder="What do you want to watch?"
-          className="search-movie__bar"
           value={query || ""}
           onChange={(event) => {
             setQuery(event.target.value);
           }}
           onKeyDown={searchMoviesOnEnterPress}
         />
-        <button type="submit" className="button__submit" onClick={searchMovies}>
+        <button type="submit" className="button__search" onClick={searchMovies}>
           <p>Search</p>
         </button>
       </form>

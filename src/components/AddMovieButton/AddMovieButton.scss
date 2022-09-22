@@ -1,0 +1,12 @@
+@import "styles/colors";
+@import "styles/fonts";
+@import "styles/buttons";
+
+.add-movie-button {
+  @extend %btn--secondary-shared;
+  width: 178px;
+  height: 46px;
+
+  background: $secondary-background-color;
+  border-color: transparent;
+}

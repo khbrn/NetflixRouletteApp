@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import Icon from "@mdi/react";
+import { mdiDotsVerticalCircle } from "@mdi/js";
 
 import MovieContextMenu from "../MovieContextMenu/MovieContextMenu";
 import DeleteMovieDialog from "../DeleteMovieDialog/DeleteMovieDialog";
 import MovieDialog from "../MovieDialog/MovieDialog";
 
-import "./MovieCard.css";
-import Icon from "@mdi/react";
-import { mdiDotsVerticalCircle } from "@mdi/js";
+import "./MovieCard.scss";
 
 const MovieCard = ({ movie }) => {
   const navigate = useNavigate();
@@ -46,8 +46,8 @@ const MovieCard = ({ movie }) => {
       ) : (
         <></>
       )}
-      <div className="movie-card__container ">
-        <div className="movie-card">
+      <div className="movie-card">
+        <div className="movie-card__container ">
           <Icon
             path={mdiDotsVerticalCircle}
             size={"36px"}
@@ -64,13 +64,12 @@ const MovieCard = ({ movie }) => {
           <img
             src={movie.poster_path}
             alt="Movie Poster"
-            className="movie-card__image"
             onClick={handleMovieDetails}
           />
         </div>
         <div className="movie-card__information">
-          <div className="movie-card__information-title">{movie.title}</div>
-          <div className="movie-card__information-year">
+          <div className="movie-card__information__title">{movie.title}</div>
+          <div className="movie-card__information__year">
             <p>{movieReleaseYear}</p>
           </div>
         </div>

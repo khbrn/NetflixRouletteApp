@@ -1,14 +1,15 @@
-import { useSelector } from "react-redux";
 import React from "react";
+import { useSelector } from "react-redux";
 
-import "./MoviesList.css";
 import MovieCard from "../MovieCard/MovieCard";
+
+import "./MoviesList.scss";
 
 const MoviesList = () => {
   const movies = useSelector((state) => state.movies.movies);
   return (
     <>
-      <ul className="movie-list">
+      <ul className="movies-list">
         {movies.map((movie) => (
           <li key={movie.id}>
             <MovieCard movie={movie} />

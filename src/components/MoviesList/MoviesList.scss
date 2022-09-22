@@ -1,13 +1,13 @@
-.movie-list {
-  list-style-type: none;
-
+.movies-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding-top: 26px;
   justify-content: space-evenly;
-}
 
-.movie-list li {
-  flex-basis: 25.1%;
+  list-style-type: none;
+
+  li {
+    flex-basis: 25.1%;
+  }
 }

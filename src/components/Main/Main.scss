@@ -1,0 +1,33 @@
+@import "styles/colors";
+
+.main {
+  height: auto;
+  overflow: visible;
+
+  &__separator {
+    height: 10px;
+    background: $tertiary-backgound-color;
+  }
+
+  &__container {
+    height: auto;
+    background-color: $primary-background-color;
+
+    &__tools {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__progress-bar {
+      margin-top: 20px;
+      margin-left: 56px;
+      margin-right: 58px;
+
+      width: 94%;
+      height: 2px;
+
+      background: $secondary-background-color;
+    }
+  }
+}

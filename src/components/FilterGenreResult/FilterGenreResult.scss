@@ -1,0 +1,13 @@
+@import "styles/colors";
+@import "styles/fonts";
+
+.filter-genre-result {
+  @include font($weight: normal, $size: 20px, $height: 24px);
+
+  padding-left: 56px;
+  padding-top: 24px;
+
+  span {
+    font-weight: 600;
+  }
+}

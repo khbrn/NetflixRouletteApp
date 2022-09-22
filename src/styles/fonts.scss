@@ -1,0 +1,10 @@
+$font-stack: "Montserrat", sans-serif;
+@mixin font($weight: 500, $size: 20px, $height: 24px) {
+  font-family: $font-stack;
+  color: $main-text-color;
+  font-style: normal;
+
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}

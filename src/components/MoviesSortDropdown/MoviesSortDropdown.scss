@@ -1,0 +1,32 @@
+@import "styles/colors";
+@import "styles/fonts";
+
+.movies-sort-dropdown {
+  padding-top: 20px;
+  width: 364px;
+
+  label {
+    margin-right: 32px;
+
+    width: 76px;
+    height: 20px;
+
+    @include font($weight: 400, $size: 16px, $height: 20px);
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    mix-blend-mode: normal;
+    opacity: 0.6;
+  }
+
+  select {
+    padding-right: 62px;
+    height: 20px;
+
+    @include font($weight: 500, $size: 16px, $height: 20px);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: inherit;
+    border: none;
+  }
+}

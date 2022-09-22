@@ -6,7 +6,7 @@ import AppLogo from "../AppLogo/AppLogo";
 import MovieDialog from "../MovieDialog/MovieDialog";
 import MoviesSearchBar from "../MoviesSearchBar/MoviesSearchBar";
 
-import "./Header.scss";
+import "./MoviesSearchContainer.scss";
 
 const MoviesSearchContainer = ({ searchQuery }) => {
   const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);
@@ -15,10 +15,10 @@ const MoviesSearchContainer = ({ searchQuery }) => {
   };
 
   return (
-    <div className="header">
-      <div className="header__background" />
-      <div className="header__container">
-        <div className="header__container__add-movie">
+    <div className="movies-search-container">
+      <div className="movies-search-container__background" />
+      <div className="movies-search-container__container">
+        <div className="movies-search-container__container__add-movie">
           <AppLogo />
           <AddMovieButton addMovieHandler={addMovie} />
           {isMovieDialogVisible && (

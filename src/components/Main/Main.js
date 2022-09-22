@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./Main.scss";
 import MoviesList from "../MoviesList/MoviesList";
 import MoviesSortDropdown from "../MoviesSortDropdown/MoviesSortDropdown";
 import GenresList from "../GenresList/GenresList";
 import FilterGenreResult from "../FilterGenreResult/FilterGenreResult";
+
+import "./Main.scss";
 
 const Main = ({ isLoading }) => {
   let fetchedMovieContent = (

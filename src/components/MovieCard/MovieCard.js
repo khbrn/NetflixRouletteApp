@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import Icon from "@mdi/react";
+import { mdiDotsVerticalCircle } from "@mdi/js";
 
 import MovieContextMenu from "../MovieContextMenu/MovieContextMenu";
 import DeleteMovieDialog from "../DeleteMovieDialog/DeleteMovieDialog";
 import MovieDialog from "../MovieDialog/MovieDialog";
 
 import "./MovieCard.scss";
-import Icon from "@mdi/react";
-import { mdiDotsVerticalCircle } from "@mdi/js";
 
 const MovieCard = ({ movie }) => {
   const navigate = useNavigate();

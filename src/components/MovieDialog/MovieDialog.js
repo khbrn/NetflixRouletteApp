@@ -2,14 +2,15 @@ import React from "react";
 import { useFormik } from "formik";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-
-import "./MovieDialog.scss";
 import Icon from "@mdi/react";
 import { mdiClose } from "@mdi/js";
-import { convertToMovieObject } from "../../utils/convertToMovieObject";
+
 import { addMovieData, editMovieData } from "../../store/moviesActions";
 import { ADD_MOVIE, EDIT_MOVIE } from "../../constants/constants";
+import { convertToMovieObject } from "../../utils/convertToMovieObject";
 import validateUrl from "../../utils/validateUrl";
+
+import "./MovieDialog.scss";
 
 const MovieDialog = (props) => {
   const dispatch = useDispatch();

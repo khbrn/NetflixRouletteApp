@@ -1,13 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-import "./MovieDetails.scss";
 import Icon from "@mdi/react";
 import { mdiMagnify } from "@mdi/js";
 
 import AppLogo from "../AppLogo/AppLogo";
 import { uiActions } from "../../store/uiSlice";
 import timeToHoursConverter from "../../utils/timeToHoursConverter";
+
+import "./MovieDetails.scss";
 
 const MovieDetails = () => {
   const dispatch = useDispatch();

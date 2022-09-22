@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-import "./MovieContextMenu.scss";
 import Icon from "@mdi/react";
 import { mdiClose } from "@mdi/js";
+
+import "./MovieContextMenu.scss";
 
 const MovieContextMenu = (props) => {
   const deleteMovie = () => {

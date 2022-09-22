@@ -1,25 +1,25 @@
 @import "styles/colors";
 
-main {
+.main {
   height: auto;
   overflow: visible;
 
-  .main__separator {
+  &__separator {
     height: 10px;
     background: $color-light-grey;
   }
 
-  .main__container {
+  &__container {
     height: auto;
     background-color: $color-dark-grey;
 
-    .main__container__tools {
+    &__tools {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
     }
 
-    .main__container__progress-bar {
+    &__progress-bar {
       margin-top: 20px;
       margin-left: 56px;
       margin-right: 58px;

@@ -2,17 +2,19 @@
 @import "styles/fonts";
 @import "styles/buttons";
 
-.delete-movie__dialog {
-  position: fixed;
-  width: 100%;
-  height: 1787px;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
+.delete-movie {
+  &__dialog {
+    position: fixed;
+    width: 100%;
+    height: 1787px;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
 
-  background: rgba(35, 35, 35, 0.918051);
+    background: rgba(35, 35, 35, 0.918051);
+  }
 
-  .delete-movie__container {
+  &__container {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -53,7 +55,7 @@
       margin-top: 38px;
     }
 
-    .delete-movie__button {
+    &__button {
       margin-top: 50px;
       margin-right: 60px;
 

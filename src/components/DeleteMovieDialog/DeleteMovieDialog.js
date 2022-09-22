@@ -29,7 +29,7 @@ const DeleteMovieDialog = (props) => {
         </button>
         <h2>Delete movie</h2>
         <p>Are you sure you want to delete this movie?</p>
-        <div className="delete-movie__button">
+        <div className="delete-movie__container__button">
           <button onClick={deleteMovieHandler}>Confirm</button>
         </div>
       </div>

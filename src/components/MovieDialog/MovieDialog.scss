@@ -12,7 +12,7 @@
   mix-blend-mode: normal;
   background: rgba(35, 35, 35, 0.918051);
 
-  .movie-dialog__container {
+  &__container {
     position: fixed;
     top: 50%;
     left: 50%;

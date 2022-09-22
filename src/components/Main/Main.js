@@ -17,7 +17,7 @@ const Main = ({ isLoading }) => {
   return isLoading ? (
     fetchedMovieContent
   ) : (
-    <main>
+    <main className="main">
       <div className="main__separator" />
       <div className="main__container">
         <div className="main__container__tools">

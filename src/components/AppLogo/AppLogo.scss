@@ -4,7 +4,7 @@
 .app-logo {
   @include font($weight: 500, $size: 20px, $height: 24px);
   letter-spacing: 0.5px;
-  color: $color-red;
+  color: $secondary-text-color;
 
   span {
     font-weight: 900;

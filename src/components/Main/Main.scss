@@ -6,12 +6,12 @@
 
   &__separator {
     height: 10px;
-    background: $color-light-grey;
+    background: $tertiary-backgound-color;
   }
 
   &__container {
     height: auto;
-    background-color: $color-dark-grey;
+    background-color: $primary-background-color;
 
     &__tools {
       display: flex;
@@ -27,7 +27,7 @@
       width: 94%;
       height: 2px;
 
-      background: $color-medium-grey;
+      background: $secondary-background-color;
     }
   }
 }

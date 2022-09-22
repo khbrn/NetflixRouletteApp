@@ -4,7 +4,7 @@
 .movie-details {
   height: 100%;
   width: 100%;
-  background: $color-dark-grey;
+  background: $primary-background-color;
   box-sizing: border-box;
 
   .movie-details__nav {
@@ -76,14 +76,14 @@
 
         .movie-details__release-year {
           @include font($weight: 300, $size: 24px, $height: 30px);
-          color: $color-red;
+          color: $secondary-text-color;
 
           margin-right: 50px;
         }
 
         .movie-details__duration {
           @include font($weight: 300, $size: 24px, $height: 30px);
-          color: $color-red;
+          color: $secondary-text-color;
         }
       }
 

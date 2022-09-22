@@ -6,8 +6,8 @@
   text-align: center;
   text-transform: uppercase;
 
-  background: $color-red;
-  color: $color-white;
+  background: $secondary-text-color;
+  color: $main-text-color;
   border-color: transparent;
   border-radius: 4px;
 }
@@ -17,6 +17,6 @@
   text-align: center;
   text-transform: uppercase;
 
-  color: $color-red;
+  color: $secondary-text-color;
   border-radius: 4px;
 }

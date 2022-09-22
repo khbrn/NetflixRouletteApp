@@ -60,7 +60,7 @@
           width: 526px;
           height: 58px;
 
-          background: $color-medium-grey;
+          background: $secondary-background-color;
           mix-blend-mode: normal;
           opacity: 0.8;
           border-radius: 4px;
@@ -71,7 +71,7 @@
           width: 301px;
           height: 57px;
 
-          background: $color-medium-grey;
+          background: $secondary-background-color;
           mix-blend-mode: normal;
           opacity: 0.8;
           border-radius: 4px;
@@ -82,7 +82,7 @@
           margin-bottom: 13px;
 
           @include font($weight: 600, $size: 16px, $height: 20px);
-          color: $color-red;
+          color: $secondary-text-color;
           letter-spacing: 1px;
           text-transform: uppercase;
 
@@ -94,7 +94,7 @@
           margin-top: 6px;
 
           @include font($weight: 400, $size: 14px, $height: 18px);
-          color: $color-red;
+          color: $secondary-text-color;
           mix-blend-mode: normal;
           opacity: 0.8;
         }
@@ -110,7 +110,7 @@
         .movie-dialog__form__overview {
           width: 860px;
           height: 198px;
-          background: $color-medium-grey;
+          background: $secondary-background-color;
           mix-blend-mode: normal;
           opacity: 0.8;
           border-radius: 4px;
@@ -136,7 +136,7 @@
         height: 58px;
 
         background: inherit;
-        border: 1.5px solid $color-red;
+        border: 1.5px solid $secondary-text-color;
       }
 
       .btn--primary {

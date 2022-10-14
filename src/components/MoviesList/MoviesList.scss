@@ -1,8 +1,9 @@
 .movies-list {
+  padding-top: 26px;
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-top: 26px;
   justify-content: space-evenly;
 
   list-style-type: none;

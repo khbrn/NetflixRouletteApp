@@ -9,6 +9,7 @@
 
   display: flex;
   justify-content: space-between;
+  gap: 30px;
 
   li {
     @include font($weight: 500, $size: 16px, $height: 20px);

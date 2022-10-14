@@ -19,8 +19,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 976px;
-    height: 750px;
+    width: 1000px;
+    height: 800px;
     z-index: $z-index-modal;
 
     background: #232323;
@@ -109,7 +109,7 @@
 
         .movie-dialog__form__overview {
           width: 860px;
-          height: 198px;
+          height: 98px;
           background: $secondary-background-color;
           mix-blend-mode: normal;
           opacity: 0.8;
@@ -117,7 +117,6 @@
           border: none;
 
           padding-top: 20px;
-          height: 60px;
         }
       }
     }

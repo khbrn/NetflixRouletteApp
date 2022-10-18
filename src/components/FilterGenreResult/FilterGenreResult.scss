@@ -4,7 +4,7 @@
 .filter-genre-result {
   @include font($weight: normal, $size: 20px, $height: 24px);
 
-  padding-top: 25px;
+  margin-left: 24px;
 
   span {
     font-weight: 600;

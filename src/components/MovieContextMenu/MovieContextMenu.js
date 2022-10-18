@@ -17,9 +17,11 @@ const MovieContextMenu = (props) => {
   };
   return (
     <div className="movie-context-menu">
-      <button onClick={() => props.setIsContextMenuVisible(false)}>
-        <Icon path={mdiClose} size={"18px"} color="white" />
-      </button>
+      <div className="movie-context-menu__button">
+        <button onClick={() => props.setIsContextMenuVisible(false)}>
+          <Icon path={mdiClose} size={"18px"} color="white" />
+        </button>
+      </div>
       <ul className="movie-context-menu__list">
         <li onClick={editMovie}>Edit</li>
         <li onClick={deleteMovie}>Delete</li>

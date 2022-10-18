@@ -15,14 +15,16 @@
 
     &__tools {
       display: flex;
+      flex-wrap: wrap;
       flex-direction: row;
       justify-content: space-between;
+      column-gap: 30px;
     }
 
     &__progress-bar {
       margin-top: 20px;
-      margin-left: 56px;
-      margin-right: 58px;
+      margin-left: 24px;
+      margin-right: 24px;
 
       width: 94%;
       height: 2px;

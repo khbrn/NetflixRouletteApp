@@ -2,13 +2,12 @@
 @import "styles/fonts";
 
 .movies-sort-dropdown {
+  display: flex;
   padding-top: 20px;
-  width: 364px;
+  width: 400px;
 
   label {
-    margin-right: 32px;
-
-    width: 76px;
+    width: 100px;
     height: 20px;
 
     @include font($weight: 400, $size: 16px, $height: 20px);
@@ -20,7 +19,6 @@
   }
 
   select {
-    padding-right: 62px;
     height: 20px;
 
     @include font($weight: 500, $size: 16px, $height: 20px);

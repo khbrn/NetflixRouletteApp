@@ -16,9 +16,9 @@ const MoviesSearchContainer = ({ searchQuery }) => {
 
   return (
     <div className="movies-search-container">
-      <div className="movies-search-container__background" />
-      <div className="movies-search-container__container">
-        <div className="movies-search-container__container__add-movie">
+      <div className="container-background" />
+      <div className="search-container">
+        <div className="search-container__header">
           <AppLogo />
           <AddMovieButton addMovieHandler={addMovie} />
           {isMovieDialogVisible && (

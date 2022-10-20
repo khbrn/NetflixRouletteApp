@@ -79,120 +79,142 @@ const MovieDialog = (props) => {
 
   return (
     <div className="movie-dialog">
-      <div className="movie-dialog__container">
-        <button className="close-button" onClick={closeDialog}>
-          <Icon path={mdiClose} size={"28px"} color="white" />
-        </button>
-        <h2>{props.movie ? EDIT_MOVIE : ADD_MOVIE}</h2>
+      <div className="modal">
+        <div className="modal-header">
+          <button className="modal-header__button" onClick={closeDialog}>
+            <Icon path={mdiClose} size={"28px"} color="white" />
+          </button>
+          <h2 className="modal-header__title">
+            {props.movie ? EDIT_MOVIE : ADD_MOVIE}
+          </h2>
+        </div>
         <form onSubmit={formik.handleSubmit}>
-          <div className="movie-dialog__form">
-            <div className="movie-dialog__form__row">
-              <label htmlFor="title">Title</label>
-              <input
-                type="text"
-                id="title"
-                name="title"
-                className="movie-dialog__form__column-left"
-                placeholder="Add Title"
-                onChange={formik.handleChange}
-                value={formik.values.title}
-              />
-              {formik.errors.title && <p>{formik.errors.title}</p>}
+          <div className="modal-content">
+            <div className="modal-content__row">
+              <div className="modal-content__column-left">
+                <label htmlFor="title" className="modal-content__label">
+                  Title
+                </label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  className="modal-content__input"
+                  placeholder="Add Title"
+                  onChange={formik.handleChange}
+                  value={formik.values.title}
+                />
+                {formik.errors.title && <p>{formik.errors.title}</p>}
+              </div>
+              <div className="modal-content__column-right">
+                <label htmlFor="releaseDate" className="modal-content__label">
+                  Release date
+                </label>
+                <input
+                  type="date"
+                  id="releaseDate"
+                  name="releaseDate"
+                  className="modal-content__input"
+                  placeholder="Select date"
+                  onChange={formik.handleChange}
+                  value={formik.values.releaseDate}
+                />
+                {formik.errors.releaseDate && (
+                  <p>{formik.errors.releaseDate}</p>
+                )}
+              </div>
             </div>
-            <div className="movie-dialog__form__row">
-              <label htmlFor="releaseDate">Release date</label>
-              <input
-                type="date"
-                id="releaseDate"
-                name="releaseDate"
-                className="movie-dialog__form__column-right"
-                placeholder="Select date"
-                onChange={formik.handleChange}
-                value={formik.values.releaseDate}
-              />
-              {formik.errors.releaseDate && <p>{formik.errors.releaseDate}</p>}
+            <div className="modal-content__row">
+              <div className="modal-content__column-left">
+                <label htmlFor="posterPath" className="modal-content__label">
+                  Movie url
+                </label>
+                <input
+                  type="text"
+                  id="posterPath"
+                  name="posterPath"
+                  className="modal-content__input"
+                  placeholder="https://"
+                  onChange={formik.handleChange}
+                  value={formik.values.posterPath}
+                />
+                {formik.errors.posterPath && <p>{formik.errors.posterPath}</p>}
+              </div>
+              <div className="modal-content__column-right">
+                <label htmlFor="rating" className="modal-content__label">
+                  Rating
+                </label>
+                <input
+                  type="text"
+                  id="rating"
+                  name="rating"
+                  className="modal-content__input"
+                  placeholder="7.8"
+                  onChange={formik.handleChange}
+                  value={formik.values.rating}
+                />
+                {formik.errors.rating && <p>{formik.errors.rating}</p>}
+              </div>
+            </div>
+            <div className="modal-content__row">
+              <div className="modal-content__column-left">
+                <label htmlFor="genres" className="modal-content__label">
+                  Genre
+                </label>
+                <input
+                  type="text"
+                  id="genres"
+                  name="genres"
+                  className="modal-content__input"
+                  placeholder="Select Genre"
+                  onChange={formik.handleChange}
+                  value={formik.values.genres}
+                />
+                {formik.errors.genres && <p>{formik.errors.genres}</p>}
+              </div>
+              <div className="modal-content__column-right">
+                <label htmlFor="runtime" className="modal-content__label">
+                  Runtime
+                </label>
+                <input
+                  type="text"
+                  id="runtime"
+                  name="runtime"
+                  className="modal-content__input"
+                  placeholder="minutes"
+                  onChange={formik.handleChange}
+                  value={formik.values.runtime}
+                />
+                {formik.errors.runtime && <p>{formik.errors.runtime}</p>}
+              </div>
+            </div>
+            <div className="modal-content__row">
+              <div className="modal-content__column-left">
+                <label htmlFor="overview" className="modal-content__label">
+                  Overview
+                </label>
+                <textarea
+                  type="text"
+                  id="overview"
+                  name="overview"
+                  className="modal-content__textarea"
+                  placeholder="Movie description"
+                  onChange={formik.handleChange}
+                  value={formik.values.overview}
+                />
+                {formik.errors.overview && <p>{formik.errors.overview}</p>}
+              </div>
             </div>
           </div>
-          <div className="movie-dialog__form">
-            <div className="movie-dialog__form__row">
-              <label htmlFor="posterPath">Movie url</label>
-              <input
-                type="text"
-                id="posterPath"
-                name="posterPath"
-                className="movie-dialog__form__column-left"
-                placeholder="https://"
-                onChange={formik.handleChange}
-                value={formik.values.posterPath}
-              />
-              {formik.errors.posterPath && <p>{formik.errors.posterPath}</p>}
-            </div>
-            <div className="movie-dialog__form__row">
-              <label htmlFor="rating">Rating</label>
-              <input
-                type="text"
-                id="rating"
-                name="rating"
-                className="movie-dialog__form__column-right"
-                placeholder="7.8"
-                onChange={formik.handleChange}
-                value={formik.values.rating}
-              />
-              {formik.errors.rating && <p>{formik.errors.rating}</p>}
-            </div>
-          </div>
-          <div className="movie-dialog__form">
-            <div className="movie-dialog__form__row">
-              <label htmlFor="genres">Genre</label>
-              <input
-                type="text"
-                id="genres"
-                name="genres"
-                className="movie-dialog__form__column-right"
-                placeholder="Select Genre"
-                onChange={formik.handleChange}
-                value={formik.values.genres}
-              />
-              {formik.errors.genres && <p>{formik.errors.genres}</p>}
-            </div>
-            <div className="movie-dialog__form__row">
-              <label htmlFor="runtime">Runtime</label>
-              <input
-                type="text"
-                id="runtime"
-                name="runtime"
-                className="movie-dialog__form__column-left"
-                placeholder="minutes"
-                onChange={formik.handleChange}
-                value={formik.values.runtime}
-              />
-              {formik.errors.runtime && <p>{formik.errors.runtime}</p>}
-            </div>
-          </div>
-          <div className="movie-dialog__form">
-            <div className="movie-dialog__form__row">
-              <label htmlFor="overview">Overview</label>
-              <textarea
-                type="text"
-                id="overview"
-                name="overview"
-                className="movie-dialog__form__overview"
-                placeholder="Movie description"
-                onChange={formik.handleChange}
-                value={formik.values.overview}
-              />
-              {formik.errors.overview && <p>{formik.errors.overview}</p>}
-            </div>
-          </div>
-          <div className="movie-dialog__buttons">
+          <div className="modal-footer">
             <button
               type="button"
-              className="btn--secondary"
+              className="modal-footer__button-secondary"
               onClick={formik.handleReset}
             >
               Reset
             </button>
-            <button type="submit" className="btn--primary">
+            <button type="submit" className="modal-footer__button-primary">
               Submit
             </button>
           </div>

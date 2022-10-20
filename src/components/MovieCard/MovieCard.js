@@ -47,11 +47,11 @@ const MovieCard = ({ movie }) => {
         <></>
       )}
       <div className="movie-card">
-        <div className="movie-card__container ">
+        <div className="movie-container ">
           <Icon
             path={mdiDotsVerticalCircle}
             size={"36px"}
-            className="menu-icon"
+            className="movie-container__icon"
             onClick={handleContextMenu}
           />
           {isContextMenuVisible && (
@@ -65,15 +65,22 @@ const MovieCard = ({ movie }) => {
             src={movie.poster_path}
             alt="Movie Poster"
             onClick={handleMovieDetails}
+            className="movie-container__image"
           />
         </div>
-        <div className="movie-card__information">
-          <div className="movie-card__information__title">{movie.title}</div>
-          <div className="movie-card__information__year">
-            <p>{movieReleaseYear}</p>
+        <div className="movie-information">
+          <div className="movie-information__row">
+            <div className="movie-information__title">{movie.title}</div>
+            <div className="movie-information__year">
+              <p>{movieReleaseYear}</p>
+            </div>
+          </div>
+          <div className="movie-information__row">
+            <p className="movie-information__genres">
+              {movie.genres.join(", ")}
+            </p>
           </div>
         </div>
-        <p className="movie-card__genre">{movie.genres.join(", ")}</p>
       </div>
     </>
   );

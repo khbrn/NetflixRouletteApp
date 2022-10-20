@@ -11,6 +11,7 @@ const FilterGenreOptionsList = () => {
     <ul className="genres-list">
       {movieFilterOptions.map((filterOption) => (
         <li
+          className="genres-list__item"
           key={filterOption.id}
           onClick={() => {
             navigate(`../search?genre=${filterOption.filterOptionValue}`, {

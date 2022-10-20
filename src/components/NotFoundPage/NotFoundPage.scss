@@ -1,8 +1,7 @@
 .not-found-page {
   margin: 16px;
 
-  h1,
-  h2 {
+  &__header {
     margin-bottom: 5px;
   }
 }

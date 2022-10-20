@@ -4,12 +4,12 @@
   height: auto;
   overflow: visible;
 
-  &__separator {
+  .separator {
     height: 10px;
     background: $tertiary-backgound-color;
   }
 
-  &__container {
+  .main-container {
     height: auto;
     background-color: $primary-background-color;
 
@@ -27,7 +27,7 @@
       margin-left: 24px;
     }
 
-    &__progress-bar {
+    &__separator {
       margin-left: 24px;
       margin-right: 24px;
 

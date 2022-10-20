@@ -19,13 +19,13 @@ const Main = ({ isLoading }) => {
     fetchedMovieContent
   ) : (
     <main className="main">
-      <div className="main__separator" />
-      <div className="main__container">
-        <div className="main__container__tools">
+      <div className="separator" />
+      <div className="main-container">
+        <div className="main-container__tools">
           <GenresList />
           <MoviesSortDropdown />
         </div>
-        <div className="main__container__progress-bar" />
+        <div className="main-container__separator" />
         <FilterGenreResult />
         <MoviesList />
       </div>

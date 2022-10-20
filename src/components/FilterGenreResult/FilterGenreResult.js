@@ -8,7 +8,8 @@ const FilterGenreResult = () => {
   const moviesNumber = useSelector((state) => state.movies.moviesNumber);
   return (
     <p className="filter-genre-result">
-      <span>{moviesNumber}</span> movies found
+      <span className="filter-genre-result__number">{moviesNumber}</span> movies
+      found
     </p>
   );
 };

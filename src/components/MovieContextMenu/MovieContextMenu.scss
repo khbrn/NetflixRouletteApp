@@ -18,31 +18,31 @@
   backdrop-filter: blur(27.1828px);
   border-radius: 4px;
 
-  &__button {
+  .context-menu-header {
     display: flex;
     flex-direction: row-reverse;
+
+    &__button {
+      background-color: $primary-background-color;
+      border: none;
+    }
   }
 
-  button {
-    background-color: $primary-background-color;
-    border: none;
-  }
-
-  &__list {
+  .context-menu-content {
     list-style-type: none;
 
-    li {
+    &__item {
       @include font($weight: 400, $size: 16px, $height: 20px);
       padding: 6px 14px 8px 14px;
       mix-blend-mode: normal;
       opacity: 0.8;
     }
-  }
 
-  ul li:hover {
-    background: $secondary-text-color;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1),
-      0px 10px 20px rgba(0, 0, 0, 0.1), 0px 10px 50px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(28px);
+    &__item:hover {
+      background: $secondary-text-color;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1),
+        0px 10px 20px rgba(0, 0, 0, 0.1), 0px 10px 50px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(28px);
+    }
   }
 }

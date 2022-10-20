@@ -19,10 +19,13 @@ const MoviesSortDropdown = () => {
 
   return (
     <div className="movies-sort-dropdown">
-      <label htmlFor="sort-movie">Sort by:</label>
+      <label htmlFor="sort-movie" className="movies-sort-dropdown__label">
+        Sort by:
+      </label>
       <select
         name="sort-movie"
         id="sort-movie"
+        className="movies-sort-dropdown__list"
         onChange={filterHander}
         value={sortParam || ""}
       >

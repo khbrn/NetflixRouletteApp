@@ -11,7 +11,7 @@ const MoviesList = () => {
     <>
       <ul className="movies-list">
         {movies.map((movie) => (
-          <li key={movie.id}>
+          <li className="movies-list__item" key={movie.id}>
             <MovieCard movie={movie} />
           </li>
         ))}

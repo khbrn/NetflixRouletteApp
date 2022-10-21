@@ -10,8 +10,6 @@ import { ADD_MOVIE, EDIT_MOVIE } from "../../constants/constants";
 import { convertToMovieObject } from "../../utils/convertToMovieObject";
 import validateUrl from "../../utils/validateUrl";
 
-import "./MovieDialog.scss";
-
 const MovieDialog = (props) => {
   const dispatch = useDispatch();
 
@@ -78,8 +76,8 @@ const MovieDialog = (props) => {
   });
 
   return (
-    <div className="movie-dialog">
-      <div className="modal">
+    <div className="modal-overlay">
+      <div className="modal-dialog">
         <div className="modal-header">
           <button className="modal-header__button" onClick={closeDialog}>
             <Icon path={mdiClose} size={"28px"} color="white" />

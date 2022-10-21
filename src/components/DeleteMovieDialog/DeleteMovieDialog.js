@@ -7,8 +7,6 @@ import { useDispatch } from "react-redux";
 import { deleteMovieData } from "../../store/moviesActions";
 import { uiActions } from "../../store/uiSlice";
 
-import "../MovieDialog/MovieDialog.scss";
-
 const DeleteMovieDialog = (props) => {
   const dispatch = useDispatch();
   const closeDialog = () => {
@@ -22,8 +20,8 @@ const DeleteMovieDialog = (props) => {
   };
 
   return (
-    <div className="movie-dialog">
-      <div className="modal-small">
+    <div className="modal-overlay">
+      <div className="modal-dialog">
         <div className="modal-header">
           <button className="modal-header__button" onClick={closeDialog}>
             <Icon path={mdiClose} size={"28px"} color="white" />

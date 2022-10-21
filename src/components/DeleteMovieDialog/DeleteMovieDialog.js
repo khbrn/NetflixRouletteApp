@@ -7,8 +7,6 @@ import { useDispatch } from "react-redux";
 import { deleteMovieData } from "../../store/moviesActions";
 import { uiActions } from "../../store/uiSlice";
 
-import "./DeleteMovieDialog.scss";
-
 const DeleteMovieDialog = (props) => {
   const dispatch = useDispatch();
   const closeDialog = () => {
@@ -22,15 +20,24 @@ const DeleteMovieDialog = (props) => {
   };
 
   return (
-    <div className="delete-movie__dialog">
-      <div className="delete-movie__container">
-        <button className="close-button" onClick={closeDialog}>
-          <Icon path={mdiClose} size={"28px"} color="white" />
-        </button>
-        <h2>Delete movie</h2>
-        <p>Are you sure you want to delete this movie?</p>
-        <div className="delete-movie__container__button">
-          <button onClick={deleteMovieHandler}>Confirm</button>
+    <div className="modal-overlay">
+      <div className="modal-dialog">
+        <div className="modal-header">
+          <button className="modal-header__button" onClick={closeDialog}>
+            <Icon path={mdiClose} size={"28px"} color="white" />
+          </button>
+          <h2 className="modal-header__title">Delete movie</h2>
+        </div>
+        <div className="modal-content">
+          <p>Are you sure you want to delete this movie?</p>
+        </div>
+        <div className="modal-footer">
+          <button
+            onClick={deleteMovieHandler}
+            className="modal-footer__button-primary"
+          >
+            Confirm
+          </button>
         </div>
       </div>
     </div>

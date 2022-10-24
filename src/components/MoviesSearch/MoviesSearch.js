@@ -6,19 +6,19 @@ import AppLogo from "../AppLogo/AppLogo";
 import MovieDialog from "../MovieDialog/MovieDialog";
 import MoviesSearchBar from "../MoviesSearchBar/MoviesSearchBar";
 
-import "./MoviesSearchContainer.scss";
+import "./MoviesSearch.scss";
 
-const MoviesSearchContainer = ({ searchQuery }) => {
+const MoviesSearch = ({ searchQuery }) => {
   const [isMovieDialogVisible, setIsMovieDialogVisible] = useState(false);
   const addMovie = () => {
     setIsMovieDialogVisible(true);
   };
 
   return (
-    <div className="movies-search-container">
+    <div className="movies-search">
       <div className="container-background" />
-      <div className="search-container">
-        <div className="search-container__header">
+      <div className="search">
+        <div className="search__header">
           <AppLogo />
           <AddMovieButton addMovieHandler={addMovie} />
           {isMovieDialogVisible && (
@@ -31,8 +31,8 @@ const MoviesSearchContainer = ({ searchQuery }) => {
   );
 };
 
-MoviesSearchContainer.propTypes = {
+MoviesSearch.propTypes = {
   searchQuery: PropTypes.string,
 };
 
-export default MoviesSearchContainer;
+export default MoviesSearch;

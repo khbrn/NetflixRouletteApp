@@ -1,7 +1,7 @@
 @import "styles/colors";
 @import "styles/z-index";
 
-.movies-search-container {
+.movies-search {
   height: 600px;
   width: 100%;
   background: $header-background-color;
@@ -19,7 +19,7 @@
     background-size: cover;
   }
 
-  .search-container {
+  .search {
     position: absolute;
     top: 0;
     width: 100%;

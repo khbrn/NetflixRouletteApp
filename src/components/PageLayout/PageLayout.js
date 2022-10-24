@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
-import MoviesSearchContainer from "../MoviesSearchContainer/MoviesSearchContainer";
+import MoviesSearch from "../MoviesSearch/MoviesSearch";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import Movie from "../Movie/Movie";
@@ -18,7 +18,7 @@ const PageLayout = () => {
         {!isHeaderVisible ? (
           <Movie />
         ) : (
-          <MoviesSearchContainer searchQuery={searchQuery} />
+          <MoviesSearch searchQuery={searchQuery} />
         )}
       </header>
       <Main isLoading={isLoading} />

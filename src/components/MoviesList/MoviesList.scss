@@ -7,6 +7,8 @@
   list-style-type: none;
 
   &__item {
-    flex-basis: 25.1%;
+    flex-basis: calc(100% / 3);
+    display: flex;
+    justify-content: center;
   }
 }

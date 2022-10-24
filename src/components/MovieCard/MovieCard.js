@@ -30,21 +30,17 @@ const MovieCard = ({ movie }) => {
 
   return (
     <>
-      {isMovieDialogVisible ? (
+      {isMovieDialogVisible && (
         <MovieDialog
           setMovieDialogVisibility={setIsMovieDialogVisible}
           movie={movie}
         />
-      ) : (
-        <></>
       )}
-      {isDeleteMovieDialogVisible ? (
+      {isDeleteMovieDialogVisible && (
         <DeleteMovieDialog
           setDeleteDialogVisibility={setIsDeleteMovieDialogVisible}
           movie={movie}
         />
-      ) : (
-        <></>
       )}
       <div className="movie-card">
         <div className="movie-container ">

@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import MoviesSearchContainer from "../MoviesSearchContainer/MoviesSearchContainer";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import MovieDetails from "../MovieDetails/MovieDetails";
+import Movie from "../Movie/Movie";
 
 const PageLayout = () => {
   const isLoading = useSelector((state) => state.ui.isLoading);
@@ -16,7 +16,7 @@ const PageLayout = () => {
     <>
       <header>
         {!isHeaderVisible ? (
-          <MovieDetails />
+          <Movie />
         ) : (
           <MoviesSearchContainer searchQuery={searchQuery} />
         )}

@@ -1,7 +1,7 @@
 @import "styles/colors";
 @import "styles/fonts";
 
-.movie-details {
+.movie {
   height: 100%;
   width: 100%;
   background: $primary-background-color;
@@ -15,7 +15,7 @@
     justify-content: space-between;
   }
 
-  .movie__content {
+  .movie-content {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -26,12 +26,12 @@
 
     padding-bottom: 24px;
 
-    &__image {
+    .movie-image {
       height: 500px;
       max-width: 100%;
     }
 
-    .details {
+    .movie-details {
       &__row {
         display: flex;
         flex-direction: row;
@@ -79,6 +79,7 @@
         @include font($weight: 300, $size: 24px, $height: 30px);
         color: $secondary-text-color;
       }
+
       &__overview {
         @include font($weight: 300, $size: 20px, $height: 24px);
         max-width: 400px;

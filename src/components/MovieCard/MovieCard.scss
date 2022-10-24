@@ -13,19 +13,19 @@
   .movie-container {
     display: flex;
     justify-content: flex-end;
+  }
 
-    &__icon {
-      top: 14px;
-      right: 14px;
+  &__icon {
+    top: 14px;
+    right: 14px;
 
-      position: absolute;
-      opacity: 1;
-    }
+    position: absolute;
+    opacity: 1;
+  }
 
-    &__image {
-      width: 350px;
-      height: 500px;
-    }
+  &__image {
+    width: 350px;
+    height: 500px;
   }
 
   .movie-information {

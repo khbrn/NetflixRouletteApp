@@ -20,7 +20,7 @@ const MovieDetails = () => {
 
   return (
     <div className="movie-details">
-      <div className="details-header">
+      <div className="movie-header">
         <AppLogo />
         <Icon
           path={mdiMagnify}
@@ -30,9 +30,9 @@ const MovieDetails = () => {
           onClick={handleSearchMovie}
         />
       </div>
-      <div className="details__content">
+      <div className="movie__content">
         <img
-          className="details-content__image"
+          className="movie-content__image"
           src={movie.poster_path}
           alt="poster"
         />

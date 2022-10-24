@@ -20,7 +20,7 @@ const Main = ({ isLoading }) => {
   ) : (
     <main className="main">
       <div className="main-container">
-        <div className="main-container__tools">
+        <div className="main__tools">
           <GenresList />
           <MoviesSortDropdown />
         </div>

@@ -18,25 +18,25 @@
     display: flex;
     row-gap: 20px;
     flex-direction: column;
+  }
 
-    &__tools {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      justify-content: space-between;
-      column-gap: 30px;
+  &__tools {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 30px;
 
-      margin-left: 24px;
-    }
+    margin-left: 24px;
+  }
 
-    &__tools::after {
-      content: " ";
-      margin: 24px 24px 0 24px;
+  &__tools::after {
+    content: " ";
+    margin: 24px 24px 0 24px;
 
-      width: 94%;
-      height: 2px;
+    width: 94%;
+    height: 2px;
 
-      background: $secondary-background-color;
-    }
+    background: $secondary-background-color;
   }
 }

@@ -51,7 +51,7 @@ const MovieCard = ({ movie }) => {
           <Icon
             path={mdiDotsVerticalCircle}
             size={"36px"}
-            className="movie-container__icon"
+            className="movie-card__icon"
             onClick={handleContextMenu}
           />
           {isContextMenuVisible && (
@@ -65,7 +65,7 @@ const MovieCard = ({ movie }) => {
             src={movie.poster_path}
             alt="Movie Poster"
             onClick={handleMovieDetails}
-            className="movie-container__image"
+            className="movie-card__image"
           />
         </div>
         <div className="movie-information">

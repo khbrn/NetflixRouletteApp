@@ -10,30 +10,32 @@
   width: 350px;
   height: 600px;
 
-  &__container {
+  .movie-container {
     display: flex;
     justify-content: flex-end;
-
-    .menu-icon {
-      top: 14px;
-      right: 14px;
-
-      position: absolute;
-      opacity: 1;
-    }
-
-    img {
-      width: 350px;
-      height: 500px;
-    }
   }
 
-  &__information {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  &__icon {
+    top: 14px;
+    right: 14px;
 
+    position: absolute;
+    opacity: 1;
+  }
+
+  &__image {
+    width: 350px;
+    height: 500px;
+  }
+
+  .movie-information {
     margin-top: 14px;
+
+    &__row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
     &__title {
       @include font($weight: 500, $size: 18px, $height: 22px);
@@ -55,16 +57,14 @@
       border: 1px solid #979797;
       opacity: 0.5;
       border-radius: 4px;
-
-      p {
-        @include font($weight: 500, $size: 14px, $height: 17px);
-        text-align: center;
-      }
+      @include font($weight: 500, $size: 14px, $height: 17px);
+      text-align: center;
     }
-  }
-  &__genre {
-    @include font($weight: 500, $size: 14px, $height: 17px);
-    margin-top: 8px;
-    opacity: 0.7;
+
+    &__genres {
+      @include font($weight: 500, $size: 14px, $height: 17px);
+      margin-top: 8px;
+      opacity: 0.7;
+    }
   }
 }

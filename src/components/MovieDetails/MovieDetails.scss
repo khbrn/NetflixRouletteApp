@@ -7,7 +7,7 @@
   background: $primary-background-color;
   box-sizing: border-box;
 
-  .movie-details__nav {
+  .movie-header {
     padding: 24px;
 
     display: flex;
@@ -15,7 +15,7 @@
     justify-content: space-between;
   }
 
-  .movie-details__main {
+  .movie__content {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -25,70 +25,60 @@
 
     padding-bottom: 24px;
 
-    img {
+    &__image {
       height: 500px;
       max-width: 100%;
     }
 
-    .movie-details__all {
-      .movie-details__first-row {
+    .details {
+      &__row {
         display: flex;
         flex-direction: row;
         align-items: center;
-
-        .movie-details__title {
-          @include font($weight: 300, $size: 40px, $height: 50px);
-
-          text-align: center;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-        }
-
-        .movie-details__rate {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          margin-left: 26px;
-          box-sizing: border-box;
-          border: 1px solid #ffffff;
-
-          border-radius: 50%;
-          width: 60px;
-          height: 60px;
-
-          p {
-            @include font($weight: 300, $size: 20px, $height: 24px);
-          }
-        }
+        margin-bottom: 20px;
       }
 
-      .movie-details__genre {
+      &__title {
+        @include font($weight: 300, $size: 40px, $height: 50px);
+
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      &__rate {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-left: 26px;
+        box-sizing: border-box;
+        border: 1px solid #ffffff;
+
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        @include font($weight: 300, $size: 20px, $height: 24px);
+      }
+
+      &__genre {
         @include font($weight: 500, $size: 14px, $height: 18px);
-        margin-top: 10px;
+        margin-bottom: 20px;
         mix-blend-mode: normal;
         opacity: 0.5;
       }
 
-      .movie-details__second-row {
-        display: flex;
-        flex-direction: row;
-        margin-top: 20px;
-        margin-bottom: 20px;
-
-        .movie-details__release-year {
-          @include font($weight: 300, $size: 24px, $height: 30px);
-          color: $secondary-text-color;
-        }
-
-        .movie-details__duration {
-          margin-left: 16px;
-          @include font($weight: 300, $size: 24px, $height: 30px);
-          color: $secondary-text-color;
-        }
+      &__release-year {
+        @include font($weight: 300, $size: 24px, $height: 30px);
+        color: $secondary-text-color;
       }
 
-      .movie-details__overview {
+      &__duration {
+        margin-left: 16px;
+        @include font($weight: 300, $size: 24px, $height: 30px);
+        color: $secondary-text-color;
+      }
+      &__overview {
         @include font($weight: 300, $size: 20px, $height: 24px);
         max-width: 400px;
         mix-blend-mode: normal;

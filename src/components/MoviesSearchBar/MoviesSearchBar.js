@@ -36,8 +36,8 @@ const MoviesSearchBar = ({ searchQuery }) => {
 
   return (
     <div className="movies-search-bar">
-      <h1 className="movies-search-bar__header">Find your movie</h1>
-      <form className="movies-search-bar__form">
+      <h1 className="search-bar-header">Find your movie</h1>
+      <form className="search-form">
         <input
           type="text"
           placeholder="What do you want to watch?"
@@ -46,8 +46,13 @@ const MoviesSearchBar = ({ searchQuery }) => {
             setQuery(event.target.value);
           }}
           onKeyDown={searchMoviesOnEnterPress}
+          className="search-form__input"
         />
-        <button type="submit" className="button__search" onClick={searchMovies}>
+        <button
+          type="submit"
+          className="search-form__button"
+          onClick={searchMovies}
+        >
           <p>Search</p>
         </button>
       </form>

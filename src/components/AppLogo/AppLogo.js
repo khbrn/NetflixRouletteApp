@@ -5,7 +5,7 @@ import "./AppLogo.scss";
 const AppLogo = () => {
   return (
     <div className="app-logo" aria-hidden="true">
-      <span>netflix</span>roulette
+      <span className="text-emphasis">netflix</span>roulette
     </div>
   );
 };
